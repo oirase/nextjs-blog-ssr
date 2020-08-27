@@ -1,2 +1,2 @@
 
-export default () => <a>posts data</a>
+export default () => <a href="">posts data</a>
