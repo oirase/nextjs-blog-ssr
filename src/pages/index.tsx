@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Posts from './posts'
 
 export default () => {
   return (
@@ -10,6 +11,12 @@ export default () => {
     <Link href="/posts">
       <a>posts</a>
     </Link>
+    <Posts />
+    <style jsx>{`
+      a {
+        color: green;
+      }
+    `}</style>
   </>
   )
 }

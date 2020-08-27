@@ -1,2 +1,2 @@
 
-export default () => <p>posts data</p>
+export default () => <a>posts data</a>
