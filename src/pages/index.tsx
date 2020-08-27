@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Posts from './posts'
+import Layout from '../../components/layout'
 
 export default () => {
   return (
   <>
+  <Layout>
   <Head>
     <title>next-blog</title>
   </Head>
@@ -17,6 +19,7 @@ export default () => {
         color: green;
       }
     `}</style>
+    </Layout>
   </>
   )
 }
