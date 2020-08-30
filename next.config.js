@@ -5,7 +5,7 @@ module.exports = (phase, { defaultConfig }) => {
   if(phase === PHASE_DEVELOPMENT_SERVER) {
     return {
       env: {
-        customKey: 'my-value',
+        customDevKey: 'my-dev-value',
       }
     }
   }
