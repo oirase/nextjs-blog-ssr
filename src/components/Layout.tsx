@@ -1,3 +1,6 @@
-import styles from './layout.module.css'
+let styles = require('./layout.module.css')
+import * as React from 'react'
 
-export default ({ children }) => <div className={styles.container}>{children}</div>
+const Layout:React.FC = ({ children }) => <div className={styles.container}>{children}</div>
+
+export default Layout

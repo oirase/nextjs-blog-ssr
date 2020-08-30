@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\n\nlet styles = require('./layout.module.css');\n\nimport * as React from 'react';\n\nconst Layout = ({\n  children\n}) => __jsx(\"div\", {\n  className: styles.container\n}, children);\n\nexport default Layout;","map":null,"metadata":{},"sourceType":"module"}
