@@ -12,7 +12,7 @@ module.exports = (phase, { defaultConfig }) => {
 
   return {
     env: {
-        customKey: 'my-value',
+        customKey: 'my-pro-value',
     }
   }
 }
