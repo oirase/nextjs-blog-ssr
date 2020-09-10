@@ -20,13 +20,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
+const fetcher = (...args) => fetch(...args).then(res => res.json());
+
 const App = ({ server, stars }: Props) => {
 /*
   const sendData = async() = {
     await fetch()
   }
 */
-  const { data, error } = useSWR('/api/hello', fetch)
+  const { data, error } = useSWR('/api/hello', fetcher)
   if (error) return <div>faild to load</div>
   if (!data) return <div>loading...</div>
     console.log(data)
