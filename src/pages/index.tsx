@@ -28,6 +28,7 @@ const App = ({ server, stars }: Props) => {
   const { data, error } = useSWR('/api/hello', fetch)
   if (error) return <div>faild to load</div>
   if (!data) return <div>loading...</div>
+  console.log(data)
 
   return (
     <>
