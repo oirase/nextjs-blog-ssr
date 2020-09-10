@@ -1,4 +1,4 @@
-//import * as React from 'react'
+import useSWR from 'swr'
 import { GetServerSideProps } from 'next'
 import serverSideProps from '~/lib/serverSideProps'
 
@@ -25,11 +25,16 @@ const App = ({ server, stars }: Props) => {
     await fetch()
   }
 */
+  const { data, error } = useSWR('/api/hello', fetch)
+  if (error) return <div>faild to load</div>
+  if (!data) return <div>loading...</div>
+
   return (
     <>
       <h1>studySearch</h1>
       <p>server: {server && server}</p>
       <p>stars: {stars && stars}</p>
+      <p>{data.text}!</p>
       {/*<p onClick={sendDtata}>send</p>*/}
     </>
   )
