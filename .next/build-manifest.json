@@ -1,41 +1,32 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills-72582ec57bbe34c511dc.js"
+    "static/chunks/polyfills-7abac9d858370c30536e.js"
   ],
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/XoR4yJd3LLdj34HrvIW0-/_buildManifest.js",
-    "static/XoR4yJd3LLdj34HrvIW0-/_ssgManifest.js"
+    "static/Km1y3QMRvwBiVOUto114P/_buildManifest.js",
+    "static/Km1y3QMRvwBiVOUto114P/_ssgManifest.js"
   ],
   "pages": {
     "/": [
-      "static/chunks/main-270a02297826a43b2a25.js",
+      "static/chunks/main-6067ef1e6c5c55b9af99.js",
       "static/chunks/webpack-ccf5ab034a524403276a.js",
       "static/chunks/framework.085e84bea8b122ad7b41.js",
-      "static/chunks/3ef630e34cd10ba68f9d468ac363ff81c534e1e9.e68a13ffc3e01fed6aa6.js",
-      "static/css/a2ff7a21d4526a66bd8a.css",
-      "static/chunks/pages/index-064598e981b2c14fe66a.js"
+      "static/chunks/pages/index-988ae04f4f3b60290b16.js"
     ],
     "/_app": [
-      "static/chunks/main-270a02297826a43b2a25.js",
+      "static/chunks/main-6067ef1e6c5c55b9af99.js",
       "static/chunks/webpack-ccf5ab034a524403276a.js",
       "static/chunks/framework.085e84bea8b122ad7b41.js",
-      "static/chunks/3ef630e34cd10ba68f9d468ac363ff81c534e1e9.e68a13ffc3e01fed6aa6.js",
-      "static/css/c5a9af311fc4739db1ef.css",
-      "static/chunks/pages/_app-6179dea64b6c41e20424.js"
+      "static/chunks/f6078781a05fe1bcb0902d23dbbb2662c8d200b3.f5f4f57982ee1f827baa.js",
+      "static/chunks/pages/_app-6fdefacd210c419cf24d.js"
     ],
     "/_error": [
-      "static/chunks/main-270a02297826a43b2a25.js",
+      "static/chunks/main-6067ef1e6c5c55b9af99.js",
       "static/chunks/webpack-ccf5ab034a524403276a.js",
       "static/chunks/framework.085e84bea8b122ad7b41.js",
       "static/chunks/pages/_error-fa39c7ce12d3ae2cec40.js"
-    ],
-    "/posts": [
-      "static/chunks/main-270a02297826a43b2a25.js",
-      "static/chunks/webpack-ccf5ab034a524403276a.js",
-      "static/chunks/framework.085e84bea8b122ad7b41.js",
-      "static/chunks/pages/posts-624811d160df2c29ec05.js"
     ]
   },
   "ampFirstPages": []
