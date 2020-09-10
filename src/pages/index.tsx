@@ -28,7 +28,7 @@ const App = ({ server, stars }: Props) => {
     await fetch()
   }
 */
-  const { data, error } = useSWR('/api/hello', fetcher)
+  const { data, error } = useSWR('https://nextjs-blog-ssr.herokuapp.com/api/hello', fetcher)
   if (error) return <div>faild to load</div>
   if (!data) return <div>loading...</div>
     console.log(data)
