@@ -38,7 +38,7 @@ const App = ({ server, stars }: Props) => {
         <h1>studySearch</h1>
         <p>server: {server && server}</p>
         <p>stars: {stars && stars}</p>
-        <p>{data.name}!</p>
+        {/*<p>{data.name}!</p>*/}
         {/*<p onClick={sendDtata}>send</p>*/}
       </>
       )
