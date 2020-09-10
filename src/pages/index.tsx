@@ -20,7 +20,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-const fetcher = (...args) => fetch(...args).then(res => res.json());
+//const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const App = ({ server, stars }: Props) => {
 /*
@@ -28,7 +28,7 @@ const App = ({ server, stars }: Props) => {
     await fetch()
   }
 */
-  const { data, error } = useSWR('https://nextjs-blog-ssr.herokuapp.com/api/hello', fetcher)
+  const { data, error } = useSWR('https://nextjs-blog-ssr.herokuapp.com/api/hello', fetch)
   if (error) return <div>faild to load</div>
   if (!data) return <div>loading...</div>
     console.log(data)
