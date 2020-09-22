@@ -1,11 +1,11 @@
 import Layout from '~/components/Layout'
 
-const Index = () => {
+const Article = () => {
   return (
     <Layout>
-      <p>New Page</p>
+      <p>Article Page</p>
     </Layout>
   )
 }
 
-export default Index
+export default Article
