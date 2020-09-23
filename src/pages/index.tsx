@@ -16,7 +16,7 @@ const Home = ({ allPostsData }) => {
     <Layout>
       <p>New Page</p>
       <ul>
-        {allPostsData.map(({ id, date, title }) => (
+        {allPostsData.map(({ id, date, title, category }) => (
           <li key={id}>
             <Link href={`/articles/${id}`}>
               <a>{title}</a>
@@ -25,6 +25,8 @@ const Home = ({ allPostsData }) => {
             {id}
             <br />
             {date}
+            <br />
+            {category}
           </li>
         ))}
       </ul>

@@ -27,16 +27,6 @@ export const getSortedPostsData = () => {
       return -1
     }
   })
-  /*
-
-  return [
-    {
-      id: 1,
-      title: postsDirectory,
-      date: '2020-01-01'
-    }
-  ]
-*/
 }
 
 export const getAllPostIds = () => {
