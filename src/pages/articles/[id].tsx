@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Layout from '~/components/Layout'
 import { getAllPostIds, getPostData } from '~/lib/posts'
 
@@ -5,25 +6,28 @@ export async function getStaticPaths() {
   const paths = getAllPostIds()
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
-export async function getStaticProps ({ params }) {
+export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
   return {
     props: {
-      postData
-    }
+      postData,
+    },
   }
 }
 
 const Article = ({ postData }) => {
-
   return (
     <Layout>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
       {postData.title}
-      <br />it commiy
+      <br />
+      it commiy
       {postData.id}
       <br />
       {postData.date}

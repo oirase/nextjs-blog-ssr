@@ -1,5 +1,4 @@
 {
-  "/article": "pages/article.html",
   "/articles/[id]": "pages/articles/[id].js",
   "/home": "pages/home.js",
   "/_app": "pages/_app.js",

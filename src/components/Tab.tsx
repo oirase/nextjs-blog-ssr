@@ -5,13 +5,11 @@ type Props = {
   href: string
 }
 
-const Tab: FC<Props> = ({ href, children}) => {
+const Tab: FC<Props> = ({ href, children }) => {
   return (
-  <Link href={href}>
-    <button>
-      {children}
-    </button>
-  </Link>
+    <Link href={href}>
+      <button>{children}</button>
+    </Link>
   )
 }
 
