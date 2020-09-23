@@ -26,10 +26,11 @@ export const getSortedPostsData = () => {
     }
   })
   */
+
   return [
     {
       id: 1,
-      title: 'Two Forms of Pre-rendering',
+      title: postsDirectory,
       date: '2020-01-01',
     },
   ]
