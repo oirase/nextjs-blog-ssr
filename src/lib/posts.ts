@@ -2,12 +2,12 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-const postsDirectory = path.join(process.cwd(), 'posts')
+const postsDirectory = path.join(process.cwd(), 'src/posts')
 
 export const getSortedPostsData = () => {
-  /*
   const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = fileNames.map(fileName => {
+
+  const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, '')
     const fullPath = path.join(postsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -15,7 +15,7 @@ export const getSortedPostsData = () => {
 
     return {
       id,
-      ...(matterResult.data as { date: string; title: string; })
+      ...(matterResult.data as { date: string; title: string }),
     }
   })
   return allPostsData.sort((a, b) => {
@@ -25,13 +25,14 @@ export const getSortedPostsData = () => {
       return -1
     }
   })
-  */
+  /*
 
   return [
     {
       id: 1,
       title: postsDirectory,
-      date: '2020-01-01',
-    },
+      date: '2020-01-01'
+    }
   ]
+*/
 }
