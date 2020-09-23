@@ -10,7 +10,7 @@ export async function getStaticProps() {
   }
 }
 
-const Index = ({ allPostsData }) => {
+const Home = ({ allPostsData }) => {
   return (
     <Layout>
       <p>New Page</p>
@@ -29,4 +29,4 @@ const Index = ({ allPostsData }) => {
   )
 }
 
-export default Index
+export default Home
