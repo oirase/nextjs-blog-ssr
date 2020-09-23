@@ -33,6 +33,8 @@ const Article = ({ postData }) => {
       {postData.date}
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <br />
+      {postData.category}
     </Layout>
   )
 }
