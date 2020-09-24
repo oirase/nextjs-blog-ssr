@@ -4,7 +4,7 @@ import { getAllPostIds, getPostData } from '~/lib/posts'
 
 export async function getStaticPaths() {
   //const paths = getAllPostIds()
-  const paths = ['teast-a', 'test-b'].map(path => {
+  const paths = ['test-a', 'test-b'].map(path => {
     return {
       params: {
         id: path
