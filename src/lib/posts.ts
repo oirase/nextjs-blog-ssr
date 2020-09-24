@@ -17,7 +17,11 @@ export const getSortedPostsData = () => {
 
     return {
       id,
-      ...(matterResult.data as { date: string; title: string }),
+      ...(matterResult.data as {
+        date: string
+        title: string
+        category: string
+      }),
     }
   })
   return allPostsData.sort((a, b) => {
