@@ -25,7 +25,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const allPostsData = getSortedPostsData()
   const categoryPostsData = allPostsData.filter(
-    ({ category }) => category === params
+    ({ category }) => category === params.category
   )
   return {
     props: {
