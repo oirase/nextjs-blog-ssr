@@ -3,14 +3,7 @@ import Layout from '~/components/Layout'
 import { getAllPostIds, getPostData } from '~/lib/posts'
 
 export async function getStaticPaths() {
-  //const paths = getAllPostIds()
-  const paths = ['test-a', 'test-b'].map(path => {
-    return {
-      params: {
-        id: path
-      }
-    }
-  })
+  const paths = getAllPostIds()
   return {
     paths,
     fallback: false
@@ -18,8 +11,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps ({ params }) {
-  //const postData = await getPostData(params.id)
-  const postData = params
+  const postData = await getPostData(params.id)
   return {
     props: {
       postData
@@ -29,12 +21,9 @@ export async function getStaticProps ({ params }) {
 
 const Article = ({ postData }) => {
 
-  console.log(postData)
-
   return (
     <Layout>
-      <p>article</p>
-      {/*<Head>
+      <Head>
         <title>{postData.title}</title>
       </Head>
       {postData.title}
@@ -45,7 +34,7 @@ const Article = ({ postData }) => {
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       <br />
-      {postData.category} */}
+      {postData.category}
     </Layout>
   )
 }
