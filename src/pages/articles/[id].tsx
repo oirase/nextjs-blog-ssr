@@ -4,34 +4,36 @@ import { getAllPostIds, getPostData } from '~/lib/posts'
 
 export async function getStaticPaths() {
   //const paths = getAllPostIds()
-  const paths = ['teast-a', 'test-b'].map((path) => {
+  const paths = ['teast-a', 'test-b'].map(path => {
     return {
       params: {
-        id: path,
-      },
+        id: path
+      }
     }
   })
   return {
     paths,
-    fallback: false,
+    fallback: false
   }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps ({ params }) {
   //const postData = await getPostData(params.id)
   const postData = params
   return {
     props: {
-      postData,
-    },
+      postData
+    }
   }
 }
 
 const Article = ({ postData }) => {
+
   console.log(postData)
 
   return (
     <Layout>
+      <p>article</p>
       {/*<Head>
         <title>{postData.title}</title>
       </Head>

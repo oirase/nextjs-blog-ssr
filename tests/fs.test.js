@@ -80,4 +80,23 @@ async function testGetPostData () {
 console.log(await getPostData('pre-rendering').then())
 }
 
-testGetPostData ()
+//testGetPostData ()
+
+async function getStaticPaths() {
+ // const paths = getAllPostIds()
+  const paths = ['teast-a', 'test-b'].map(path => {
+    //return paths.[0].params
+    return {
+      params: {
+        id: path
+      }
+    }
+  })
+  return paths
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+console.log(getStaticPaths())
