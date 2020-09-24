@@ -1,0 +1,21 @@
+{
+  "presets": [
+    "next/babel",
+    "@zeit/next-typescript/babel"
+  ],
+  "plugins": [
+    [
+      "module-resolver", {
+        "alias": {
+          "~": "./src"
+        }
+      }
+    ]
+  ],
+  env: {
+      test: {
+          presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
+      },
+  },
+}
+
