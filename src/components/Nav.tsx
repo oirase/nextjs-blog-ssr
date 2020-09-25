@@ -10,7 +10,7 @@ const Nav = () => {
   const router = useRouter()
   const dispatch = useActiveArticleDispatch()
 
-  console.log(router.pathname)
+  console.log(router.query)
 
   return (
     <nav>
