@@ -4,6 +4,7 @@ const ActiveArticleStateContext = createContext('initialState')
 const ActiveArticleDispatchContext = createContext(null)
 
 const reducer = (state, action) => {
+  console.log(action.payload)
   return action.payload
 }
 
@@ -19,5 +20,4 @@ export const ActiveArticleProvider = ({ children }) => {
 }
 
 export const useActiveArticleState = () => useContext(ActiveArticleStateContext)
-export const useActiveArticleDispatch = () =>
-  useContext(ActiveArticleDispatchContext)
+export const useActiveArticleDispatch = () => useContext(ActiveArticleDispatchContext)

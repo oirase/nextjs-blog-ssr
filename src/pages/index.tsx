@@ -3,19 +3,19 @@ import Layout from '~/components/Layout'
 import { getSortedPostsData } from '~/lib/posts'
 import {
   useActiveArticleState,
-  useActiveArticleDispatch,
-} from '~/components/Context'
+  useActiveArticleDispatch } from '~/components/Context'
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   const allPostsData = getSortedPostsData()
   return {
     props: {
-      allPostsData,
-    },
+      allPostsData
+    }
   }
 }
 
 const Index = ({ allPostsData }) => {
+
   const state = useActiveArticleState()
   const dispatch = useActiveArticleDispatch()
 
@@ -25,28 +25,22 @@ const Index = ({ allPostsData }) => {
     <Layout>
       <p>New Page</p>
       <p>{state}</p>
-      <button
-        onClick={() => {
-          dispatch('ssg-ssr')
-        }}
-      >
-        post
-      </button>
-      <ul>
-        {allPostsData.map(({ id, date, title, category }) => (
-          <li key={id}>
+      <button onClick={()=>{dispatch('ssg-ssr')}}>post</button>
+        <ul>
+          {allPostsData.map(({ id, date, title, category }) => (
+            <li key={id}>
             <Link href={`/articles/${id}`}>
               <a>{title}</a>
             </Link>
-            <br />
-            {id}
-            <br />
-            {date}
-            <br />
-            {category}
-          </li>
-        ))}
-      </ul>
+              <br />
+              {id}
+              <br />
+              {date}
+              <br />
+              {category}
+            </li>
+          ))}
+        </ul>
     </Layout>
   )
 }

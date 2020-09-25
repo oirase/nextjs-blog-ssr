@@ -7,12 +7,19 @@ const Nav = () => {
 
   return (
     <nav>
-      <Tab href="/">New</Tab>
-      <Tab href="/category">Category</Tab>
-      <Tab href="/search">Search</Tab>
-      {router.pathname.includes('articles') ? (
-        <Tab href="/article">Article</Tab>
-      ) : null}
+      <Tab href='/' >
+        New
+      </Tab>
+      <Tab href='/category' >
+        Category
+      </Tab>
+      <Tab href='/search' >
+        Search
+      </Tab>
+      { router.pathname.includes('articles') ? (<Tab href='/article' >
+            Article
+          </Tab>)
+        : null }
     </nav>
   )
 }
