@@ -11,10 +11,11 @@ export async function getStaticProps() {
   }
 }
 
-const Home = ({ allPostsData }) => {
+const Index = ({ allPostsData, glovalValue }) => {
   return (
     <Layout>
       <p>New Page</p>
+      <p>{glovalValue}</p>
       <ul>
         {allPostsData.map(({ id, date, title, category }) => (
           <li key={id}>
@@ -34,4 +35,4 @@ const Home = ({ allPostsData }) => {
   )
 }
 
-export default Home
+export default Index
