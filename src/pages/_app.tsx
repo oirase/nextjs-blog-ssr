@@ -1,5 +1,5 @@
-const App = ({ Component, pageProps }) => {
-  return <Component {...pageProps} globalValue="glovalVale" />
-}
+import { AppProps } from 'next/app'
 
-export default App
+export default function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
