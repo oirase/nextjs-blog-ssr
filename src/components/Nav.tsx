@@ -7,19 +7,14 @@ import {
 } from '~/components/Context'
 
 const Nav = () => {
-  const router = useRouter()
-  const dispatch = useActiveArticleDispatch()
-
-  console.log(router.query)
+  const state = useActiveArticleState()
 
   return (
     <nav>
       <Tab href="/">New</Tab>
       <Tab href="/category">Category</Tab>
       <Tab href="/search">Search</Tab>
-      {router.pathname.includes('articles') ? (
-        <Tab href="/article">Article</Tab>
-      ) : null}
+      {state ? <Tab href={`/articles/${state}`}>Article</Tab> : null}
     </nav>
   )
 }

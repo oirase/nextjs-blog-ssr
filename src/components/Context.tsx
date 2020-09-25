@@ -1,15 +1,14 @@
 import { useContext, useReducer, createContext } from 'react'
 
-const ActiveArticleStateContext = createContext('initialState')
+const ActiveArticleStateContext = createContext('')
 const ActiveArticleDispatchContext = createContext(null)
 
 const reducer = (state, action) => {
-  console.log(action.payload)
   return action.payload
 }
 
 export const ActiveArticleProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, 'initialState')
+  const [state, dispatch] = useReducer(reducer, '')
   return (
     <ActiveArticleDispatchContext.Provider value={dispatch}>
       <ActiveArticleStateContext.Provider value={state}>

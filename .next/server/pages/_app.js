@@ -141,11 +141,10 @@ function App({
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const ActiveArticleStateContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])('initialState');
+const ActiveArticleStateContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])('');
 const ActiveArticleDispatchContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])(null);
 
 const reducer = (state, action) => {
-  console.log(action.payload);
   return action.payload;
 };
 
@@ -155,7 +154,7 @@ const ActiveArticleProvider = ({
   const {
     0: state,
     1: dispatch
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(reducer, 'initialState');
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(reducer, '');
   return __jsx(ActiveArticleDispatchContext.Provider, {
     value: dispatch
   }, __jsx(ActiveArticleStateContext.Provider, {

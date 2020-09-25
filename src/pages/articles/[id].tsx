@@ -1,6 +1,11 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Layout from '~/components/Layout'
 import { getAllPostIds, getPostData } from '~/lib/posts'
+import {
+  useActiveArticleState,
+  useActiveArticleDispatch,
+} from '~/components/Context'
 
 export async function getStaticPaths() {
   const paths = getAllPostIds()
@@ -20,6 +25,10 @@ export async function getStaticProps({ params }) {
 }
 
 const Article = ({ postData }) => {
+  const router = useRouter()
+  const dispatch = useActiveArticleDispatch()
+  dispatch({ payload: router.query })
+
   return (
     <Layout>
       <Head>
