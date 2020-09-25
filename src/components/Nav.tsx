@@ -1,9 +1,16 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Tab from '~/components/Tab'
+import {
+  useActiveArticleState,
+  useActiveArticleDispatch,
+} from '~/components/Context'
 
 const Nav = () => {
   const router = useRouter()
+  const dispatch = useActiveArticleDispatch()
+
+  console.log(router.pathname)
 
   return (
     <nav>
