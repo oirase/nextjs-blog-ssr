@@ -1,10 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Tab from '~/components/Tab'
-import {
-  useActiveArticleState,
-  useActiveArticleDispatch,
-} from '~/components/Context'
+import { useActiveArticleState } from '~/components/Context'
 
 const Nav = () => {
   const state = useActiveArticleState()

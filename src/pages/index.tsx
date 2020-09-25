@@ -16,22 +16,9 @@ export async function getStaticProps() {
 }
 
 const Index = ({ allPostsData }) => {
-  const state = useActiveArticleState()
-  const dispatch = useActiveArticleDispatch()
-
-  console.log(state)
-
   return (
     <Layout>
       <p>New Page</p>
-      <p>{state}</p>
-      <button
-        onClick={() => {
-          dispatch({ payload: 'ssg-ssr' })
-        }}
-      >
-        post
-      </button>
       <ul>
         {allPostsData.map(({ id, date, title, category }) => (
           <li key={id}>
