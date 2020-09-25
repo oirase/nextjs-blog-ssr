@@ -8,23 +8,24 @@ export async function getStaticPaths() {
   const paths = getAllPostIds()
   return {
     paths,
-    fallback: false,
+    fallback: false
   }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps ({ params }) {
   const postData = await getPostData(params.id)
   return {
     props: {
-      postData,
-    },
+      postData
+    }
   }
 }
 
 const Article = ({ postData }) => {
+
   const router = useRouter()
   const dispatch = useActiveArticleDispatch()
-  dispatch({ payload: router.query })
+  dispatch({ payload: router.query.id })
 
   return (
     <Layout>
@@ -32,8 +33,7 @@ const Article = ({ postData }) => {
         <title>{postData.title}</title>
       </Head>
       {postData.title}
-      <br />
-      it commiy
+      <br />it commiy
       {postData.id}
       <br />
       {postData.date}
