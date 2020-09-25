@@ -113,23 +113,17 @@ module.exports = require("react");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return App; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-const App = ({
+function App({
   Component,
   pageProps
-}) => {
-  return __jsx(Component, _extends({}, pageProps, {
-    globalValue: "glovalVale"
-  }));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (App);
+}) {
+  return __jsx(Component, pageProps);
+}
 
 /***/ })
 
