@@ -145,6 +145,7 @@ const ActiveArticleStateContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["cre
 const ActiveArticleDispatchContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])(null);
 
 const reducer = (state, action) => {
+  console.log(action.payload);
   return action.payload;
 };
 

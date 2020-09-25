@@ -20,4 +20,5 @@ export const ActiveArticleProvider = ({ children }) => {
 }
 
 export const useActiveArticleState = () => useContext(ActiveArticleStateContext)
-export const useActiveArticleDispatch = () => useContext(ActiveArticleDispatchContext)
+export const useActiveArticleDispatch = () =>
+  useContext(ActiveArticleDispatchContext)
