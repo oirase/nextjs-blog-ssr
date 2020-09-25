@@ -141,7 +141,7 @@ function App({
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const ActiveArticleStateContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])('');
+const ActiveArticleStateContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])('initialState');
 const ActiveArticleDispatchContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])(null);
 
 const reducer = (state, action) => {

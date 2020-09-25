@@ -1,6 +1,6 @@
 import { useContext, useReducer, createContext } from 'react'
 
-const ActiveArticleStateContext = createContext('')
+const ActiveArticleStateContext = createContext('initialState')
 const ActiveArticleDispatchContext = createContext(null)
 
 const reducer = (state, action) => {

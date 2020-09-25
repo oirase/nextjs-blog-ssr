@@ -19,6 +19,8 @@ const Index = ({ allPostsData }) => {
   const state = useActiveArticleState()
   const dispatch = useActiveArticleDispatch()
 
+  console.log(state)
+
   return (
     <Layout>
       <p>New Page</p>
