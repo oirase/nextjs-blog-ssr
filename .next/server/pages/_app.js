@@ -116,14 +116,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return App; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("pork");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 function App({
   Component,
   pageProps
 }) {
-  return __jsx(Component, pageProps);
+  return __jsx(_components_Context__WEBPACK_IMPORTED_MODULE_1__[/* ActiveArticleProvider */ "a"], null, __jsx(Component, pageProps));
 }
+
+/***/ }),
+
+/***/ "pork":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActiveArticleProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return useActiveArticleState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return useActiveArticleDispatch; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const ActiveArticleStateContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])('');
+const ActiveArticleDispatchContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])(null);
+
+const reducer = (state, action) => {
+  return action.payload;
+};
+
+const ActiveArticleProvider = ({
+  children
+}) => {
+  const {
+    0: state,
+    1: dispatch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(reducer, '');
+  return __jsx(ActiveArticleDispatchContext.Provider, {
+    value: dispatch
+  }, __jsx(ActiveArticleStateContext.Provider, {
+    value: state
+  }, children));
+};
+const useActiveArticleState = () => Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(ActiveArticleStateContext);
+const useActiveArticleDispatch = () => Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(ActiveArticleDispatchContext);
 
 /***/ })
 
