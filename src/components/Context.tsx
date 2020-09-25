@@ -8,7 +8,7 @@ const reducer = (state, action) => {
 }
 
 export const ActiveArticleProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, '')
+  const [state, dispatch] = useReducer(reducer, 'initialState')
   return (
     <ActiveArticleDispatchContext.Provider value={dispatch}>
       <ActiveArticleStateContext.Provider value={state}>

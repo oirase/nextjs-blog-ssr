@@ -154,7 +154,7 @@ const ActiveArticleProvider = ({
   const {
     0: state,
     1: dispatch
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(reducer, '');
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(reducer, 'initialState');
   return __jsx(ActiveArticleDispatchContext.Provider, {
     value: dispatch
   }, __jsx(ActiveArticleStateContext.Provider, {
