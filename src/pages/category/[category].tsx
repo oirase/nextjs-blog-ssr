@@ -5,32 +5,28 @@ import { PostMetaType } from '~/types/post'
 
 export async function getStaticPaths() {
   const allPostsData = getSortedPostsData()
-  let allPostsCategory = allPostsData.map(
-    ({ category }: PostMetaType) => category
-  )
+  let allPostsCategory = allPostsData.map(({ category }: PostMetaType) => category)
   allPostsCategory = Array.from(new Set(allPostsCategory))
-  const paths = allPostsCategory.map((category) => {
+  const paths = allPostsCategory.map(category => {
     return {
       params: {
-        category,
-      },
+        category
+      }
     }
   })
   return {
     paths,
-    fallback: false,
+    fallback: false
   }
 }
 
 export async function getStaticProps({ params }) {
   const allPostsData = getSortedPostsData()
-  const categoryPostsData = allPostsData.filter(
-    ({ category }) => category === params.category
-  )
+  const categoryPostsData = allPostsData.filter(({ category }) => category === params.category)
   return {
     props: {
-      categoryPostsData,
-    },
+      categoryPostsData
+    }
   }
 }
 
@@ -39,24 +35,25 @@ type Props = {
 }
 
 const Category = ({ categoryPostsData }: Props) => {
+
   return (
     <Layout>
       <p>category page</p>
       <ul>
-        {categoryPostsData.map(({ id, date, title, category }) => (
-          <li key={id}>
-            <Link href={`/articles/${id}`}>
+          {categoryPostsData.map(({ id, date, title, category }) => (
+            <li key={id}>
+            <Link href={`/article/${id}`}>
               <a>{title}</a>
             </Link>
-            <br />
-            {id}
-            <br />
-            {date}
-            <br />
-            {category}
-          </li>
-        ))}
-      </ul>
+              <br />
+              {id}
+              <br />
+              {date}
+              <br />
+              {category}
+            </li>
+          ))}
+        </ul>
     </Layout>
   )
 }

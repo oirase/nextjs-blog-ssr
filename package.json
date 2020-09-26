@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "next",
     "test": "jest",
-    "build": "next build",
-    "start": "next start -p $PORT",
+    "server": "ts-node --project tsconfig.server.json ./src/server/server.ts",
+    "build": "npm run server && next build",
+    "start": "npm run server && next start -p $PORT",
     "export": "next export",
     "deploy": "npm run build && npm run export",
     "lint": "eslint . --ext .ts,.tsx --fix"
@@ -19,12 +20,15 @@
     "@zeit/next-typescript": "^1.1.1",
     "gray-matter": "^4.0.2",
     "next": "^9.5.2",
+    "node-ts": "^5.0.8",
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "redis": "^3.0.2",
     "remark": "^12.0.1",
     "remark-html": "^12.0.0",
-    "swr": "^0.3.2"
+    "swr": "^0.3.2",
+    "ts-node": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
