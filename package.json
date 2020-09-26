@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "next",
     "test": "jest",
-    "server": "ts-node --project tsconfig.server.json ./src/server/server.ts",
-    "build": "npm run server && next build",
+    "server": "ts-node --project tsconfig.server.json ./server.ts",
+    "build": "next build",
     "start": "npm run server && next start -p $PORT",
     "export": "next export",
     "deploy": "npm run build && npm run export",
