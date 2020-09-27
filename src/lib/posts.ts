@@ -69,7 +69,11 @@ export const getAllPostsData = async () => {
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const matterResult = matter(fileContents)
 
-    return matterResult
+    return {
+      id,
+      ...(matterResult.data as { date: string; title: string; category: string;}),
+      content: matterResult.content
+    }
   })
 
   return allPostsData

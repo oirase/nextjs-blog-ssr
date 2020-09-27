@@ -101,6 +101,6 @@ async function getStaticPaths() {
 
 //console.log(getStaticPaths())
 
-console.log(getAllPostsData)
+console.log(getAllPostsData())
 
 

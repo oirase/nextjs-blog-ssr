@@ -11,7 +11,7 @@ export default async function getSearch(req, res) {
   client.quit()
 
   res.json({
-    body: body
+    ...body
   })
 
 }
