@@ -5,14 +5,12 @@ import { PostMetaType } from '~/types/post'
 
 export function getStaticProps() {
   const allPostsData = getSortedPostsData()
-  let allPostsCategory = allPostsData.map(
-    ({ category }: PostMetaType) => category
-  )
+  let allPostsCategory = allPostsData.map(({ category }: PostMetaType) => category)
   allPostsCategory = Array.from(new Set(allPostsCategory))
   return {
     props: {
-      allPostsCategory,
-    },
+      allPostsCategory
+    }
   }
 }
 
@@ -21,17 +19,18 @@ type Props = {
 }
 
 const Category = ({ allPostsCategory }: Props) => {
+
   return (
     <Layout>
       <p>category page</p>
       <ul>
-        {allPostsCategory.map((category) => (
-          <li key={category}>
-            <Link href={`/category/${category}`}>
-              <a>{category}</a>
-            </Link>
-          </li>
-        ))}
+      {allPostsCategory.map(category => (
+        <li key={category}>
+          <Link href={`/category/${category}`}>
+            <a>{category}</a>
+          </Link>
+        </li>
+      ))}
       </ul>
     </Layout>
   )
