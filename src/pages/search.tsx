@@ -7,7 +7,7 @@ const Search = () => {
   const inputSearch = useRef()
 
   const handleSearch = (event) => {
-    fetch('api/search')
+    fetch('api/getSearch')
       .then((res) => res.json())
       .then((result) => {
         console.log(result)
