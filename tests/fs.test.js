@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import remark from 'remark'
 import html from 'remark-html'
 //import { getSortedPostsData } from '../src/lib/posts'
-
+import { getAllPostsData } from '../src/lib/posts'
 
 /*
 const onPress = jest.fn();
@@ -99,4 +99,8 @@ async function getStaticPaths() {
   }
 }
 
-console.log(getStaticPaths())
+//console.log(getStaticPaths())
+
+console.log(getAllPostsData)
+
+

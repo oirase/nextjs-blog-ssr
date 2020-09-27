@@ -69,8 +69,8 @@ export const getAllPostData = async () => {
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const matterResult = matter(fileContents)
 
-    return atterResult
+    return matterResult
   })
 
-  console.log(allPostsData)
+  return allPostsData
 }
