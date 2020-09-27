@@ -14,11 +14,14 @@ client.exists('frameworks', function (err, reply) {
       'css': 'Bootstrap',
       'node': 'Express'
     }, function(err, res) {
+      console.log('exists');
+      console.log('redis set succcess');
       client.quit()
     })
   } else {
-     console.log('exist');
+     console.log('redis key exists');
      client.quit()
+     throw new Error("exists")
   }
 })
 
