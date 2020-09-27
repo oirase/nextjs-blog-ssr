@@ -9,11 +9,11 @@ client.on('error', function (err) {
 
 client.exists('frameworks', function (err, reply) {
   if (reply !== 1) {
-    client.HMSET('frameworks', {
+    client.hmset('frameworks', [
       'javascript': 'AngularJS',
       'css': 'Bootstrap',
       'node': 'Express'
-    })
+    ])
   } else {
      console.log('exist');
   }
