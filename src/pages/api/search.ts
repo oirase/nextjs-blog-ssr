@@ -9,7 +9,7 @@ export default async function getSearch(req, res) {
   const body = req.body
   console.log(req.body)
   let result = {}
-  client.hgetall("frameworks", function(err, value) {
+  client.hgetall("ssg-ssr", function(err, value) {
     result = value
     client.quit()
     res.json(result)
