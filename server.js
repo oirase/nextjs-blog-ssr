@@ -9,15 +9,16 @@ client.on('error', function (err) {
 
 client.exists('frameworks', function (err, reply) {
   if (reply !== 1) {
-    client.hmset('frameworks', [
+    client.hmset('frameworks', {
       'javascript': 'AngularJS',
       'css': 'Bootstrap',
       'node': 'Express'
-    ])
+    }, function(err, res) {
+      client.quit()
+    })
   } else {
      console.log('exist');
+     client.quit()
   }
 })
-
-client.quit()
 

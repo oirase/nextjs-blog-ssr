@@ -4,22 +4,19 @@ import { getPostData } from '~/lib/posts'
 import { useRef } from 'react'
 
 const Search = () => {
-
   const inputSearch = useRef()
 
   const handleSearch = (event) => {
     const requestOptions = {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({ name: 'melon' })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: 'melon' }),
     }
     fetch('api/search', requestOptions)
       .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log(result)
-        }
-      )
+      .then((result) => {
+        console.log(result)
+      })
     event.preventDefault()
   }
 
@@ -27,11 +24,8 @@ const Search = () => {
     <Layout>
       <p>search page</p>
       <form onSubmit={(e) => handleSearch(e)}>
-        <input
-          type="text"
-          ref={inputSearch}
-        />
-      <button type="submit">検索</button>
+        <input type="text" ref={inputSearch} />
+        <button type="submit">検索</button>
       </form>
     </Layout>
   )
