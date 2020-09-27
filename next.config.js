@@ -7,7 +7,12 @@ module.exports = withTypescript({
       ...config.resolve.alias,
       '~': './src'
     }
-
+/*
+    config.entry = {
+      ...config.entry,
+      server: './server.ts'
+    }
+*/
     config.module.rules.push(
       {
         test: /(t|j)s[x]?$/,

@@ -78,3 +78,7 @@ export const getAllPostsData = async () => {
 
   return allPostsData
 }
+
+export const consoleTest = () => {
+  console.log('console test')
+}

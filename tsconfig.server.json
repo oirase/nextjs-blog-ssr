@@ -1,10 +1,28 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "outDir": "dist",
-    "target": "es2017",
+    "target": "es5",
+    "lib": [
+      "dom"
+    ],
+    "removeComments": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": false,
+    "moduleResolution": "node",
     "isolatedModules": false,
-    "noEmit": false
-  }
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "outFile": "server_result.js",
+    "module": "system"
+  },
+  "include": [
+    "server.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/lib/posts.ts"
+  ]
 }

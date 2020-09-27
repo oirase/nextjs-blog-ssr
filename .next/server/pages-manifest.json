@@ -1,12 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/api/search": "pages/api/search.js",
-  "/article/[id]": "pages/article/[id].js",
-  "/category/[category]": "pages/category/[category].js",
-  "/category": "pages/category.js",
-  "/": "pages/index.js",
-  "/search": "pages/search.html",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
-}
+{}
