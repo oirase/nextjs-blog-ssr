@@ -39,7 +39,7 @@ client.on('error', function (err) {
   throw err
 })
 
-AllPostsData.forEach(data => {
+AllPostsData.forEach((data, index) => {
   const {id, ...rest} = data
   client.exists(id, function (err, reply) {
     if (reply !== 1) {
@@ -54,7 +54,10 @@ AllPostsData.forEach(data => {
        console.log('redis key exists');
        //throw new Error("exists")
     }
+    if (index === AllPostsData.length - 1) {
+      client.quit()
+    }
   })
 })
 
-client.quit()
+
