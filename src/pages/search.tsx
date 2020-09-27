@@ -13,7 +13,7 @@ const Search = () => {
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({ name: 'melon' })
     }
-    fetch('api/getSearch', requestOptions)
+    fetch('api/search', requestOptions)
       .then((res) => res.json())
       .then(
         (result) => {
