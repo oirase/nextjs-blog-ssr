@@ -60,7 +60,7 @@ export const getPostData = async (id) => {
   }
 }
 
-export const getAllPostData = async () => {
+export const getAllPostsData = async () => {
   const fileNames = fs.readdirSync(postsDirectory)
 
   const allPostsData = fileNames.map(fileName => {

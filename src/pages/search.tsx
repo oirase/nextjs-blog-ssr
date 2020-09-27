@@ -11,7 +11,7 @@ const Search = () => {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({ id: 10 })
+      body: JSON.stringify({ name: 'melon' })
     }
     fetch('api/getSearch', requestOptions)
       .then((res) => res.json())
