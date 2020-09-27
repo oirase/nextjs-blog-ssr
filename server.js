@@ -21,7 +21,7 @@ client.exists('frameworks', function (err, reply) {
   } else {
      console.log('redis key exists');
      client.quit()
-     throw new Error("exists")
+     //throw new Error("exists")
   }
 })
 
