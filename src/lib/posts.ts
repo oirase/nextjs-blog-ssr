@@ -91,7 +91,3 @@ export const getAllPostsData = () => {
     }
   })
 }
-
-export const consoleTest = () => {
-  console.log('console test')
-}

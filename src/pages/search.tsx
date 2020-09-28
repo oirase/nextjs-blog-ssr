@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRef, useState } from 'react'
 import Layout from '~/components/Layout'
+import ArticleItem from '~/components/ArticleItem'
 import { getAllPostsData } from '~/lib/posts'
 import { PostMetaType } from '~/types/post'
 
@@ -15,16 +16,13 @@ export function getStaticProps() {
 
 const Search = ({ allPostsData }) => {
   const inputSearch = useRef(null)
-  const [searchResult, setSearchResult] = useState(null)
+  const [searchResult, setSearchResult] = useState<PostMetaType[] | null>(null)
   console.log(allPostsData)
   const handleSearch = () => {
     const searchWord = inputSearch.current.value
     const result = allPostsData.filter((data) => {
       const { id, ...rest } = data
       for (const key of Object.keys(rest)) {
-        console.log(key)
-        console.log(typeof rest[key])
-        console.log('rest', rest)
         if (rest[key].includes(searchWord)) {
           return true
         }
@@ -46,17 +44,8 @@ const Search = ({ allPostsData }) => {
       )}
       {searchResult &&
         searchResult.length &&
-        searchResult.map(({ id, date, title, category }) => (
-          <ul key={id}>
-            <li>
-              <Link href={`/article/${id}`}>
-                <a>{title}</a>
-              </Link>
-            </li>
-            <li>{id}</li>
-            <li>{date}</li>
-            <li>{category}</li>
-          </ul>
+        searchResult.map(({ id, ...rest }) => (
+          <ArticleItem key={id} id={id} {...rest} />
         ))}
     </Layout>
   )
