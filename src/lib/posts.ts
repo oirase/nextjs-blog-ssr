@@ -7,10 +7,9 @@ import html from 'remark-html'
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
 export const getSortedPostsData = () => {
-
   const fileNames = fs.readdirSync(postsDirectory)
 
-  const allPostsData = fileNames.map(fileName => {
+  const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, '')
     const fullPath = path.join(postsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -18,7 +17,11 @@ export const getSortedPostsData = () => {
 
     return {
       id,
-      ...(matterResult.data as { date: string; title: string; category: string;})
+      ...(matterResult.data as {
+        date: string
+        title: string
+        category: string
+      }),
     }
   })
   return allPostsData.sort((a, b) => {
@@ -33,11 +36,11 @@ export const getSortedPostsData = () => {
 export const getAllPostIds = () => {
   const fileNames = fs.readdirSync(postsDirectory)
 
-  return fileNames.map(fileName => {
+  return fileNames.map((fileName) => {
     return {
       params: {
-        id: fileName.replace(/\.md$/, '')
-      }
+        id: fileName.replace(/\.md$/, ''),
+      },
     }
   })
 }
@@ -51,19 +54,19 @@ export const getPostData = async (id) => {
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content)
-  const contentHtml = processedContent.toString()
+  const content = processedContent.toString()
 
   return {
     id,
-    contentHtml,
-    ...matterResult.data
+    content,
+    ...matterResult.data,
   }
 }
 
 export const getAllPostsData = () => {
   const fileNames = fs.readdirSync(postsDirectory)
 
-  const allPostsData = fileNames.map(fileName => {
+  const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, '')
     const fullPath = path.join(postsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -71,8 +74,12 @@ export const getAllPostsData = () => {
 
     return {
       id,
-      ...(matterResult.data as { date: string; title: string; category: string;}),
-      content: matterResult.content
+      ...(matterResult.data as {
+        date: string
+        title: string
+        category: string
+      }),
+      content: matterResult.content,
     }
   })
 
