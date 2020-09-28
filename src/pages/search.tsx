@@ -16,7 +16,7 @@ const Search = ({ allPostsData }) => {
 
   const inputSearch = useRef(null)
   const [searchResult, setSearchResult] = useState([])
-
+  console.log(allPostsData)
   const handleSearch = () => {
     const searchWord = inputSearch.current.value
     const result = allPostsData.find(data=>{
