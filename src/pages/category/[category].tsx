@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Layout from '~/components/Layout'
 import { getSortedPostsData } from '~/lib/posts'
 import { PostMetaType } from '~/types/post'
+import ArticleItem from '~/components/ArticleItem'
 
 export async function getStaticPaths() {
   const allPostsData = getSortedPostsData()
@@ -43,18 +44,8 @@ const Category = ({ categoryPostsData }: Props) => {
     <Layout>
       <p>category page</p>
       <ul>
-        {categoryPostsData.map(({ id, date, title, category }) => (
-          <li key={id}>
-            <Link href={`/article/${id}`}>
-              <a>{title}</a>
-            </Link>
-            <br />
-            {id}
-            <br />
-            {date}
-            <br />
-            {category}
-          </li>
+        {categoryPostsData.map(({ id, ...rest }) => (
+          <ArticleItem key={id} id={id} {...rest} />
         ))}
       </ul>
     </Layout>

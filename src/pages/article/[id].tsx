@@ -32,18 +32,18 @@ const Article = ({ postData }) => {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      {postData.title}
-      <br />
-      it commiy
-      {postData.id}
-      <br />
-      {postData.date}
-      <br />
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      <br />
-      <Link href={`/category/${postData.category}`}>
-        <a>{postData.category}</a>
-      </Link>
+      <ul>
+        <li>{postData.title}</li>
+        <li>{postData.date}</li>
+        <li>
+          <p dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </li>
+        <li>
+          <Link href={`/category/${postData.category}`}>
+            <a>{postData.category}</a>
+          </Link>
+        </li>
+      </ul>
     </Layout>
   )
 }

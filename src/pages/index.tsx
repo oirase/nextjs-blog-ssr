@@ -5,6 +5,8 @@ import {
   useActiveArticleState,
   useActiveArticleDispatch,
 } from '~/components/Context'
+import ArticleItem from '~/components/ArticleItem'
+import { PostMetaType } from '~/types/post'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -15,25 +17,17 @@ export async function getStaticProps() {
   }
 }
 
-const Index = ({ allPostsData }) => {
+type Props = {
+  allPostsData: PostMetaType[]
+}
+
+const Index = ({ allPostsData }: Props) => {
   return (
     <Layout>
       <p>New Page</p>
-      <ul>
-        {allPostsData.map(({ id, date, title, category }) => (
-          <li key={id}>
-            <Link href={`/article/${id}`}>
-              <a>{title}</a>
-            </Link>
-            <br />
-            {id}
-            <br />
-            {date}
-            <br />
-            {category}
-          </li>
-        ))}
-      </ul>
+      {allPostsData.map(({ id, ...rest }) => (
+        <ArticleItem key={id} id={id} {...rest} />
+      ))}
     </Layout>
   )
 }

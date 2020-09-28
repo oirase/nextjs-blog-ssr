@@ -3,10 +3,11 @@ import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
 import html from 'remark-html'
+import { PostMetaType } from '~/types/post'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
-export const getSortedPostsData = () => {
+export const getSortedPostsData = (): PostMetaType[] => {
   const fileNames = fs.readdirSync(postsDirectory)
 
   const allPostsData = fileNames.map((fileName) => {
