@@ -16,7 +16,7 @@ const Search = ({ allPostsData }) => {
   const inputSearch = useRef(null)
   const [searchResult, setSearchResult] = useState([])
 
-  const handleSearch = (event) => {
+  const handleSearch = () => {
     const searchWord = inputSearch.current.value
     const result = allPostsData.find((data) => {
       for (const key of Object.keys(data)) {
@@ -30,16 +30,13 @@ const Search = ({ allPostsData }) => {
     })
     console.log(result)
     setSearchResult(result)
-    event.preventDefault()
   }
 
   return (
     <Layout>
       <p>search page</p>
-      <form onSubmit={(e) => handleSearch(e)}>
-        <input type="text" ref={inputSearch} />
-        <button type="submit">検索</button>
-      </form>
+      <input type="text" ref={inputSearch} />
+      <button onClick={handleSearch}>検索</button>
       <ul>
         {searchResult.length ? (
           searchResult.map(({ id, date, title, category }) => (
