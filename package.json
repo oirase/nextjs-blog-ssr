@@ -24,6 +24,7 @@
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-paginate": "^6.5.0",
     "redis": "^3.0.2",
     "remark": "^12.0.1",
     "remark-html": "^12.0.0",

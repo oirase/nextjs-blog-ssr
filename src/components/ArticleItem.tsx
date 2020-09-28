@@ -11,13 +11,9 @@ const ArticleItem = ({ id, title, date, category }: PostMetaType) => (
     </li>
     <li>{date}</li>
     <li>
-      <Link href={`/category/${category}`}>
-        {category}
-      </Link>
+      <Link href={`/category/${category}`}>{category}</Link>
     </li>
   </ul>
 )
 
 export default ArticleItem
-
-
