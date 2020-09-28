@@ -21,16 +21,17 @@ const Search = ({ allPostsData }) => {
   const handleSearch = () => {
     const searchWord = inputSearch.current.value
     const result = allPostsData.filter(data=>{
-      for (let key of Object.keys(data)) {
+      const {id, ...rest} = data
+      for (let key of Object.keys(rest)) {
         console.log(key)
-        console.log( typeof data[key])
-        const value = data[key]
-        if(value.includes(searchWord)) {
+        console.log( typeof rest[key])
+        console.log('rest', rest)
+        if(rest[key].includes(searchWord)) {
           return true
         }
       }
     })
-    console.log(result)
+    console.log('result', result)
     result && setSearchResult(result)
   }
 
@@ -41,7 +42,7 @@ const Search = ({ allPostsData }) => {
           type="text"
           ref={inputSearch}
         />
-      <button onClick={handleSearch}>検索</button>
+      <button onClick={handleSearch}>検索</button>ci
       {searchResult.length ?
           searchResult.map(({ id, date, title, category }) => (
           <ul  key={id}>
