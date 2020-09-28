@@ -4,29 +4,28 @@ import Layout from '~/components/Layout'
 import { getAllPostsData } from '~/lib/posts'
 import { PostMetaType } from '~/types/post'
 
-export function getStaticProps () {
+export function getStaticProps() {
   const allPostsData = getAllPostsData()
   return {
     props: {
-      allPostsData
-    }
+      allPostsData,
+    },
   }
 }
 
 const Search = ({ allPostsData }) => {
-
   const inputSearch = useRef(null)
-  const [searchResult, setSearchResult] = useState([])
+  const [searchResult, setSearchResult] = useState(null)
   console.log(allPostsData)
   const handleSearch = () => {
     const searchWord = inputSearch.current.value
-    const result = allPostsData.filter(data=>{
-      const {id, ...rest} = data
-      for (let key of Object.keys(rest)) {
+    const result = allPostsData.filter((data) => {
+      const { id, ...rest } = data
+      for (const key of Object.keys(rest)) {
         console.log(key)
-        console.log( typeof rest[key])
+        console.log(typeof rest[key])
         console.log('rest', rest)
-        if(rest[key].includes(searchWord)) {
+        if (rest[key].includes(searchWord)) {
           return true
         }
       }
@@ -35,17 +34,23 @@ const Search = ({ allPostsData }) => {
     result && setSearchResult(result)
   }
 
+  let result
+
+  if (!searchResult) {
+    result = <p>検索語句を入力して下さい</p>
+  } else {
+    result = <p>`検索結果${searchResult.length}件`</p>
+  }
+
   return (
     <Layout>
       <p>search page</p>
-        <input
-          type="text"
-          ref={inputSearch}
-        />
-      <button onClick={handleSearch}>検索</button>ci
-      {searchResult.length ?
-          searchResult.map(({ id, date, title, category }) => (
-          <ul  key={id}>
+      <input type="text" ref={inputSearch} />
+      <button onClick={handleSearch}>検索</button>
+      {result}
+      {searchResult && searchResult.length ? (
+        searchResult.map(({ id, date, title, category }) => (
+          <ul key={id}>
             <li>
               <Link href={`/article/${id}`}>
                 <a>{title}</a>
@@ -58,8 +63,10 @@ const Search = ({ allPostsData }) => {
               {category}
             </li>
           </ul>
-          )) :
-      <p>none</p>}
+        ))
+      ) : (
+        <p>none</p>
+      )}
     </Layout>
   )
 }
