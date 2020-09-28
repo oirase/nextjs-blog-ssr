@@ -34,39 +34,30 @@ const Search = ({ allPostsData }) => {
     result && setSearchResult(result)
   }
 
-  let result
-
-  if (!searchResult) {
-    result = <p>検索語句を入力して下さい</p>
-  } else {
-    result = <p>`検索結果${searchResult.length}件`</p>
-  }
-
   return (
     <Layout>
       <p>search page</p>
       <input type="text" ref={inputSearch} />
       <button onClick={handleSearch}>検索</button>
-      {result}
-      {searchResult && searchResult.length ? (
+      {searchResult ? (
+        <p>検索結果{searchResult.length}件</p>
+      ) : (
+        <p>検索語句を入力して下さい</p>
+      )}
+      {searchResult &&
+        searchResult.length &&
         searchResult.map(({ id, date, title, category }) => (
           <ul key={id}>
             <li>
               <Link href={`/article/${id}`}>
                 <a>{title}</a>
               </Link>
-              <br />
-              {id}
-              <br />
-              {date}
-              <br />
-              {category}
             </li>
+            <li>{id}</li>
+            <li>{date}</li>
+            <li>{category}</li>
           </ul>
-        ))
-      ) : (
-        <p>none</p>
-      )}
+        ))}
     </Layout>
   )
 }
