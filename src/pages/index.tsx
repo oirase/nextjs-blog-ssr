@@ -3,17 +3,16 @@ import Layout from '~/components/Layout'
 import { getSortedPostsData } from '~/lib/posts'
 import {
   useActiveArticleState,
-  useActiveArticleDispatch,
-} from '~/components/Context'
+  useActiveArticleDispatch } from '~/components/Context'
 import ArticleItem from '~/components/ArticleItem'
 import { PostMetaType } from '~/types/post'
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   const allPostsData = getSortedPostsData()
   return {
     props: {
-      allPostsData,
-    },
+      allPostsData
+    }
   }
 }
 
@@ -22,12 +21,13 @@ type Props = {
 }
 
 const Index = ({ allPostsData }: Props) => {
+
   return (
     <Layout>
       <p>New Page</p>
-      {allPostsData.map(({ id, ...rest }) => (
-        <ArticleItem key={id} id={id} {...rest} />
-      ))}
+          { allPostsData.map(({ id, ...rest }) => (
+             <ArticleItem key={id} id={id} {...rest} />
+            ))}
     </Layout>
   )
 }
