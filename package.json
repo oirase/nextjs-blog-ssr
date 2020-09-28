@@ -8,7 +8,7 @@
     "test": "jest",
     "server": "node ./server.js",
     "build": "next build",
-    "start": "npm run server && next start -p $PORT",
+    "start": "next start -p $PORT",
     "export": "next export",
     "deploy": "npm run build && npm run export",
     "lint": "eslint . --ext .ts,.tsx --fix"

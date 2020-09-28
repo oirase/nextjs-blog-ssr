@@ -1,25 +1,35 @@
 import Link from 'next/link'
 import Layout from '~/components/Layout'
-import { getPostData } from '~/lib/posts'
-import { useRef } from 'react'
+import { getAllPostsData } from '~/lib/posts'
+import { useRef, useState } from 'react'
 
-const Search = () => {
+export function getStaticProps() {
+  const allPostsData = getAllPostsData()
+  return {
+    props: {
+      allPostsData,
+    },
+  }
+}
 
-  const inputSearch = useRef()
+const Search = ({ allPostsData }) => {
+  const inputSearch = useRef(null)
+  const [searchResult, setSearchResult] = useState([])
 
   const handleSearch = (event) => {
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({ name: 'melon' })
-    }
-    fetch('api/search', requestOptions)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log(result)
+    const searchWord = inputSearch.current.value
+    const result = allPostsData.find((data) => {
+      for (const key of Object.keys(data)) {
+        console.log(key)
+        console.log(typeof data[key])
+        const value = data[key]
+        if (value.includes(searchWord)) {
+          return true
         }
-      )
+      }
+    })
+    console.log(result)
+    setSearchResult(result)
     event.preventDefault()
   }
 
@@ -27,12 +37,28 @@ const Search = () => {
     <Layout>
       <p>search page</p>
       <form onSubmit={(e) => handleSearch(e)}>
-        <input
-          type="text"
-          ref={inputSearch}
-        />
-      <button type="submit">検索</button>
+        <input type="text" ref={inputSearch} />
+        <button type="submit">検索</button>
       </form>
+      <ul>
+        {searchResult.length ? (
+          searchResult.map(({ id, date, title, category }) => (
+            <li key={id}>
+              <Link href={`/article/${id}`}>
+                <a>{title}</a>
+              </Link>
+              <br />
+              {id}
+              <br />
+              {date}
+              <br />
+              {category}
+            </li>
+          ))
+        ) : (
+          <li>none</li>
+        )}
+      </ul>
     </Layout>
   )
 }
