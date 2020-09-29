@@ -8,10 +8,10 @@ type Props = {
 }
 
 const ListRender = ({ render, data, offset, range }: Props) => {
-  const start = offset * range
-  const end = offset * range - range
+  const start = offset * range - range
+  const end = offset * range
 
-  return <>{data.slice(0, 20).map((props) => render(props))}</>
+  return <>{data.slice(start, end).map((props) => render(props))}</>
 }
 
 ListRender.defaultProps = {
