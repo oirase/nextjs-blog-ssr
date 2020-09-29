@@ -6,9 +6,11 @@ type Props = {
 
 const Paginate = ({ offset, length, range, setOffset }) => {
   const totalPage = Math.ceil(length / range)
+  const start = offset < 10 ? 1 : Math.floor(offset / 10) * 10
+  const end = start + 10
   const list = []
 
-  for (let i = 1; i <= totalPage; ++i) {
+  for (let i = start; i <= end; ++i) {
     if (i === offset) {
       list.push(<li>@{i}</li>)
     } else {
