@@ -21,8 +21,10 @@ const Paginate = ({ offset, length, range, setOffset }) => {
   end !== totalPage &&
     list.push(<li onClick={() => setOffset(totalPage)}>{totalPage}</li>)
 
-  list.unshift(<li onClick={() => setOffset(offset - 1)}>PREV</li>)
-  list.push(<li onClick={() => setOffset(offset + 1)}>NEXT</li>)
+  offset !== 1 &&
+    list.unshift(<li onClick={() => setOffset(offset - 1)}>PREV</li>)
+  offset === end &&
+    list.push(<li onClick={() => setOffset(offset + 1)}>NEXT</li>)
 
   return <ul>{list}</ul>
 }
