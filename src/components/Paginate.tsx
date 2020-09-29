@@ -4,7 +4,7 @@ type Props = {
   range: number
 }
 
-const Paginate = ({ offset, length, range }) => {
+const Paginate = ({ offset, length, range, setOffset }) => {
   const totalPage = Math.ceil(length / range)
   const list = []
 
@@ -12,7 +12,7 @@ const Paginate = ({ offset, length, range }) => {
     if (i === offset) {
       list.push(<li>@{i}</li>)
     } else {
-      list.push(<li>{i}</li>)
+      list.push(<li onClick={() => setOffset(i)}>{i}</li>)
     }
   }
 
