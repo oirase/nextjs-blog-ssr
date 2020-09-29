@@ -3,19 +3,18 @@ import Layout from '~/components/Layout'
 import { getSortedPostsData } from '~/lib/posts'
 import {
   useActiveArticleState,
-  useActiveArticleDispatch,
-} from '~/components/Context'
+  useActiveArticleDispatch } from '~/components/Context'
 import ListRender from '~/components/ListRender'
 import ArticleItem from '~/components/ArticleItem'
 import { PostMetaType } from '~/types/post'
 import { useState, useEffect } from 'react'
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   const allPostsData = getSortedPostsData()
   return {
     props: {
-      allPostsData,
-    },
+      allPostsData
+    }
   }
 }
 
@@ -24,6 +23,7 @@ type Props = {
 }
 
 const Index = ({ allPostsData }: Props) => {
+
   const [offset, setOffset] = useState(1)
 
   return (
@@ -31,7 +31,10 @@ const Index = ({ allPostsData }: Props) => {
       <p>New Page</p>
       <ListRender
         data={allPostsData}
-        render={(data) => <ArticleItem {...data} />}
+        render={
+          (data)=>
+            <ArticleItem {...data} />
+        }
       />
     </Layout>
   )
