@@ -5,7 +5,7 @@ type Props = {
 }
 
 const Paginate = ({ offset, length, range }) => {
-  const totalPage = Math.ceil(length * range)
+  const totalPage = Math.ceil(length / range)
   const list = []
 
   for (let i = 1; i < totalPage; ++i) {

@@ -29,7 +29,7 @@ const Index = ({ allPostsData }: Props) => {
 
   return (
     <Layout>
-      <Paginate offset={offset} length={allPostsData.length} />
+      <Paginate offset={offset} length={60} />
       <p>New Page</p>
       <ListRender
         data={allPostsData}
