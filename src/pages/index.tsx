@@ -5,6 +5,7 @@ import {
   useActiveArticleState,
   useActiveArticleDispatch,
 } from '~/components/Context'
+import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
 import ArticleItem from '~/components/ArticleItem'
 import { PostMetaType } from '~/types/post'
@@ -28,9 +29,11 @@ const Index = ({ allPostsData }: Props) => {
 
   return (
     <Layout>
+      <Paginate offset={offset} length={allPostsData.length} />
       <p>New Page</p>
       <ListRender
         data={allPostsData}
+        offset={offset}
         render={(data) => <ArticleItem {...data} />}
       />
     </Layout>
