@@ -9,21 +9,20 @@ export async function getStaticPaths() {
   const paths = getAllPostIds()
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
-export async function getStaticProps ({ params }) {
+export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
   return {
     props: {
-      postData
-    }
+      postData,
+    },
   }
 }
 
 const Article = ({ postData }) => {
-
   const router = useRouter()
   const dispatch = useActiveArticleDispatch()
   dispatch({ payload: router.query.id })
