@@ -25,7 +25,7 @@ export async function getStaticProps({ params }) {
 const Article = ({ postData }) => {
   const router = useRouter()
   const dispatch = useActiveArticleDispatch()
-  dispatch({ payload: router.query.id })
+  dispatch(router.query.id)
 
   return (
     <Layout>
