@@ -1,0 +1,79 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, pre,
+img, strong,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+ margin:0;
+ padding:0;
+ border:0;
+ outline:0;
+ font-size:100%;
+ vertical-align:baseline;
+ background:transparent;
+}
+
+body {
+ line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+ display:block;
+}
+
+ul {
+ list-style:none;
+}
+
+a {
+ margin:0;
+ padding:0;
+ font-size:100%;
+ vertical-align:baseline;
+ background:transparent;
+ cursor: pointer;
+}
+
+table {
+ border-collapse:collapse;
+ border-spacing:0;
+}
+
+ input, select {
+ vertical-align:middle;
+}
+
+div, img, label, p, a, button, input, textarea {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, p, a, li, button, label, input, div {
+  letter-spacing: 0.25rem;
+}
+
+h2, h3 {
+  font-weight: normal;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+  min-height: 100vh;
+  width: auto;
+}
+
+img {
+  vertical-align: bottom;
+}
