@@ -40,6 +40,9 @@ const Index = ({ allPostsData }: Props) => {
         offset={offset}
         render={(data) => <ArticleItem {...data} />}
       />
+      <style jsx>{`
+        background: yellow;
+      `}</style>
     </Layout>
   )
 }
