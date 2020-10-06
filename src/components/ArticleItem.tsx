@@ -13,6 +13,12 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category }) => (
     <li>
       <Link href={`/category/${category}`}>{category}</Link>
     </li>
+    <style jsx>{`
+      $red: red;
+      li {
+        color: $red;
+      }
+    `}</style>
   </ul>
 )
 
