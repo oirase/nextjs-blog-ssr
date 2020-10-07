@@ -1,3 +1,7 @@
+import { fontBase,
+         yellow,
+         darkbrown
+      } from '~/styles/variables'
 
 type Props = {
   offset: number
@@ -27,9 +31,40 @@ const Paginate = ({ offset, length, range, setOffset }) => {
   offset !== end && list.push(<li onClick={()=>setOffset(offset + 1)}>NEXT</li>)
 
   return (
+  <>
     <ul>
       {list}
     </ul>
+    <style jsx>{`
+      .paginate {
+        width: 100%;
+        color: ${yellow};
+        padding: 4rem 3.5rem 0 5rem;
+        background: ${yellow};
+        font-family: 'Abril Fatface', ${fontBase};
+
+        &__ul {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 auto;
+          width: 80rem;
+          max-width: 100%;
+          //justify-content: space-around;
+        }
+
+        &__li {
+          display: flex;
+          justify-content: center;
+          margin: 0 1.5rem 1.5rem 0;
+          align-items: center;
+          background: ${darkbrown};
+          border-radius: 100%;
+          height: 4rem;
+          width: 4rem;
+        }
+      }
+    `}</style>
+  </>
   )
 }
 
