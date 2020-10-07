@@ -16,10 +16,10 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category }) => (
       </Link>
     </li>
     <style jsx>{`
-      $red: red;
+      $blue: blue;
       li {
-        color: $red;
-        background: $red;
+        color: $blue;
+        background: $blue;
       }
 
   `}</style>
