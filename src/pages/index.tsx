@@ -36,14 +36,16 @@ const Index = ({ allPostsData }: Props) => {
         setOffset={setOffset}
       />
       <p>New Page</p>
-      <ListRender
-        data={allPostsData}
-        offset={offset}
-        render={
-          (data)=>
-            <ArticleItem {...data} />
-        }
-      />
+      <div className="contents">
+        <ListRender
+          data={allPostsData}
+          offset={offset}
+          render={
+            (data)=>
+              <ArticleItem {...data} />
+          }
+        />
+      </div>
       <style jsx>{`
         %item--base {
           width: 27rem;
