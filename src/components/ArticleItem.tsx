@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import { PostMetaType } from '~/types/post'
+import { green } from '~/styles/variables'
 
 const ArticleItem: FC<PostMetaType> = ({ id, title, date, category }) => (
   <ul>
@@ -19,7 +20,7 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category }) => (
       $blue: blue;
       li {
         color: $blue;
-        background: $blue;
+        background: ${green};
       }
 
   `}</style>
