@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 import { ActiveArticleProvider } from '~/components/Context'
-import '../styles/global.css'
+import '../styles/global.scss'
 
 export default function App ({ Component, pageProps }: AppProps) {
   return (
