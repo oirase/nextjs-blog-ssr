@@ -1,5 +1,6 @@
 
 export const headerFont = 'Courier New'
+export const md = 787
 
 export const white = '#FFF'
 export const green = '#33CC99'

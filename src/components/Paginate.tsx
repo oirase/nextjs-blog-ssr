@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { fontBase,
          yellow,
          darkbrown
@@ -8,6 +9,16 @@ type Props = {
   length: number
   range: number
 }
+
+type LiType = {
+  chirdren: number
+}
+
+const Li: FC<any> = ({ children, ...rest }) => (
+  <li  className="paginate__li" {...rest}>
+    {children}
+  </li>
+)
 
 const Paginate = ({ offset, length, range, setOffset }) => {
 
@@ -20,19 +31,19 @@ const Paginate = ({ offset, length, range, setOffset }) => {
 
   for (let i=start; i<=end; ++i) {
     i === offset
-      ? list.push(<li>@{i}</li>)
-      : list.push(<li onClick={()=>setOffset(i)}>{i}</li>)
+      ? list.push(<Li>@{i}</Li>)
+      : list.push(<Li onClick={()=>setOffset(i)}>{i}</Li>)
   }
 
-  start !== 1 && list.unshift(<li onClick={()=>setOffset(1)}>1</li>)
-  end !== totalPage && list.push(<li onClick={()=>setOffset(totalPage)}>{totalPage}</li>)
+  start !== 1 && list.unshift(<Li onClick={()=>setOffset(1)}>1</Li>)
+  end !== totalPage && list.push(<Li onClick={()=>setOffset(totalPage)}>{totalPage}</Li>)
 
-  offset !== 1 && list.unshift(<li onClick={()=>setOffset(offset - 1)}>PREV</li>)
-  offset !== end && list.push(<li onClick={()=>setOffset(offset + 1)}>NEXT</li>)
+  offset !== 1 && list.unshift(<Li onClick={()=>setOffset(offset - 1)}>PREV</Li>)
+  offset !== end && list.push(<Li onClick={()=>setOffset(offset + 1)}>NEXT</Li>)
 
   return (
-  <>
-    <ul>
+  <div className="paginate">
+    <ul  className="paginate__ul">
       {list}
     </ul>
     <style jsx>{`
@@ -49,7 +60,6 @@ const Paginate = ({ offset, length, range, setOffset }) => {
           margin: 0 auto;
           width: 80rem;
           max-width: 100%;
-          //justify-content: space-around;
         }
 
         &__li {
@@ -64,7 +74,7 @@ const Paginate = ({ offset, length, range, setOffset }) => {
         }
       }
     `}</style>
-  </>
+  </div>
   )
 }
 
