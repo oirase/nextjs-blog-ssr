@@ -15,8 +15,11 @@ footer, header, hgroup, menu, nav, section {
  background:transparent;
 }
 
+$green: green;
+
 body {
  line-height:1;
+ background: $green;
 }
 
 article,aside,details,figcaption,figure,
