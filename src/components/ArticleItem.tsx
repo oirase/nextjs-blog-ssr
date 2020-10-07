@@ -11,7 +11,9 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category }) => (
     </li>
     <li>{date}</li>
     <li>
-      <Link href={`/category/${category}`}>{category}</Link>
+      <Link href={`/category/${category}`}>
+        {category}
+      </Link>
     </li>
     <style jsx>{`
       $red: red;
@@ -19,8 +21,11 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category }) => (
         color: $red;
         background: $red;
       }
-    `}</style>
+
+  `}</style>
   </ul>
 )
 
 export default ArticleItem
+
+

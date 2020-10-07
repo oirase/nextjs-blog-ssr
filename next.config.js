@@ -1,19 +1,14 @@
 const withTypescript = require('@zeit/next-typescript')
 const path = require('path')
 
-module.exports = withTypescript({
-  webpack(config, options) {
-    config.resolve.alias = {
-      ...config.resolve.alias,
+module.exports = {
+  resolve: {
+    alias: {
       '~': './src'
     }
-/*
-    config.entry = {
-      ...config.entry,
-      server: './server.ts'
-    }
-*/
-    config.module.rules.push(
+  },
+  module: {
+    rules: [
       {
         test: /(t|j)s[x]?$/,
         enforce: 'pre',
@@ -26,8 +21,7 @@ module.exports = withTypescript({
             }
           }
         ]
-      })
-
-    return config
+      }
+    ]
   }
-})
+}

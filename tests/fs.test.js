@@ -104,3 +104,4 @@ async function getStaticPaths() {
 console.log(getAllPostsData())
 
 
+console.log(path.join(__dirname, 'styles'))

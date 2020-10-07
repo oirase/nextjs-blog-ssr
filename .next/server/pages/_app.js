@@ -144,8 +144,8 @@ function App({
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const ActiveArticleStateContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])('');
-const ActiveArticleDispatchContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])(null);
+const ActiveArticleStateContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])('');
+const ActiveArticleDispatchContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])(null);
 const ActiveArticleProvider = ({
   children
 }) => {
