@@ -1,30 +1,78 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import { PostMetaType } from '~/types/post'
-import { green } from '~/styles/variables'
+import { white, skyblue } from '~/styles/variables'
 
 const ArticleItem: FC<PostMetaType> = ({ id, title, date, category }) => (
-  <ul>
-    <li>
-      <Link href={`/article/${id}`}>
-        <a>{title}</a>
-      </Link>
-    </li>
-    <li>{date}</li>
-    <li>
-      <Link href={`/category/${category}`}>
-        {category}
-      </Link>
-    </li>
-    <style jsx>{`
-      $blue: blue;
-      li {
-        color: $blue;
-        background: ${green};
-      }
+  <div className="item">
+    <div className="item__image-view">
+      <img className="item__image" src="" />
+    </div>
+    <ul className="item__info">
+      <li className="item__title">
+        <Link href={`/article/${id}`}>
+          <a>{title}</a>
+        </Link>
+      </li>
+      <li className="item__date">{date}</li>
+      <li className="item__category">
+        <Link href={`/category/${category}`}>
+          {category}
+        </Link>
+      </li>
+      </ul>
+      <style jsx>{`
+        .item {
+          width: 27rem;
+          background: skyblue;
+          margin-bottom: 4rem;
+          font-size: 1.4rem;
+          border-radius: 18px;
+          overflow: hidden;
+          position: relative;
+          color: white;
 
-  `}</style>
-  </ul>
+          &:last-child {
+            margin-bottom: auto;
+          }
+
+          %item__list {
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+
+          }
+
+          &__image-view {
+            width: 100%;
+            height: 18rem;
+            overflow: hidden;
+            position: relative;
+          }
+
+          &__image {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          &__info {
+            font-size: 1.4rem;
+            text-align: center;
+            padding: 2rem 2.5rem 3.5rem 2.5rem;
+          }
+
+          &__title {
+            @extend %item__list;
+          }
+
+          &__date {
+            @extend %item__list;
+          }
+        }
+
+    `}</style>
+  </div>
 )
 
 export default ArticleItem
