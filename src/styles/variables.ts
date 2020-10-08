@@ -1,6 +1,6 @@
 
 export const headerFont = 'Courier New'
-export const md = 787
+export const md = 'min-width: 768px !default'
 
 export const white = '#FFF'
 export const green = '#33CC99'
