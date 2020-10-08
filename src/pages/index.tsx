@@ -4,6 +4,7 @@ import { getSortedPostsData } from '~/lib/posts'
 import {
   useActiveArticleState,
   useActiveArticleDispatch } from '~/components/Context'
+import Contents from '~/components/Contents'
 import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
 import ArticleItem from '~/components/ArticleItem'
@@ -36,7 +37,7 @@ const Index = ({ allPostsData }: Props) => {
         setOffset={setOffset}
       />
       <p>New Page</p>
-      <div className="contents">
+      <Contents>
         <ListRender
           data={allPostsData}
           offset={offset}
@@ -45,41 +46,7 @@ const Index = ({ allPostsData }: Props) => {
               <ArticleItem {...data} />
           }
         />
-      </div>
-      <style jsx>{`
-        %item--base {
-          width: 27rem;
-        }
-
-        .contents {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
-          padding: 3rem 2rem 2rem 2rem;
-          background: ${yellow};
-
-
-          &:before{
-            @extend %item--base;
-            content:"";
-            display: block;
-            height:0;
-            order: 1;
-          }
-
-          &:after{
-            @extend %item--base;
-            content:"";
-            display: block;
-            height:0;
-            order: 0;
-
-            @media(${md}) {
-              width: 26rem;
-            }
-          }
-        }
-      `}</style>
+      </Contents>
     </Layout>
   )
 }

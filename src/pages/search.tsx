@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRef, useState, KeyboardEvent } from 'react'
 import Layout from '~/components/Layout'
+import Contents from '~/components/Contents'
 import ArticleItem from '~/components/ArticleItem'
 import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
@@ -63,14 +64,16 @@ const Search = ({ allPostsData }) => {
               length={searchResult.length}
               setOffset={setOffset}
             />
-            <ListRender
-              data={searchResult}
-              offset={offset}
-              render={
-                (data)=>
-                  <ArticleItem {...data} />
-              }
-            />
+            <Contents>
+              <ListRender
+                data={searchResult}
+                offset={offset}
+                render={
+                  (data)=>
+                    <ArticleItem {...data} />
+                }
+              />
+            </Contents>
           </>
       }
     </Layout>
