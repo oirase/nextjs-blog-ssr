@@ -41,7 +41,7 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category, image }) => 
             line-height: 1.9;
 
           }
-
+/*
           &__image-view {
             width: 100%;
             height: 18rem;
@@ -55,7 +55,7 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category, image }) => 
             top: 50%;
             transform: translateY(-50%);
           }
-
+*/
           &__info {
             font-size: 1.4rem;
             text-align: center;

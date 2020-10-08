@@ -7,6 +7,22 @@ import PostType from '~/types/post'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
+const getFileData = (fileName) => {
+
+    const id = fileName.replace(/\.md$/, '')
+    const fullPath = path.join(postsDirectory, fileName)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const matterResult = matter(fileContents)
+
+    const result = {
+      id,
+      ...(matterResult.data as PostType),
+      content: matterResult.content
+    }
+
+    return result
+}
+
 export const getAllPostIds = () => {
   const fileNames = fs.readdirSync(postsDirectory)
 
@@ -42,17 +58,8 @@ export const getPostsData = (getProp: (post: PostType)=>PostType): PostType[] =>
   const fileNames = fs.readdirSync(postsDirectory)
 
   const allPostsData = fileNames.map(fileName => {
-    const id = fileName.replace(/\.md$/, '')
-    const fullPath = path.join(postsDirectory, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
-    const matterResult = matter(fileContents)
 
-    const result = {
-      id,
-      ...(matterResult.data as PostType),
-      content: matterResult.content
-    }
-
+    const result = getFileData(fileName)
     return getProp(result)
   })
 
@@ -70,17 +77,8 @@ export const getPostsSingleData = (getProp: (post: PostType)=> string): string[]
   const fileNames = fs.readdirSync(postsDirectory)
 
   const allPostsData = fileNames.map(fileName => {
-    const id = fileName.replace(/\.md$/, '')
-    const fullPath = path.join(postsDirectory, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
-    const matterResult = matter(fileContents)
 
-    const result = {
-      id,
-      ...(matterResult.data as PostType),
-      content: matterResult.content
-    }
-
+    const result = getFileData(fileName)
     return getProp(result)
   })
 
