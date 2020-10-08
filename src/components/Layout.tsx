@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import path from 'path'
 import Meta from '~/components/Meta'
 import Header from '~/components/Header'
 import Nav from '~/components/Nav'
@@ -23,7 +24,7 @@ const Layout: FC = ({ children }) => (
         }
 
         .top-view {
-          background-image: url("../images/header.jpg");
+          background-image: url(${path.join(process.cwd(), 'src/images/header.jpg')});
           background-color: purple;
           border-radius: 10px 10px 0 0;
         }
