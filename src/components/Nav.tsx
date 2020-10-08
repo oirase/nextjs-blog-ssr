@@ -15,7 +15,6 @@ const Nav = () => {
   return (
     <nav className="nav">
       <div className="nav__menu">
-      <p>test</p>
         <Tab href='/' >
           New
         </Tab>
@@ -40,7 +39,6 @@ const Nav = () => {
             display: flex;
             justify-content: center;
             width: 100%;
-            //
           }
         }
       `}</style>

@@ -4,15 +4,14 @@ import { PostMetaType } from '~/types/post'
 import { white, skyblue } from '~/styles/variables'
 
 const ArticleItem: FC<PostMetaType> = ({ id, title, date, category }) => (
+<Link href={`/article/${id}`}>
   <div className="item">
     <div className="item__image-view">
       <img className="item__image" src="" />
     </div>
     <ul className="item__info">
       <li className="item__title">
-        <Link href={`/article/${id}`}>
           <a>{title}</a>
-        </Link>
       </li>
       <li className="item__date">{date}</li>
       <li className="item__category">
@@ -72,7 +71,8 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category }) => (
         }
 
     `}</style>
-  </div>
+    </div>
+  </Link>
 )
 
 export default ArticleItem
