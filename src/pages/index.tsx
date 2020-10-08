@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Layout from '~/components/Layout'
-import { getSortedPostsData } from '~/lib/posts'
+import { getPostsData } from '~/lib/posts'
 import {
   useActiveArticleState,
   useActiveArticleDispatch } from '~/components/Context'
@@ -13,7 +13,14 @@ import { useState } from 'react'
 import { yellow, md } from '~/styles/variables'
 
 export async function getStaticProps () {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getPostsData(({ id, title, category, date })=>{
+  return {
+    id,
+    title,
+    category,
+    date
+  }})
+
   return {
     props: {
       allPostsData

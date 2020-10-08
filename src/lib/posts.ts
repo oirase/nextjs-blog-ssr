@@ -7,6 +7,8 @@ import { PostMetaType } from '~/types/post'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
+
+
 export const getSortedPostsData = (): PostMetaType[] => {
 
   const fileNames = fs.readdirSync(postsDirectory)
@@ -19,7 +21,7 @@ export const getSortedPostsData = (): PostMetaType[] => {
 
     return {
       id,
-      ...(matterResult.data as { date: string; title: string; category: string;})
+      ...(matterResult.data as Omit<PostMetaType, 'id'>)
     }
   })
   return allPostsData.sort((a, b) => {
@@ -72,12 +74,48 @@ export const getAllPostsData = () => {
 
     return {
       id,
-      ...(matterResult.data as { date: string; title: string; category: string;}),
+      ...(matterResult.data as Omit<PostMetaType, 'id'>),
       content: matterResult.content
     }
   })
 
   return allPostsData.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1
+    } else {
+      return -1
+    }
+  })
+}
+
+type PostType = {
+  id: string
+  title: string
+  category: string
+  content?: string
+  date: string
+}
+
+export const getPostsData = (getProp: (post: PostType)=>PostType): PostType[] => {
+
+  const fileNames = fs.readdirSync(postsDirectory)
+
+  const allPostsData = fileNames.map(fileName => {
+    const id = fileName.replace(/\.md$/, '')
+    const fullPath = path.join(postsDirectory, fileName)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const matterResult = matter(fileContents)
+
+    const result = {
+      id,
+      ...(matterResult.data as Omit<PostMetaType, 'id'>),
+      content: matterResult.content
+    }
+
+    return getProp(result)
+  })
+
+   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
       return 1
     } else {
