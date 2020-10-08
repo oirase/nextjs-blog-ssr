@@ -21,6 +21,7 @@ const Tab: FC<Props> = ({ href, children}) => {
 
       .tab {
         padding: 2rem 0;
+        color: ${white};
         text-align: center;
         font-size: 1.4rem;
         width: 20rem;

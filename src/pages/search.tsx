@@ -9,7 +9,7 @@ import { getPostsData } from '~/lib/posts'
 import PostType from '~/types/post'
 
 
-export function getStaticProps () {
+export async function getStaticProps () {
   const allPostsData = getPostsData(({ id, title, category, date, content })=>{
   return {
     id,

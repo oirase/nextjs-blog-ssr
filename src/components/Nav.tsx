@@ -34,7 +34,7 @@ const Nav = () => {
         .nav {
           display: flex;
           justify-content: center;
-          color: ${white};
+
           font-size: 2.8rem;
           font-family: 'Open Sans Condensed', ${fontBase};
           font-weight: bold;

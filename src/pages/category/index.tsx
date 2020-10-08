@@ -8,7 +8,6 @@ export function getStaticProps() {
     return category
   })
 
-  //let allPostsCategory = allPostsData.map(({ category }: PostType) => category)
   allPostsCategory = Array.from(new Set(allPostsCategory))
   return {
     props: {
