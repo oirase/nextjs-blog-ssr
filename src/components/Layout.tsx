@@ -6,12 +6,25 @@ import Footer from '~/components/Footer'
 import styles from '~/components/layout.module.css'
 
 const Layout: FC = ({ children }) => (
-  <>
-    <Header />
-    <Nav />
+  <div className="outbox">
+    <div className="top-view">
+      <Header />
+      <Nav />
+    </div>
       {children}
     <Footer />
-  </>
+    <style jsx>{`
+      .outbox {
+        background: #333;
+        padding: 1rem;
+      }
+
+      .top-view {
+        background-image: url("");
+        border-radius: 10px 10px 0 0;
+      }
+    `}</style>
+  </div>
 )
 
 export default Layout
