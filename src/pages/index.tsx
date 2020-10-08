@@ -13,12 +13,13 @@ import { useState } from 'react'
 import { yellow, md } from '~/styles/variables'
 
 export async function getStaticProps () {
-  const allPostsData = getPostsData(({ id, title, category, date })=>{
+  const allPostsData = getPostsData(({ id, title, category, date, image })=>{
   return {
     id,
     title,
     category,
-    date
+    date,
+    image
   }})
 
   return {

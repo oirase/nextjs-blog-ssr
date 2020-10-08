@@ -3,15 +3,16 @@ import Link from 'next/link'
 import { PostMetaType } from '~/types/post'
 import { white, skyblue } from '~/styles/variables'
 
-const ArticleItem: FC<PostMetaType> = ({ id, title, date, category }) => (
+const ArticleItem: FC<PostMetaType> = ({ id, title, date, category, image }) => (
 <Link href={`/article/${id}`}>
+  <a>
   <div className="item">
     <div className="item__image-view">
-      <img className="item__image" src="" />
+      <img className="item__image" src="/image/${image}" />
     </div>
     <ul className="item__info">
       <li className="item__title">
-          <a>{title}</a>
+          {title}
       </li>
       <li className="item__date">{date}</li>
       <li className="item__category">
@@ -72,6 +73,7 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category }) => (
 
     `}</style>
     </div>
+    </a>
   </Link>
 )
 

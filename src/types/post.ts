@@ -5,6 +5,7 @@ type PostType = {
   category: string
   content?: string
   date: string
+  image?: string
 }
 
 export type PostMetaType = Omit<PostType, 'content'>
