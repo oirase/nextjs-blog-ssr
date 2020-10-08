@@ -8,7 +8,7 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category, image }) => 
   <a>
   <div className="item">
     <div className="item__image-view">
-      <img className="item__image" src="/image/${image}" />
+      <img className="item__image" src=`/image/${image}` />
     </div>
     <ul className="item__info">
       <li className="item__title">
