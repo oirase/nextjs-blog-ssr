@@ -15,9 +15,8 @@ const Tab: FC<Props> = ({ href, children}) => {
   <Link href={href}>
     <button className="tab">
       {children}
-          <style jsx>{`
+      <style jsx>{`
 
-      $white: #FFF;
       $green: #33CC99;
       $orange: #FF9900;
       $red: #FF3300;
@@ -30,11 +29,19 @@ const Tab: FC<Props> = ({ href, children}) => {
         width: 20rem;
         max-width: 24%;
         margin-right: 0.8%;
-        border: 1px solid $white;
+        border: 1px solid ${white};
         border-bottom: none;
         background: $blue;
         border-radius: 10px 10px 0 0;
+        font-size: 2.8rem;
+        font-family: 'Open Sans Condensed', ${fontBase};
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: ${brown};
 
+        @media(${md}) {
+          font-size: 4rem;
+        }
 
         &:nth-child(1) {
           background: $green;

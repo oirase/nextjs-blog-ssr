@@ -35,22 +35,12 @@ const Nav = () => {
         .nav {
           display: flex;
           justify-content: center;
-          color: #888;
-          font-size: 2.8rem;
-          font-family: 'Open Sans Condensed', ${fontBase};
-          font-weight: bold;
-          letter-spacing: 1px;
-
-
-          @media(${md}) {
-            font-size: 4rem;
-          }
 
           &__menu {
             display: flex;
             justify-content: center;
             width: 100%;
-            //color: ${brown};
+            //
           }
         }
       `}</style>
