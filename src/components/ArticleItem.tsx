@@ -26,7 +26,7 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category, image }) => 
           width: 27rem;
           background: skyblue;
           margin-bottom: 4rem;
-          font-size: 1.4rem;
+          font-size: 1.8rem;
           border-radius: 18px;
           overflow: hidden;
           position: relative;
