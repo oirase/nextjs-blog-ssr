@@ -4,6 +4,7 @@ import Header from '~/components/Header'
 import Nav from '~/components/Nav'
 import Footer from '~/components/Footer'
 import styles from '~/components/layout.module.css'
+import { white, purple } from '~/styles/variables'
 
 const Layout: FC = ({ children }) => (
   <div className="outbox">
@@ -21,6 +22,7 @@ const Layout: FC = ({ children }) => (
 
       .top-view {
         background-image: url("");
+        background-color: purple;
         border-radius: 10px 10px 0 0;
       }
     `}</style>
