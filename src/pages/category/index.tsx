@@ -22,7 +22,6 @@ const Category = ({ allPostsCategory }: Props) => {
 
   return (
     <Layout>
-      <p>category page</p>
       <ul>
       {allPostsCategory.map(category => (
         <li key={category}>

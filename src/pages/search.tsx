@@ -45,7 +45,6 @@ const Search = ({ allPostsData }) => {
 
   return (
     <Layout>
-      <p>search page</p>
         <input
           type="text"
           ref={inputSearch}

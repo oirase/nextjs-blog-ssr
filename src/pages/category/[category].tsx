@@ -45,7 +45,6 @@ const Category = ({ categoryPostsData }: Props) => {
 
   return (
     <Layout>
-      <p>category page</p>
       <Paginate
               offset={offset}
               length={categoryPostsData.length}

@@ -36,7 +36,6 @@ const Index = ({ allPostsData }: Props) => {
         length={allPostsData.length}
         setOffset={setOffset}
       />
-      <p>New Page</p>
       <Contents>
         <ListRender
           data={allPostsData}
