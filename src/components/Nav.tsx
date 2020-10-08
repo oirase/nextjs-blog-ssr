@@ -15,6 +15,7 @@ const Nav = () => {
   return (
     <nav className="nav">
       <div className="nav__menu">
+      <p>test</p>
         <Tab href='/' >
           New
         </Tab>
@@ -34,7 +35,7 @@ const Nav = () => {
         .nav {
           display: flex;
           justify-content: center;
-
+          color: #888;
           font-size: 2.8rem;
           font-family: 'Open Sans Condensed', ${fontBase};
           font-weight: bold;
@@ -49,7 +50,7 @@ const Nav = () => {
             display: flex;
             justify-content: center;
             width: 100%;
-            color: ${brown};
+            //color: ${brown};
           }
         }
       `}</style>
