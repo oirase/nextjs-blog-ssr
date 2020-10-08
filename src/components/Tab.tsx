@@ -13,7 +13,7 @@ type Props = {
 const Tab: FC<Props> = ({ href, children}) => {
   return (
   <Link href={href}>
-    <button className="tab">
+    <a className="tab">
       {children}
       <style jsx>{`
 
@@ -68,7 +68,7 @@ const Tab: FC<Props> = ({ href, children}) => {
         }
       }
     `}</style>
-    </button>
+    </a>
   </Link>
   )
 }
