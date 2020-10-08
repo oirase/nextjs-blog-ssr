@@ -5,7 +5,6 @@ import { white, skyblue } from '~/styles/variables'
 
 const ArticleItem: FC<PostMetaType> = ({ id, title, date, category, image }) => (
 <Link href={`/article/${id}`}>
-  <a>
   <div className="item">
     <div className="item__image-view">
       <img className="item__image" src={`/images/${image}`} />
@@ -73,7 +72,6 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category, image }) => 
 
     `}</style>
     </div>
-    </a>
   </Link>
 )
 
