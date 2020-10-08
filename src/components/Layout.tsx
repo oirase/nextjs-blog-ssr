@@ -24,7 +24,7 @@ const Layout: FC = ({ children }) => (
         }
 
         .top-view {
-          background-image: url(${path.join(process.cwd(), 'src/images/header.jpg')});
+          background-image: url('/images/header.jpg');
           background-color: purple;
           border-radius: 10px 10px 0 0;
         }
