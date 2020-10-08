@@ -8,7 +8,7 @@ import Contents from '~/components/Contents'
 import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
 import ArticleItem from '~/components/ArticleItem'
-import { PostMetaType } from '~/types/post'
+import PostType from '~/types/post'
 import { useState } from 'react'
 import { yellow, md } from '~/styles/variables'
 
@@ -29,7 +29,7 @@ export async function getStaticProps () {
 }
 
 type Props = {
-  allPostsData: PostMetaType[]
+  allPostsData: PostType[]
 }
 
 const Index = ({ allPostsData }: Props) => {

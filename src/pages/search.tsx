@@ -6,7 +6,7 @@ import ArticleItem from '~/components/ArticleItem'
 import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
 import { getPostsData } from '~/lib/posts'
-import { PostMetaType } from '~/types/post'
+import PostType from '~/types/post'
 
 
 export function getStaticProps () {
@@ -29,7 +29,7 @@ export function getStaticProps () {
 const Search = ({ allPostsData }) => {
 
   const inputSearch = useRef(null)
-  const [searchResult, setSearchResult] = useState<PostMetaType[] | null>(null)
+  const [searchResult, setSearchResult] = useState<PostType[] | null>(null)
   const [offset, setOffset] = useState(1)
 
   const handleSearch = () => {

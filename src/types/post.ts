@@ -3,7 +3,7 @@ type PostType = {
   id: string
   title: string
   category: string
-  content: string
+  content?: string
   date: string
 }
 
