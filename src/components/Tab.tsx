@@ -1,6 +1,10 @@
 import { FC } from 'react'
 import Link from 'next/link'
-
+import { fontBase,
+         white,
+         brown,
+         md
+        } from '~/styles/variables'
 
 type Props = {
   href: string
