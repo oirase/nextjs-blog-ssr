@@ -5,12 +5,20 @@ import Contents from '~/components/Contents'
 import ArticleItem from '~/components/ArticleItem'
 import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
-import { getAllPostsData } from '~/lib/posts'
+import { getPostsData } from '~/lib/posts'
 import { PostMetaType } from '~/types/post'
 
 
 export function getStaticProps () {
-  const allPostsData = getAllPostsData()
+  const allPostsData = getPostsData(({ id, title, category, date, content })=>{
+  return {
+    id,
+    title,
+    category,
+    date,
+    content
+  }})
+
   return {
     props: {
       allPostsData

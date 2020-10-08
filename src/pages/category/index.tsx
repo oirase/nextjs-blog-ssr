@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import Layout from '~/components/Layout'
-import { getSortedPostsData } from '~/lib/posts'
+import { getPostsSingleData } from '~/lib/posts'
 import { PostMetaType } from '~/types/post'
 
 export function getStaticProps() {
-  const allPostsData = getSortedPostsData()
-  let allPostsCategory = allPostsData.map(({ category }: PostMetaType) => category)
+  let allPostsCategory = getPostsSingleData(({ category })=>{
+    return category
+  })
+
+  //let allPostsCategory = allPostsData.map(({ category }: PostMetaType) => category)
   allPostsCategory = Array.from(new Set(allPostsCategory))
   return {
     props: {
