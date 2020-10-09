@@ -36,7 +36,7 @@ export async function getStaticProps({ params }) {
     date
   }})
 
-  const categoryPostsData = allPostsData.filter(({ category }) => category === params.category)
+  const categoryPostsData = allPostsData.filter(({ category, url }) => category === params.category || url === params.category)
   return {
     props: {
       categoryPostsData

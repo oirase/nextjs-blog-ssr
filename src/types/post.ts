@@ -1,10 +1,10 @@
 
 type PostType = {
-  id: string
-  title: string
-  category: string
+  id?: string
+  title?: string
+  category?: string
   content?: string
-  date: string
+  date?: string
   image?: string
   url?: string
 }

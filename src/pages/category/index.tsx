@@ -1,33 +1,58 @@
 import Link from 'next/link'
 import Layout from '~/components/Layout'
-import { getPostsSingleData } from '~/lib/posts'
+import { getPostsData } from '~/lib/posts'
 import PostType from '~/types/post'
 
 export function getStaticProps() {
-  let allPostsCategory = getPostsSingleData(({ category, url })=>{
-    return url ?? category
+  let allPostsCategory = getPostsData(({ category, url })=>{
+    if(!url) {
+      return {
+        category
+      }
+    } else {
+      return {
+        category,
+        url
+      }
+    }})
+
+  //allPostsCategory = Array.from(new Set(allPostsCategory))
+
+  let allPostsLink = []
+
+  allPostsCategory.map(a => {
+    if(!allPostsLink.some(b => {
+      if(!a.url) {
+        return b.category === a.category
+      } else {
+        return b.url === a.url
+      }})
+    ) {
+      allPostsLink.push(a)
+    }
   })
 
-  allPostsCategory = Array.from(new Set(allPostsCategory))
+
+
   return {
     props: {
-      allPostsCategory
+      allPostsLink
     }
   }
 }
 
 type Props = {
-  allPostsCategory: string[]
+  allPostsLink: PostType[]
 }
 
-const Category = ({ allPostsCategory }: Props) => {
+const Category = ({ allPostsLink }: Props) => {
 
   return (
     <Layout>
       <ul>
-      {allPostsCategory.map(category => (
+      {allPostsLink.map(({ category, url }) => (
         <li key={category}>
-          <Link href={`/category/${category}`}>
+          <Link href={`/category/${url ?? category}`}>
             <a>{category}</a>
           </Link>
         </li>
