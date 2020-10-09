@@ -25,7 +25,7 @@ const ArticleItem: FC<PostMetaType> = ({ id, title, date, category, image }) => 
       <style jsx>{`
         .item {
           width: 27rem;
-          background: skyblue;
+          background: ${skyblue};
           margin-bottom: 4rem;
           font-size: 1.8rem;
           border-radius: 18px;
