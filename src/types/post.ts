@@ -6,9 +6,6 @@ type PostType = {
   content?: string
   date?: string
   image?: string
-  url?: string
 }
-
-export type PostMetaType = Omit<PostType, 'content'>
 
 export default PostType

@@ -10,9 +10,7 @@ import Contents from '~/components/Contents'
 
 export async function getStaticPaths() {
 
-  let allPostsCategory = getPostsSingleData(({ category, url }) => {
-    return url ?? category
-  })
+  let allPostsCategory = getPostsSingleData(({ category }) => category)
   allPostsCategory = Array.from(new Set(allPostsCategory))
   const paths = allPostsCategory.map(category => {
     return {
@@ -28,8 +26,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const allPostsData = getPostsData(({ id, title, category, date, image, url })=>{
-  if (!url) {
+  const allPostsData = getPostsData(({ id, title, category, date, image })=>{
     return {
       id,
       title,
@@ -37,19 +34,10 @@ export async function getStaticProps({ params }) {
       date,
       image
     }
-  } else {
-    return {
-      id,
-      title,
-      category,
-      date,
-      image,
-      url
-    }
-  }})
+  })
 
-  const categoryPostsData = allPostsData.filter(({ category, url }) =>
-    category === params.category || url === params.category)
+  const categoryPostsData = allPostsData.filter(({ category }) =>
+    category === params.category)
   return {
     props: {
       categoryPostsData

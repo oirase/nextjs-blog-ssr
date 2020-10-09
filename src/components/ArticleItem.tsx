@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import Link from 'next/link'
-import { PostMetaType } from '~/types/post'
+import PostsType from '~/types/post'
 import { white, skyblue } from '~/styles/variables'
 
-const ArticleItem: FC<PostMetaType> = ({ id, title, date, category, image }) => (
+const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
 
   <div className="item">
     <Link href={`/article/${id}`}>
