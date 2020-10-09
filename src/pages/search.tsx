@@ -10,12 +10,13 @@ import PostType from '~/types/post'
 
 
 export async function getStaticProps () {
-  const allPostsData = getPostsData(({ id, title, category, date, content })=>{
+  const allPostsData = getPostsData(({ id, title, category, date, image, content })=>{
   return {
     id,
     title,
     category,
     date,
+    image,
     content
   }})
 
