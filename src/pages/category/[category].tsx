@@ -28,15 +28,26 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const allPostsData = getPostsData(({ id, title, category, date })=>{
-  return {
-    id,
-    title,
-    category,
-    date
+  const allPostsData = getPostsData(({ id, title, category, date, url })=>{
+  if (!url) {
+    return {
+      id,
+      title,
+      category,
+      date
+    }
+  } else {
+    return {
+      id,
+      title,
+      category,
+      date,
+      url
+    }
   }})
 
-  const categoryPostsData = allPostsData.filter(({ category, url }) => category === params.category || url === params.category)
+  const categoryPostsData = allPostsData.filter(({ category, url }) =>
+    category === params.category || url === params.category)
   return {
     props: {
       categoryPostsData
