@@ -23,7 +23,7 @@ const Tab: FC<Props> = ({ href, children}) => {
       $blue: #00CCCC;
 
       .tab {
-        padding: 2rem 0;
+        padding: 1.8rem 0;
         text-align: center;
         font-size: 1.4rem;
         width: 20rem;

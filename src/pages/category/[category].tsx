@@ -10,7 +10,9 @@ import Contents from '~/components/Contents'
 
 export async function getStaticPaths() {
 
-  let allPostsCategory = getPostsSingleData(({ category }) => category)
+  let allPostsCategory = getPostsSingleData(({ category, url }) => {
+    return url ?? category
+  })
   allPostsCategory = Array.from(new Set(allPostsCategory))
   const paths = allPostsCategory.map(category => {
     return {

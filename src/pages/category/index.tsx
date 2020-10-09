@@ -4,8 +4,8 @@ import { getPostsSingleData } from '~/lib/posts'
 import PostType from '~/types/post'
 
 export function getStaticProps() {
-  let allPostsCategory = getPostsSingleData(({ category })=>{
-    return category
+  let allPostsCategory = getPostsSingleData(({ category, url })=>{
+    return url ?? category
   })
 
   allPostsCategory = Array.from(new Set(allPostsCategory))
