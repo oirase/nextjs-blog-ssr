@@ -38,7 +38,6 @@ const Tab: FC<Props> = ({ href, children}) => {
         //font-weight: bold;
         letter-spacing: 1px;
         color: ${brown};
-        text-decoration: none;
 
         @media(${md}) {
           font-size: 2rem;
