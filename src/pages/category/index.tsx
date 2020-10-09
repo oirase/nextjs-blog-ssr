@@ -1,37 +1,40 @@
 import Link from 'next/link'
 import Layout from '~/components/Layout'
-import { getPostsSingleData } from '~/lib/posts'
-import PostType from '~/types/post'
+import Contents from '~/components/Contents'
+import ListRender from '~/components/ListRender'
+import category from '~/lib/category'
+import CategoryType from '~/types/category'
+import CategoryItem from '~/components/CategoryItem'
 
 export function getStaticProps() {
-  let allPostsCategory = getPostsSingleData(({ category }) => category)
+  //let allPostsCategory = getPostsSingleData(({ category }) => category)
 
-  allPostsCategory = Array.from(new Set(allPostsCategory))
+  //allPostsCategory = Array.from(new Set(allPostsCategory))
 
   return {
     props: {
-      allPostsCategory
+      category
     }
   }
 }
 
 type Props = {
-  allPostsCategory: string[]
+  category: CategoryType[]
 }
 
-const Category = ({ allPostsCategory }: Props) => {
+const Category = ({ category }: Props) => {
 
   return (
     <Layout>
-      <ul>
-      {allPostsCategory.map(category => (
-        <li key={category}>
-          <Link href={`/category/${category}`}>
-            <a>{category}</a>
-          </Link>
-        </li>
-      ))}
-      </ul>
+      <Contents>
+        <ListRender
+          data={category}
+          render={
+            (data)=>
+              <CategoryItem {...data} />
+          }
+        />
+      </Contents>
     </Layout>
   )
 }
