@@ -28,13 +28,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const allPostsData = getPostsData(({ id, title, category, date, url })=>{
+  const allPostsData = getPostsData(({ id, title, category, date, image, url })=>{
   if (!url) {
     return {
       id,
       title,
       category,
-      date
+      date,
+      image
     }
   } else {
     return {
@@ -42,6 +43,7 @@ export async function getStaticProps({ params }) {
       title,
       category,
       date,
+      image,
       url
     }
   }})
