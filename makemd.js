@@ -25,7 +25,7 @@ const getRandomTime = (max) => {
   return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
 }
 
-for (let i = 0; i < 6; ++i) {
+for (let i = 0; i < 200; ++i) {
   article = {
     fileName: faker.lorem.slug(),
     title: faker.lorem.sentence(),
