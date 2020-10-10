@@ -9,7 +9,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
     <Link href={`/article/${id}`}>
     <a>
     <div className="item__image-view">
-      <img className="item__image" src={`/images/${image}`} />
+      <img className="item__image" src={`/images/article/${image}`} />
     </div>
     <ul className="item__info">
       <li className="item__title">

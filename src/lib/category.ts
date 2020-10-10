@@ -1,12 +1,52 @@
 
 const category = [
   {
+    name: 'javascript',
+    image: 'image1.jpg'
+  },
+  {
     name: 'php',
-    image: 'Hirosaki_Castle.jpg'
+    image: 'image2.jpg'
+  },
+  {
+    name: 'ruby',
+    image: 'image3.jpg'
+  },
+  {
+    name: 'java',
+    image: 'image4.jpg'
+  },
+  {
+    name: 'c#',
+    image: 'image5.jpg'
   },
   {
     name: 'python',
-    image: 'Mount_Hakkoda.jpg'
+    image: 'image6.jpg'
+  },
+  {
+    name: 'kotlin',
+    image: 'image7.jpg'
+  },
+  {
+    name: 'swift',
+    image: 'image8.jpg'
+  },
+  {
+    name: 'mysql',
+    image: 'image9.jpg'
+  },
+  {
+    name: 'postgresql',
+    image: 'image10.jpg'
+  },
+  {
+    name: 'mongodb',
+    image: 'image11.jpg'
+  },
+  {
+    name: 'redis',
+    image: 'image12.jpg'
   }
 ]
 

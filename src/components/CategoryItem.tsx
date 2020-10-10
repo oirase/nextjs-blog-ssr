@@ -9,7 +9,7 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
     <Link href={`/category/${name}`}>
     <a>
     <div className="item__image-view">
-      <img className="item__image" src={`/images/${image}`} />
+      <img className="item__image" src={`/images/category/${image}`} />
     </div>
     <ul className="item__info">
       <li className="item__title">
