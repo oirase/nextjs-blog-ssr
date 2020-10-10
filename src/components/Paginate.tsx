@@ -10,16 +10,6 @@ type Props = {
   range: number
 }
 
-type LiType = {
-  chirdren: number
-}
-
-const Li: FC<any> = ({ children, ...rest }) => (
-  <li  className="paginate__li" {...rest}>
-    {children}
-  </li>
-)
-
 const Paginate = ({ offset, length, range, setOffset }) => {
 
   const totalPage = Math.ceil(length / range)
@@ -31,15 +21,15 @@ const Paginate = ({ offset, length, range, setOffset }) => {
 
   for (let i=start; i<=end; ++i) {
     i === offset
-      ? list.push(<Li>@{i}</Li>)
-      : list.push(<Li onClick={()=>setOffset(i)}>{i}</Li>)
+      ? list.push(<li className="paginate__li">@{i}</li>)
+      : list.push(<li className="paginate__li" onClick={()=>setOffset(i)}>{i}</li>)
   }
 
-  start !== 1 && list.unshift(<Li onClick={()=>setOffset(1)}>1</Li>)
-  end !== totalPage && list.push(<Li onClick={()=>setOffset(totalPage)}>{totalPage}</Li>)
+  start !== 1 && list.unshift(<li className="paginate__li" onClick={()=>setOffset(1)}>1</li>)
+  end !== totalPage && list.push(<li className="paginate__li" onClick={()=>setOffset(totalPage)}>{totalPage}</li>)
 
-  offset !== 1 && list.unshift(<Li onClick={()=>setOffset(offset - 1)}>PREV</Li>)
-  offset !== end && list.push(<Li onClick={()=>setOffset(offset + 1)}>NEXT</Li>)
+  offset !== 1 && list.unshift(<li className="paginate__li" onClick={()=>setOffset(offset - 1)}>PREV</li>)
+  offset !== end && list.push(<li className="paginate__li" onClick={()=>setOffset(offset + 1)}>NEXT</li>)
 
   return (
   <div className="paginate">
