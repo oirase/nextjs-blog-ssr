@@ -5,7 +5,7 @@ import Header from '~/components/Header'
 import Nav from '~/components/Nav'
 import Footer from '~/components/Footer'
 import styles from '~/components/layout.module.css'
-import { white, purple } from '~/styles/variables'
+import { white, purple, yellow } from '~/styles/variables'
 
 const Layout: FC = ({ children }) => (
   <>
@@ -29,6 +29,11 @@ const Layout: FC = ({ children }) => (
           background-image: url('/images/layout/header.jpg');
           background-color: purple;
           border-radius: 10px 10px 0 0;
+        }
+
+        .contents {
+          background: ${yellow};
+          padding: 2rem 0;
         }
       `}</style>
     </div>
