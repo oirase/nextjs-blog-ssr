@@ -7,7 +7,7 @@ import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
 import { getPostsData } from '~/lib/posts'
 import PostType from '~/types/post'
-
+import { white, yellow, darkbrown, fontBase } from '~/styles/variables'
 
 export async function getStaticProps () {
   const allPostsData = getPostsData(({ id, title, category, date, image, content })=>{
@@ -54,20 +54,23 @@ const Search = ({ allPostsData }) => {
 
   return (
     <Layout>
-      <div className="searchBox">
-        <input
-          type="text"
-          ref={inputSearch}
-          onKeyPress={keyPress}
-          autoFocus
-        />
-        <button onClick={handleSearch}>検索</button>
-      </div>
-      <div className="SearchResult">
-      {searchResult
-        ? <p>検索結果{searchResult.length}件</p>
-        : <p>検索語句を入力して下さい</p>
-      }
+      <div className="search">
+        <div className="searchBox">
+          <input
+            type="text"
+            className="searchInput"
+            ref={inputSearch}
+            onKeyPress={keyPress}
+            autoFocus
+          />
+          <button className="searchButton" onClick={handleSearch}>検索</button>
+        </div>
+        <div className="searchResult">
+        {searchResult
+          ? <p>{searchResult.length} search results</p>
+          : <p>please enter a search term</p>
+        }
+        </div>
       </div>
       {searchResult && searchResult.length &&
           <>
@@ -88,6 +91,42 @@ const Search = ({ allPostsData }) => {
             </ItemList>
           </>
       }
+    <style jsx>{`
+
+      .search {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 7rem;
+
+        &__box {
+          border: 1px solid ${darkbrown};
+          height: 3rem;
+          display: flex;
+          border-radius: 4px;
+          over-flow: hidden;
+        }
+
+        &__input {
+          background: ${white};
+          display: block;
+          width: 17rem;
+          padding: 2px 4px;
+          height: 100%;
+        }
+
+        &__button {
+          background: ${darkbrown};
+          display: block;
+          width: 9rem;
+          color: ${yellow};
+          height: 100%;
+          font-size: 1.8rem;
+          font-family: Georgia, ${fontBase};
+        }
+      }
+    `}</style>
     </Layout>
   )
 }
