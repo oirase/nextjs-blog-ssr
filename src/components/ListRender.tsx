@@ -22,7 +22,7 @@ const ListRender = ({ render, data, offset, range }: Props) => {
 }
 
 ListRender.defaultProps = {
-  range: 20,
+  range: 24,
   offset: 1
 }
 

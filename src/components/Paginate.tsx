@@ -12,7 +12,7 @@ type Props = {
 }
 
 type LiType = {
-  chirdren: number
+  active: boolean
 }
 
 const scoped = css.resolve`
@@ -28,8 +28,8 @@ const scoped = css.resolve`
 }
 `
 
-const Li: FC<any> = ({ children, ...rest }) => (
-  <li  className="paginate__li" {...rest}>
+const Li: FC<any> = ({ children, active, ...rest }) => (
+  <li  className={`paginate__li${active ? '--active' : ''}`} {...rest}>
     {children}
     <style jsx>{`
       .paginate__li {
@@ -41,6 +41,13 @@ const Li: FC<any> = ({ children, ...rest }) => (
           border-radius: 100%;
           height: 4rem;
           width: 4rem;
+
+          &--active {
+            @extend .paginate__li;
+            background: ${yellow};
+            border: 1px solid ${darkbrown};
+            color: ${darkbrown};
+          }
       }
     `}</style>
   </li>
@@ -57,15 +64,15 @@ const Paginate = ({ offset, length, range, setOffset }) => {
 
   for (let i=start; i<=end; ++i) {
     i === offset
-      ? list.push(<Li>@{i}</Li>)
+      ? list.push(<Li active={true}>@{i}</Li>)
       : list.push(<Li onClick={()=>setOffset(i)}>{i}</Li>)
   }
 
   start !== 1 && list.unshift(<Li onClick={()=>setOffset(1)}>1</Li>)
   end !== totalPage && list.push(<Li onClick={()=>setOffset(totalPage)}>{totalPage}</Li>)
 
-  offset !== 1 && list.unshift(<Li onClick={()=>setOffset(offset - 1)}>PREV</Li>)
-  offset !== end && list.push(<Li onClick={()=>setOffset(offset + 1)}>NEXT</Li>)
+  offset !== 1 && list.unshift(<Li onClick={()=>setOffset(offset - 1)}>&#9664;</Li>)
+  offset !== end && list.push(<Li onClick={()=>setOffset(offset + 1)}>&#9654;</Li>)
 
   return (
   <div className="paginate">
