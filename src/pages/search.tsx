@@ -99,6 +99,7 @@ const Search = ({ allPostsData }) => {
         justify-content: space-between;
         align-items: center;
         height: 7rem;
+        padding: 3rem 0;
 
         &__box {
           border: 1px solid ${darkbrown};

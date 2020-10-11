@@ -2,7 +2,8 @@ import { FC } from 'react'
 import css from 'styled-jsx/css'
 import { fontBase,
          yellow,
-         darkbrown
+         darkbrown,
+         md
       } from '~/styles/variables'
 
 type Props = {
@@ -81,6 +82,11 @@ const Paginate = ({ offset, length, range, setOffset }) => {
           margin: 0 auto;
           width: 80rem;
           max-width: 100%;
+
+
+          @media(${md}){
+            justify-content: center;
+          }
         }
       }
     `}</style>
