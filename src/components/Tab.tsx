@@ -34,7 +34,7 @@ const Tab: FC<Props> = ({ href, children}) => {
         background: $blue;
         border-radius: 10px 10px 0 0;
         font-size: 1.4rem;
-        font-family: 'Open Sans Condensed', ${fontBase};
+        font-family: Georgia, 'Open Sans Condensed', ${fontBase};
         //font-weight: bold;
         letter-spacing: 1px;
         color: ${brown};

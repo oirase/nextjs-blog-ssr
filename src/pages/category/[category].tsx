@@ -6,7 +6,7 @@ import PostType from '~/types/post'
 import ArticleItem from '~/components/ArticleItem'
 import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
-import Contents from '~/components/Contents'
+import ItemList from '~/components/ItemList'
 
 export async function getStaticPaths() {
 
@@ -60,7 +60,7 @@ const Category = ({ categoryPostsData }: Props) => {
               length={categoryPostsData.length}
               setOffset={setOffset}
             />
-      <Contents>
+      <ItemList>
         <ListRender
           data={categoryPostsData}
           offset={offset}
@@ -69,7 +69,7 @@ const Category = ({ categoryPostsData }: Props) => {
               <ArticleItem {...data} />
           }
         />
-      </Contents>
+      </ItemList>
     </Layout>
   )
 }

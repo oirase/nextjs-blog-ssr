@@ -15,7 +15,9 @@ const Layout: FC = ({ children }) => (
         <Header />
         <Nav />
       </div>
+      <div className="contents">
         {children}
+      </div>
       <Footer />
       <style jsx>{`
         .outbox {

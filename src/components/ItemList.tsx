@@ -15,7 +15,7 @@ const Contents: FC = ({ children }) => (
           flex-wrap: wrap;
           justify-content: space-around;
           padding: 3rem 2rem 2rem 2rem;
-          background: ${yellow};
+          //background: ${yellow};
 
 
           &:before{

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Layout from '~/components/Layout'
-import Contents from '~/components/Contents'
+import ItemList from '~/components/ItemList'
 import ListRender from '~/components/ListRender'
 import category from '~/lib/category'
 import CategoryType from '~/types/category'
@@ -26,7 +26,7 @@ const Category = ({ category }: Props) => {
 
   return (
     <Layout>
-      <Contents>
+      <ItemList>
         <ListRender
           data={category}
           render={
@@ -34,7 +34,7 @@ const Category = ({ category }: Props) => {
               <CategoryItem {...data} />
           }
         />
-      </Contents>
+      </ItemList>
     </Layout>
   )
 }
