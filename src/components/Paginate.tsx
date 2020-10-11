@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import css from 'styled-jsx/css'
 import { fontBase,
          yellow,
          darkbrown
@@ -9,6 +10,29 @@ type Props = {
   length: number
   range: number
 }
+
+type LiType = {
+  chirdren: number
+}
+
+const scoped = css.resolve`
+.paginate__li {
+    display: flex;
+    justify-content: center;
+    margin: 0 1.5rem 1.5rem 0;
+    align-items: center;
+    background: ${darkbrown};
+    border-radius: 100%;
+    height: 4rem;
+    width: 4rem;
+}
+`
+
+const Li: FC<any> = ({ children, ...rest }) => (
+  <li  className={`paginate__li ${scoped.className}`} {...rest}>
+    {children}
+  </li>
+)
 
 const Paginate = ({ offset, length, range, setOffset }) => {
 
@@ -21,15 +45,15 @@ const Paginate = ({ offset, length, range, setOffset }) => {
 
   for (let i=start; i<=end; ++i) {
     i === offset
-      ? list.push(<li className="paginate__li">@{i}</li>)
-      : list.push(<li className="paginate__li" onClick={()=>setOffset(i)}>{i}</li>)
+      ? list.push(<Li>@{i}</Li>)
+      : list.push(<Li onClick={()=>setOffset(i)}>{i}</Li>)
   }
 
-  start !== 1 && list.unshift(<li className="paginate__li" onClick={()=>setOffset(1)}>1</li>)
-  end !== totalPage && list.push(<li className="paginate__li" onClick={()=>setOffset(totalPage)}>{totalPage}</li>)
+  start !== 1 && list.unshift(<Li onClick={()=>setOffset(1)}>1</Li>)
+  end !== totalPage && list.push(<Li onClick={()=>setOffset(totalPage)}>{totalPage}</Li>)
 
-  offset !== 1 && list.unshift(<li className="paginate__li" onClick={()=>setOffset(offset - 1)}>PREV</li>)
-  offset !== end && list.push(<li className="paginate__li" onClick={()=>setOffset(offset + 1)}>NEXT</li>)
+  offset !== 1 && list.unshift(<Li onClick={()=>setOffset(offset - 1)}>PREV</Li>)
+  offset !== end && list.push(<Li onClick={()=>setOffset(offset + 1)}>NEXT</Li>)
 
   return (
   <div className="paginate">
