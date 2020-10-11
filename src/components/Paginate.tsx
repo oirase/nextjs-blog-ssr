@@ -41,6 +41,7 @@ const Li: FC<any> = ({ children, active, ...rest }) => (
           border-radius: 100%;
           height: 4rem;
           width: 4rem;
+          cursor: pointer;
 
           &--active {
             @extend .paginate__li;
@@ -64,7 +65,7 @@ const Paginate = ({ offset, length, range, setOffset }) => {
 
   for (let i=start; i<=end; ++i) {
     i === offset
-      ? list.push(<Li active={true}>@{i}</Li>)
+      ? list.push(<Li active={true}>{i}</Li>)
       : list.push(<Li onClick={()=>setOffset(i)}>{i}</Li>)
   }
 
@@ -112,7 +113,7 @@ const Paginate = ({ offset, length, range, setOffset }) => {
 }
 
 Paginate.defaultProps = {
-  range: 20,
+  range: 24,
   offset: 1
 }
 
