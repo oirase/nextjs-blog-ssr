@@ -49,7 +49,7 @@ const Article = ({ postData }) => {
           background: ${white};
           padding: 3rem 3rem 4.5rem 3rem;
           line-height: 2;
-          min-height: 50rem;
+          min-height: 60rem;
 
 
           @media(${md}){

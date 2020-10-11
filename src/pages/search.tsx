@@ -55,17 +55,17 @@ const Search = ({ allPostsData }) => {
   return (
     <Layout>
       <div className="search">
-        <div className="searchBox">
+        <div className="search__box">
           <input
             type="text"
-            className="searchInput"
+            className="search__input"
             ref={inputSearch}
             onKeyPress={keyPress}
             autoFocus
           />
-          <button className="searchButton" onClick={handleSearch}>検索</button>
+          <button className="search__button" onClick={handleSearch}>検索</button>
         </div>
-        <div className="searchResult">
+        <div className="search__result">
         {searchResult
           ? <p>{searchResult.length} search results</p>
           : <p>please enter a search term</p>
