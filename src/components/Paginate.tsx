@@ -29,8 +29,20 @@ const scoped = css.resolve`
 `
 
 const Li: FC<any> = ({ children, ...rest }) => (
-  <li  className={`paginate__li ${scoped.className}`} {...rest}>
+  <li  className="paginate__li" {...rest}>
     {children}
+    <style jsx>{`
+      .paginate__li {
+          display: flex;
+          justify-content: center;
+          margin: 0 1.5rem 1.5rem 0;
+          align-items: center;
+          background: ${darkbrown};
+          border-radius: 100%;
+          height: 4rem;
+          width: 4rem;
+      }
+    `}</style>
   </li>
 )
 
