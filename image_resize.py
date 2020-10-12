@@ -2,12 +2,12 @@ import os
 import glob
 from PIL import Image
 
-q = 75
+q = 50
 w = 270
 h = 202
 
-entry_dir = "./public/images/article/"
-out_dir = "./public/images/resize/"
+entry_dir = "./public/images/storage/"
+out_dir = "./public/images/article/"
 files = glob.glob(entry_dir + '/*.jpg')
 
 for i, f in enumerate(files, 1):
