@@ -34,6 +34,7 @@ const Nav = () => {
         .nav {
           display: flex;
           justify-content: center;
+          height: 5rem;
 
           &__menu {
             display: flex;

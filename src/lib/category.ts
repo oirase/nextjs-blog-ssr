@@ -2,39 +2,39 @@
 const category = [
   {
     name: 'javascript',
-    image: 'image1.jpg'
+    image: 'image01.jpg'
   },
   {
     name: 'php',
-    image: 'image2.jpg'
+    image: 'image02.jpg'
   },
   {
     name: 'ruby',
-    image: 'image3.jpg'
+    image: 'image03.jpg'
   },
   {
     name: 'java',
-    image: 'image4.jpg'
+    image: 'image04.jpg'
   },
   {
     name: 'c#',
-    image: 'image5.jpg'
+    image: 'image05.jpg'
   },
   {
     name: 'python',
-    image: 'image6.jpg'
+    image: 'image06.jpg'
   },
   {
     name: 'kotlin',
-    image: 'image7.jpg'
+    image: 'image07.jpg'
   },
   {
     name: 'swift',
-    image: 'image8.jpg'
+    image: 'image08.jpg'
   },
   {
     name: 'mysql',
-    image: 'image9.jpg'
+    image: 'image09.jpg'
   },
   {
     name: 'postgresql',
