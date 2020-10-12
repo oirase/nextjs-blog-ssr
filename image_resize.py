@@ -2,7 +2,7 @@ import os
 import glob
 from PIL import Image
 
-q = 50
+q = 60
 w = 270
 h = 202
 
