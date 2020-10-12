@@ -23,10 +23,11 @@ const Layout: FC = ({ children }) => (
         .outbox {
           background: #333;
           padding: 1rem;
+          max-width: 120rem;
         }
 
         .top-view {
-          background-image: url('/images/layout/header.jpg');
+          background-image: url('/images/layout/image06.jpg');
           background-color: purple;
           border-radius: 10px 10px 0 0;
         }

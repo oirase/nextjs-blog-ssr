@@ -11,11 +11,7 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
     <div className="item__image-view">
       <img className="item__image" src={`/images/category/${image}`} />
     </div>
-    <ul className="item__info">
-      <li className="item__title">
-          {name}
-      </li>
-    </ul>
+    <p className="item__title">{name}</p>
       </a>
       </Link>
       <style jsx>{`
