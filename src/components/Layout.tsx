@@ -27,7 +27,7 @@ const Layout: FC = ({ children }) => (
         }
 
         .top-view {
-          background-image: url('/images/layout/image06.jpg');
+          background-image: url('/images/layout/image01.jpg');
           background-color: purple;
           border-radius: 10px 10px 0 0;
         }
