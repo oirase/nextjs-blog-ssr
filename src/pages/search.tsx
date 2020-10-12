@@ -98,7 +98,7 @@ const Search = ({ allPostsData }) => {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        height: 13rem;
+        height: 14rem;
         padding: 3rem 0;
 
         &__box {

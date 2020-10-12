@@ -3,6 +3,7 @@ var faker = require('faker')
 const dir = './src/posts/'
 const date = new Date()
 const baseTime = 1600000000000
+const imgLength = 68
 let article, result
 const category = [
   'javascript',
@@ -25,15 +26,27 @@ const getRandomTime = (max) => {
   return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
 }
 
+const zeroPadding = (num, len) => {
+  if ((num + '').length <= len) {
+    return (Array(len).join('0') + num).slice( - len )
+  } else {
+    return num
+  }
+}
+
+let a = 1
 for (let i = 0; i < 200; ++i) {
   article = {
     fileName: faker.lorem.slug(),
     title: faker.lorem.sentence(),
-    date: getRandomTime(30),
+    date: getRandomTime(60),
     category: category[Math.floor(Math.random() * category.length)],
-    image: `image${i + 1}.jpg`,
-    content: faker.lorem.text()
+    image: `image${zeroPadding(a, 2)}.jpg`,
+    content: faker.lorem.paragraphs()
   }
+
+  ++a
+  if (a > 68) a = 1
 
   result =
 `---
@@ -45,8 +58,6 @@ image: '${article.image}'
 
 ${article.content}
 `
-
-  //console.log(result)
 
   fs.writeFileSync(`${dir}${article.fileName}.md`, result)
   console.log(`make ${article.fileName}.md`)
