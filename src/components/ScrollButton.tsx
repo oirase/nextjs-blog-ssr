@@ -17,15 +17,15 @@ const ScrollButton = () => {
 
   useEffect(()=>{
    window.addEventListener('scroll', (e) => {
-    window.pageYOffset > 500
-    ?  (state === false && setState(true))
-    :  (state === true && setState(false))
+    window.pageYOffset < 500
+    ? (state === true && setState(false))
+    : (state === false && setState(true))
   })
   }, [])
 
   return (
     <button onClick={scrollToTop}
-      className={`scroll-button ${state ? 'active' : null}`}
+      className={`scroll-button ${state ? 'active' : ''}`}
     >
       &#9650;
       <style jsx>{`
