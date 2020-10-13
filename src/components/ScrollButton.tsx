@@ -13,11 +13,16 @@ const ScrollButton = () => {
     offset > 0 && window.setTimeout(scrollToTop, 30)
   }
 
+  const dispatch = (value) => {
+    console.log(state, window.pageYOffset)
+    setState(value)
+  }
+
   useEffect(()=>{
    window.addEventListener('scroll', (e) => {
     window.pageYOffset < 500
-    ? state && (console.log(state, window.pageYOffset))
-    : (state || console.log(state, window.pageYOffset))
+    ? (state && dispatch(false))
+    : (state || dispatch(true))
   })
   }, [])
 
