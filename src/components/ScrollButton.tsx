@@ -20,9 +20,11 @@ const ScrollButton = () => {
 
   useEffect(()=>{
    window.addEventListener('scroll', (e) => {
-    window.pageYOffset < 500
-    ? (state && dispatch(false))
-    : (state || dispatch(true))
+    if (window.pageYOffset < 500) {
+      state && setState(false)
+    } else {
+      state || setState(true)
+    }
   })
   }, [])
 
