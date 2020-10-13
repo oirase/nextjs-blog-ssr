@@ -18,19 +18,18 @@ const Contents: FC = ({ children }) => (
           //background: ${yellow};
 
 
-          &:before{
+          &:before, &:after{
             @extend %item--base;
             content:"";
             display: block;
             height:0;
+          }
+
+          &:before {
             order: 1;
           }
 
           &:after{
-            @extend %item--base;
-            content:"";
-            display: block;
-            height:0;
             order: 0;
 
             @media(${md}) {

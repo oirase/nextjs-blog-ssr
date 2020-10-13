@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import path from 'path'
 import Meta from '~/components/Meta'
+import ScrollButton from '~/components/ScrollButton'
 import Header from '~/components/Header'
 import Nav from '~/components/Nav'
 import Footer from '~/components/Footer'
@@ -10,6 +11,7 @@ import { white, purple, yellow } from '~/styles/variables'
 const Layout: FC = ({ children }) => (
   <>
     <Meta />
+    <ScrollButton />
     <div className="outbox">
       <div className="top-view">
         <Header />
