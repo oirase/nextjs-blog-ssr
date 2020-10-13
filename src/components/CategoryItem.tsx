@@ -29,11 +29,7 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
             margin-bottom: auto;
           }
 
-          %item__list {
-            margin-bottom: 1.5rem;
-            line-height: 1.9;
 
-          }
 
           &__image-view {
             width: 100%;
@@ -49,14 +45,14 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
             transform: translateY(-50%);
           }
 
-          &__info {
+
+
+          &__title {
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
             font-size: 1.4rem;
             text-align: center;
             padding: 2rem 2.5rem 3.5rem 2.5rem;
-          }
-
-          &__title {
-            @extend %item__list;
           }
         }
 
