@@ -7,8 +7,6 @@ const ScrollButton = () => {
 
   const [state, setState] = useState(false)
 
-  let a = true
-
   const scrollToTop = () => {
     const offset = window.pageYOffset
     window.scrollTo(0, Math.floor( offset / 2 ))
@@ -18,8 +16,8 @@ const ScrollButton = () => {
   useEffect(()=>{
    window.addEventListener('scroll', (e) => {
     window.pageYOffset < 500
-    ? (state === true && setState(false))
-    : (state === false && setState(true))
+    ? (state && setState(false))
+    : (state || setState(true))
   })
   }, [])
 
