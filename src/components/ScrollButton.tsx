@@ -42,7 +42,7 @@ const ScrollButton = () => {
       window.removeEventListener('scroll', onScroll)
     }
 
-  }, [])
+  }, [state])
 
   return (
     <button onClick={scrollToTop}
