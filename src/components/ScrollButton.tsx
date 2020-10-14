@@ -19,8 +19,7 @@ const ScrollButton = () => {
   }
 
   const onScroll = () => {
-    window.addEventListener('scroll', (e) => {
-      if (window.pageYOffset < 500) {
+    if (window.pageYOffset < 500) {
         console.log('under', window.pageYOffset)
         if (state) {
           setState(false)
@@ -33,13 +32,17 @@ const ScrollButton = () => {
           console.log('up', state)
         }
       }
-    })
   }
-/*
-   return () => {
-       window.removeEventListener('scroll', onScroll);
-*/
-  useEffect(onScroll, [])
+
+
+  useEffect(()=> {
+    window.addEventListener('scroll', onScroll)
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
+
+  }, [])
 
   return (
     <button onClick={scrollToTop}
