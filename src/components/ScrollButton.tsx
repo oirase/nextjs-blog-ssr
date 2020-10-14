@@ -22,8 +22,16 @@ const ScrollButton = () => {
    window.addEventListener('scroll', (e) => {
     if (window.pageYOffset < 500) {
       console.log('under', window.pageYOffset)
+      if (state) {
+        setState(false)
+        console.log('under', state)
+      }
     } else {
       console.log('up', window.pageYOffset)
+      if (!state) {
+        setState(true)
+        console.log('up', state)
+      }
     }
   })
   }, [])

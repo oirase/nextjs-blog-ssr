@@ -29,8 +29,6 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
             margin-bottom: auto;
           }
 
-
-
           &__image-view {
             width: 100%;
             height: 18rem;
@@ -45,14 +43,14 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
             transform: translateY(-50%);
           }
 
-
-
           &__title {
             margin-bottom: 1.5rem;
             line-height: 1.9;
+            color: ${skyblue};
+            background: ${white};
             font-size: 1.4rem;
             text-align: center;
-            padding: 2rem 2.5rem 3.5rem 2.5rem;
+            padding: 2rem 2.5rem;
           }
         }
 
