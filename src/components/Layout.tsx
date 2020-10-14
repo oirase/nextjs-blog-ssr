@@ -5,7 +5,6 @@ import ScrollButton from '~/components/ScrollButton'
 import Header from '~/components/Header'
 import Nav from '~/components/Nav'
 import Footer from '~/components/Footer'
-import Loader from '~/components/Loader'
 import styles from '~/components/layout.module.css'
 import { white, purple, yellow } from '~/styles/variables'
 
@@ -18,7 +17,6 @@ const Layout: FC = ({ children }) => (
         <Header />
         <Nav />
       </div>
-      <Loader />
       <div className="contents">
         {children}
       </div>
