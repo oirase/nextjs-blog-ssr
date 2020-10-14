@@ -38,7 +38,7 @@ const Layout: FC = ({ children }) => (
         .contents {
           background: ${yellow};
           padding: 2rem 0;
-          min-height: 100%;
+          min-height: 100vh;
         }
       `}</style>
     </div>
