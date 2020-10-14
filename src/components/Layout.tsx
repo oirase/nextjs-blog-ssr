@@ -26,6 +26,7 @@ const Layout: FC = ({ children }) => (
           background: #333;
           padding: 1rem;
           max-width: 120rem;
+          height: 100%;
         }
 
         .top-view {
