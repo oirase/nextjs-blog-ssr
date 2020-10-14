@@ -13,25 +13,10 @@ const ScrollButton = () => {
     offset > 0 && window.setTimeout(scrollToTop, 30)
   }
 
-  const dispatch = (value) => {
-    console.log(state, window.pageYOffset)
-    setState(value)
-  }
-
   const onScroll = () => {
-    if (window.pageYOffset < 500) {
-        console.log('under', window.pageYOffset)
-        if (state) {
-          setState(false)
-          console.log('under', state)
-        }
-      } else {
-        console.log('up', window.pageYOffset)
-        if (!state) {
-          setState(true)
-          console.log('up', state)
-        }
-      }
+    window.pageYOffset < 500
+      ? (state && setState(false))
+      : (state || setState(true))
   }
 
 
