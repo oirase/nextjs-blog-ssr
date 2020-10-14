@@ -18,23 +18,28 @@ const ScrollButton = () => {
     setState(value)
   }
 
-  useEffect(()=>{
-   window.addEventListener('scroll', (e) => {
-    if (window.pageYOffset < 500) {
-      console.log('under', window.pageYOffset)
-      if (state) {
-        setState(false)
-        console.log('under', state)
+  const onScroll = () => {
+    window.addEventListener('scroll', (e) => {
+      if (window.pageYOffset < 500) {
+        console.log('under', window.pageYOffset)
+        if (state) {
+          setState(false)
+          console.log('under', state)
+        }
+      } else {
+        console.log('up', window.pageYOffset)
+        if (!state) {
+          setState(true)
+          console.log('up', state)
+        }
       }
-    } else {
-      console.log('up', window.pageYOffset)
-      if (!state) {
-        setState(true)
-        console.log('up', state)
-      }
-    }
-  })
-  }, [])
+    })
+  }
+/*
+   return () => {
+       window.removeEventListener('scroll', onScroll);
+*/
+  useEffect(onScroll, [])
 
   return (
     <button onClick={scrollToTop}

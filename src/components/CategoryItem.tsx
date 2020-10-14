@@ -51,6 +51,7 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
             font-size: 1.4rem;
             text-align: center;
             padding: 2rem 2.5rem;
+            display: inline-block;
           }
         }
 
