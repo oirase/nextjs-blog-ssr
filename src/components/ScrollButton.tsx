@@ -8,9 +8,14 @@ const ScrollButton = () => {
   const [state, setState] = useState(false)
 
   const scrollToTop = () => {
-    const offset = window.pageYOffset
-    window.scrollTo(0, Math.floor( offset / 2 ))
-    offset > 0 && setTimeout(scrollToTop, 30)
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+    //const offset = window.pageYOffset
+    //window.scrollTo(0, Math.floor( offset / 2 ))
+    //offset > 0 && setTimeout(scrollToTop, 30)
   }
 
   const onScroll = () => {

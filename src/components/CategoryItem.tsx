@@ -11,7 +11,9 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
     <div className="item__image-view">
       <img className="item__image" src={`/images/category/${image}`} />
     </div>
-    <p className="item__title">{name}</p>
+    <div className="item__info">
+      <p className="item__title">{name}</p>
+    </div>
       </a>
       </Link>
       <style jsx>{`
@@ -24,7 +26,6 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
           overflow: hidden;
           position: relative;
           color: white;
-          text-align: center;
 
           &:last-child {
             margin-bottom: auto;
@@ -44,15 +45,19 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
             transform: translateY(-50%);
           }
 
+          &__info {
+            text-align: center;
+            padding: 1rem 0;
+          }
+
           &__title {
             margin-bottom: 1.5rem;
             line-height: 1.9;
             color: ${skyblue};
             background: ${white};
             font-size: 1.4rem;
-            text-align: center;
             //padding: 2rem 2.5rem;
-            padding: 1rem;
+            padding: 0.7rem 1.5rem;
             border-radius: 5px;
             display: inline-block;
           }
