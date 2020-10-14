@@ -44,11 +44,10 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
           }
 
           &__title {
-            margin-bottom: 1.5rem;
             line-height: 1.9;
             font-size: 1.4rem;
             text-align: center;
-            padding: 2rem 2.5rem 3.5rem 2.5rem;
+            padding: 2rem 2.5rem 3rem 2.5rem;
           }
         }
 
