@@ -10,7 +10,7 @@ const ScrollButton = () => {
   const scrollToTop = () => {
     const offset = window.pageYOffset
     window.scrollTo(0, Math.floor( offset / 2 ))
-    offset > 0 && window.setTimeout(scrollToTop, 30)
+    offset > 0 && setTimeout(scrollToTop, 30)
   }
 
   const onScroll = () => {
@@ -48,6 +48,7 @@ const ScrollButton = () => {
           bottom: 20px;
           font-size: 36px;
           transition: opacity 1.5s, visibility 1.5s;
+          z-index: 100;
         }
 
         .active {

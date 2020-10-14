@@ -24,6 +24,7 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
           overflow: hidden;
           position: relative;
           color: white;
+          text-align: center;
 
           &:last-child {
             margin-bottom: auto;
@@ -50,7 +51,9 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
             background: ${white};
             font-size: 1.4rem;
             text-align: center;
-            padding: 2rem 2.5rem;
+            //padding: 2rem 2.5rem;
+            padding: 1rem;
+            border-radius: 5px;
             display: inline-block;
           }
         }
