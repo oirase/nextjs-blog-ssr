@@ -47,7 +47,7 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
 
           &__info {
             text-align: center;
-            padding: 1rem 0;
+            padding: 4rem 0;
           }
 
           &__title {
@@ -57,7 +57,7 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
             background: ${white};
             font-size: 1.4rem;
             //padding: 2rem 2.5rem;
-            padding: 0.7rem 1.5rem;
+            padding: 0.6rem 1.5rem;
             border-radius: 5px;
             display: inline-block;
           }
