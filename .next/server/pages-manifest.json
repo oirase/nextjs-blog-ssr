@@ -3,6 +3,7 @@
   "/article/[id]": "pages/article/[id].js",
   "/category/[category]": "pages/category/[category].js",
   "/category": "pages/category.js",
+  "/contact": "pages/contact.html",
   "/": "pages/index.js",
   "/search": "pages/search.js",
   "/_error": "pages/_error.js",
