@@ -1,83 +1,56 @@
- import React from 'react';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 import Layout from '~/components/Layout'
 
- import { Formik, Field, Form, ErrorMessage } from 'formik';
 
- import * as Yup from 'yup';
+const Contact = () => {
 
-
-
- const SignupForm = () => {
-
-   return (
-  <Layout>
-     <Formik
-
-       initialValues={{ firstName: '', lastName: '', email: '' }}
-
-       validationSchema={Yup.object({
-
-         firstName: Yup.string()
-
-           .max(15, 'Must be 15 characters or less')
-
-           .required('Required'),
-
-         lastName: Yup.string()
-
-           .max(20, 'Must be 20 characters or less')
-
-           .required('Required'),
-
-         email: Yup.string().email('Invalid email address').required('Required'),
-
-       })}
-
-       onSubmit={(values, { setSubmitting }) => {
-
-         setTimeout(() => {
-
+  return (
+    <Layout>
+      <Formik
+        initialValues={{ name: '', email: '', title: '', body: '' }}
+        validationSchema={Yup.object({
+          name: Yup.string()
+          .max(20, 'お名前は20文字まで使用可能です')
+          .required('お名前は必須項目です'),
+          email: Yup.string()
+          .email('メールアドレスのみ使用可能です')
+          .required('メールアドレスは必須項目です')
+          ,
+          subject: Yup.string()
+          .max(30, '件名は30文字まで使用可能です')
+          ,
+          body: Yup.string()
+          .max(200, 'お問い合わせ本文は200文字まで使用可能です')
+          .required('お問い合わせ本文は必須項目です')
+        })}
+        onSubmit={(values, {
+        setSubmitting }) => {
+          setTimeout(() => {
            alert(JSON.stringify(values, null, 2));
-
            setSubmitting(false);
+         }, 400)
+        }}
+        >
+        <Form>
+          <label htmlFor="name">お名前</label>
+          <Field name="name" type="text" />
+          <ErrorMessage name="name" />
+          <label htmlFor="email">メールアドレス</label>
+          <Field name="email" type="text" />
+          <ErrorMessage name="email" />
+          <label htmlFor="subject">題名</label>
+          <Field name="subject" type="text" />
+          <ErrorMessage name="subject" />
+          <label htmlFor="body">お問い合わせ内容</label>
+          <Field name="body" type="text" />
+          <ErrorMessage name="body" />
+        </Form>
+      </Formik>
+    </Layout>
+  )
+}
 
-         }, 400);
-
-       }}
-
-     >
-
-       <Form>
-
-         <label htmlFor="firstName">First Name</label>
-
-         <Field name="firstName" type="text" />
-
-         <ErrorMessage name="firstName" />
-
-         <label htmlFor="lastName">Last Name</label>
-
-         <Field name="lastName" type="text" />
-
-         <ErrorMessage name="lastName" />
-
-         <label htmlFor="email">Email Address</label>
-
-         <Field name="email" type="email" />
-
-         <ErrorMessage name="email" />
-
-         <button type="submit">Submit</button>
-
-       </Form>
-
-     </Formik>
-     </Layout>
-
-   );
-
- };
-
-export default  SignupForm
+export default  Contact
 
 
