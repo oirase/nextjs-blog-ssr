@@ -1,6 +1,7 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import Layout from '~/components/Layout'
+import { white, skyblue } from '~/styles/variables'
 
 
 const Contact = () => {
@@ -32,21 +33,79 @@ const Contact = () => {
          }, 400)
         }}
         >
-        <Form>
-          <label htmlFor="name">お名前</label>
-          <Field name="name" type="text" />
-          <ErrorMessage name="name" />
-          <label htmlFor="email">メールアドレス</label>
-          <Field name="email" type="text" />
-          <ErrorMessage name="email" />
-          <label htmlFor="subject">題名</label>
-          <Field name="subject" type="text" />
-          <ErrorMessage name="subject" />
-          <label htmlFor="body">お問い合わせ内容</label>
-          <Field name="body" type="text" />
-          <ErrorMessage name="body" />
+        <Form  className="form" >
+          <label className="form__label" htmlFor="name">お名前</label>
+          <Field className="form__input" name="name" type="text" />
+          <ErrorMessage className="form__error" name="name" />
+          <label className="form__label" htmlFor="email">メールアドレス</label>
+          <Field className="form__input" name="email" type="text" />
+          <ErrorMessage className="form__error" name="email" />
+          <label className="form__label" htmlFor="subject">題名</label>
+          <Field className="form__input" name="subject" type="text" />
+          <ErrorMessage  className="form__error" name="subject" />
+          <label className="form__label" htmlFor="body">お問い合わせ内容</label>
+          <Field className="form__input" name="body" type="text" component="textarea" />
+          <ErrorMessage className="form__error" name="body" />
+          <button className="form__button" type="submit">お問い合わせ送信</button>
         </Form>
       </Formik>
+      <style jsx>{`
+        .form {
+          display: flex;
+          margin: 0 auto;
+          width: 34rem;
+          padding: 4rem 0;
+          background: ${skyblue};
+          flex-direction: column;
+          align-items: center;
+          box-shadow: 3px 3px 15px #333;
+
+          @at-root %form__element {
+            margin-bottom: 1.5rem;
+          }
+
+          @at-root %form__input-element {
+            margin-bottom: 3rem;
+            width: 25rem;
+            background: ${white};
+          }
+
+          &__input {
+            @extend %form__input-element;
+            height: 3.5rem;
+            border-radius: 20px;
+            padding: 5px 15px;
+          }
+
+          &__label {
+            @extend %form__element;
+            color: ${white};
+          }
+
+          &__textarea {
+            @extend %form__input-element;
+            height: 20rem;
+            padding: 5px;
+            border-radius: 5px;
+          }
+
+          &__button {
+            padding: 2rem 4rem;
+            background: ${white};
+            color: ${skyblue};
+            border-radius: 7px;
+          }
+
+          &__error {
+            margin-bottom: 3rem;
+            color: ${white};
+            background: red;
+            padding: 1.2rem 0;
+            width: 100%;
+            text-align: center;
+          }
+        }
+      `}</style>
     </Layout>
   )
 }
