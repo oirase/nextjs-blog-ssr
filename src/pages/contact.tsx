@@ -44,7 +44,7 @@ const Contact = () => {
           <Field className="form__input" name="subject" type="text" />
           <ErrorMessage  className="form__error" name="subject" />
           <label className="form__label" htmlFor="body">お問い合わせ内容</label>
-          <Field className="form__input" name="body" type="text" component="textarea" />
+          <Field className="form__textarea" name="body" type="text" component="textarea" />
           <ErrorMessage className="form__error" name="body" />
           <button className="form__button" type="submit">お問い合わせ送信</button>
         </Form>
