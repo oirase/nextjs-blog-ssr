@@ -5,8 +5,7 @@
       {
         "styled-jsx": {
           "plugins": [
-            "styled-jsx-plugin-sass",
-            "babel-plugin-macros"
+            "styled-jsx-plugin-sass"
           ]
         }
       }
