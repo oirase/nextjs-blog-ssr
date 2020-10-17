@@ -36,7 +36,9 @@ const Contact = () => {
         <Form  className="form" >
           <label className="form__label" htmlFor="name">お名前</label>
           <Field className="form__input" name="name" type="text" />
-          <ErrorMessage className="form__error" name="name" />
+          <ErrorMessage name="name">
+            { msg => <p className="form__error">{msg}</p> }
+          </ErrorMessage>
           <label className="form__label" htmlFor="email">メールアドレス</label>
           <Field className="form__input" name="email" type="text" />
           <ErrorMessage className="form__error" name="email" />
