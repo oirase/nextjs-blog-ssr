@@ -6,6 +6,20 @@ import { white, skyblue } from '~/styles/variables'
 
 const Contact = () => {
 
+  const setData = async () => {
+    const url = '/api/contact'
+    const data = { test: "api-test" }
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    const json = await res.json()
+    console.log(json)
+  }
+
   return (
     <Layout>
       <Formik
@@ -27,6 +41,7 @@ const Contact = () => {
         })}
         onSubmit={(values, {
         setSubmitting }) => {
+          setData()
           setTimeout(() => {
            alert(JSON.stringify(values, null, 2));
            setSubmitting(false);
@@ -41,13 +56,19 @@ const Contact = () => {
           </ErrorMessage>
           <label className="form__label" htmlFor="email">メールアドレス</label>
           <Field className="form__input" name="email" type="text" />
-          <ErrorMessage className="form__error" name="email" />
+          <ErrorMessage name="email">
+            { msg => <p className="form__error">{msg}</p> }
+          </ErrorMessage>
           <label className="form__label" htmlFor="subject">題名</label>
           <Field className="form__input" name="subject" type="text" />
-          <ErrorMessage  className="form__error" name="subject" />
+          <ErrorMessage name="subject">
+            { msg => <p className="form__error">{msg}</p> }
+          </ErrorMessage>
           <label className="form__label" htmlFor="body">お問い合わせ内容</label>
           <Field className="form__textarea" name="body" type="text" component="textarea" />
-          <ErrorMessage className="form__error" name="body" />
+          <ErrorMessage name="body">
+            { msg => <p className="form__error">{msg}</p> }
+          </ErrorMessage>
           <button className="form__button" type="submit">お問い合わせ送信</button>
         </Form>
       </Formik>
