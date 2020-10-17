@@ -49,7 +49,7 @@ const Contact = () => {
           <button className="form__button" type="submit">お問い合わせ送信</button>
         </Form>
       </Formik>
-      <style jsx>{`
+      <style jsx global>{`
         .form {
           display: flex;
           margin: 0 auto;
