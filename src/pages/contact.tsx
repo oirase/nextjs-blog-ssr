@@ -6,9 +6,9 @@ import { white, skyblue } from '~/styles/variables'
 
 const Contact = () => {
 
-  const setData = async () => {
+  const setData = async (data) => {
     const url = '/api/contact'
-    const data = { test: "api-test" }
+    //const data = { test: "api-test" }
     const res = await fetch(url, {
       method: 'POST',
       headers: {
@@ -41,7 +41,7 @@ const Contact = () => {
         })}
         onSubmit={(values, {
         setSubmitting }) => {
-          setData()
+          setData(values)
           setTimeout(() => {
            alert(JSON.stringify(values, null, 2));
            setSubmitting(false);
