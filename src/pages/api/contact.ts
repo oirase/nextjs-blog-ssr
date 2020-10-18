@@ -14,10 +14,10 @@ const smtpConfig = {
   }
 }
 
-//const transporter = nodemailer.createTransport(smtpConfig)
+const transporter = nodemailer.createTransport(smtpConfig)
 
 export default async function getData(req, res) {
-//  const { name, email, subject, body } = req.body
+  const { name, email, subject, body } = req.body
 /*
   const mailView =
 `
