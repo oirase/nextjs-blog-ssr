@@ -8,7 +8,9 @@ import Layout from '~/components/Layout'
 const Contact = () => {
 
   const [state, setState] = useState(null)
-  const { data, error } = useSWR(state ? '/api/contact' : null, ()=> fetcher(state))
+  const { data, error } = useSWR(state ? '/api/contact' : null, ()=> fetcher(state), {
+    revalidateOnFocus: false
+  })
 
   const fetcher =  async (data: any) => {
     /*
