@@ -60,6 +60,8 @@ const Contact = () => {
 
   return (
     <Layout>
+      { error && <p>error</p>}
+      { data ? complete : loading }
       <ContactForm onSubmit={setData} />
     </Layout>
   )
