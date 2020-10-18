@@ -3,7 +3,7 @@ import * as Yup from 'yup'
 import { white, skyblue } from '~/styles/variables'
 
 type Props = {
-  onSubmit: (value: {any})=>void
+  onSubmit: (value: any)=>void
 }
 
 const ContactForm = ({ onSubmit }: Props) => (
@@ -14,17 +14,18 @@ const ContactForm = ({ onSubmit }: Props) => (
       validationSchema={Yup.object({
         name: Yup.string()
         .max(20, 'お名前は20文字まで使用可能です')
-        .required('お名前は必須項目です'),
+        //.required('お名前は必須項目です')
+        ,
         email: Yup.string()
         .email('メールアドレスのみ使用可能です')
-        .required('メールアドレスは必須項目です')
+        //.required('メールアドレスは必須項目です')
         ,
         subject: Yup.string()
         .max(30, '件名は30文字まで使用可能です')
         ,
         body: Yup.string()
         .max(200, 'お問い合わせ本文は200文字まで使用可能です')
-        .required('お問い合わせ本文は必須項目です')
+        //.required('お問い合わせ本文は必須項目です')
       })}
       onSubmit={(values, {
       setSubmitting }) => {
@@ -32,6 +33,7 @@ const ContactForm = ({ onSubmit }: Props) => (
          alert(JSON.stringify(values, null, 2));
          setSubmitting(false);
        }, 400)
+       onSubmit(values)
       }}
       >
       <Form  className="form" >
