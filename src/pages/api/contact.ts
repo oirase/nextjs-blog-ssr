@@ -35,7 +35,7 @@ ${body}
     subject: `${name}様からのお問い合わせ`,
     text: mailView
   }
-
+/*
   transporter.sendMail(message, (error, res) => {
     if(error) {
       console.log('error')
@@ -44,5 +44,6 @@ ${body}
       res.status(200).json(body)
     }
   })
-
+*/
+  res.status(200).json(body)
 }
