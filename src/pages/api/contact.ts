@@ -3,7 +3,12 @@ import { createTransport　} from 'nodemailer'
 const senderEmailAdress = 'japan.prefecture@gmail.com'
 const receiverEmailAddress = 'azukiparfait@protonmail.com'
 
-const smtpConfig = {
+
+
+export default async function getData(req, res) {
+  const { name, email, subject, body } = req.body
+
+  const smtpConfig = {
   service: 'gmail',
   host: 'smtp.gmail.com',
   port: 587,
@@ -13,10 +18,7 @@ const smtpConfig = {
     pass: 'axvdylavjpypqytf'
   }
 }
-
-export default async function getData(req, res) {
-  const { name, email, subject, body } = req.body
-try{
+//try{
   const transporter = createTransport(smtpConfig)
 
 /*
@@ -49,8 +51,10 @@ ${body}
 */
 
   res.status(200).json(req.body)
+  /*
   } catch(e) {
   res.status(200).json({ error: e })
-}
+  }
+  */
 }
 
