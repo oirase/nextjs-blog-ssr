@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer'
 //const nodemailer = require('nodemailer')
 const senderEmailAdress = 'japan.prefecture@gmail.com'
 const receiverEmailAddress = 'azukiparfait@protonmail.com'
-
+try{
 const smtpConfig = {
   service: 'gmail',
   host: 'smtp.gmail.com',
@@ -16,11 +16,9 @@ const smtpConfig = {
 
 export default async function getData(req, res) {
   const { name, email, subject, body } = req.body
-  try{
+
   const transporter = nodemailer.createTransport(smtpConfig)
-} catch(e) {
-  res.status(200).json({ error: e })
-}
+
 /*
   const mailView =
 `
@@ -51,4 +49,7 @@ ${body}
 */
 
   //res.status(200).json(req.body)
+}
+} catch(e) {
+  res.status(200).json({ error: e })
 }
