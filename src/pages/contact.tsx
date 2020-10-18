@@ -7,13 +7,15 @@ import Layout from '~/components/Layout'
 
 const Contact = () => {
 
-  const [state, setState] = useState(false)
-  const { data, error } = useSWR(state ? '/api/contact' : null, ()=> fetcher())
+  const [state, setState] = useState(null)
+  const { data, error } = useSWR(state ? '/api/contact' : null, ()=> fetcher(state))
 
-  const fetcher =  async () => {
+  const fetcher =  async (data: any) => {
+    /*
     const data = {
       test: 'swr-test'
     }
+    */
     const url = '/api/contact'
     //const data = { test: "api-test" }
     const res = await fetch(url, {
@@ -48,7 +50,7 @@ const Contact = () => {
   }
 
   const handleClick = (data) => {
-    setState(true)
+    setState(data)
   }
 
   const complete =
