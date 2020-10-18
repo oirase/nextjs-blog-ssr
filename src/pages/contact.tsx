@@ -68,7 +68,7 @@ const Contact = () => {
   return (
     <Layout>
       { error && <p>error</p>}
-      { data ? complete : loading }
+      { state && data ? complete : loading }
       { !data ? <ContactForm onSubmit={handleClick} /> : null }
     </Layout>
   )
