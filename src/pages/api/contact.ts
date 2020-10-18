@@ -8,15 +8,10 @@ const receiverEmailAddress = 'azukiparfait@protonmail.com'
 export default async function getData(req, res) {
   const { name, email, subject, body } = req.body
 
-  const smtpConfig = {
-  service: 'gmail',
+const smtpConfig = {
   host: 'smtp.gmail.com',
   port: 587,
-  secure: true,
-  auth: {
-    user: senderEmailAdress,
-    pass: 'axvdylavjpypqytf'
-  }
+  secure: true
 }
 //try{
   const transporter = createTransport(smtpConfig)
