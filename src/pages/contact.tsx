@@ -8,7 +8,7 @@ import Layout from '~/components/Layout'
 const Contact = () => {
 
   const [state, setState] = useState(false)
-  const { data, error } = useSWR('/api/contact', ()=> fetcher())
+  const { data, error } = useSWR(state ? '/api/contact' : null, ()=> fetcher())
 
   const fetcher =  async () => {
     const data = {
@@ -45,7 +45,10 @@ const Contact = () => {
     console.log(json)
     setState(true)
     */
+  }
 
+  const handleClick = (data) => {
+    setState(true)
   }
 
   const complete =
@@ -62,7 +65,7 @@ const Contact = () => {
     <Layout>
       { error && <p>error</p>}
       { data ? complete : loading }
-      <ContactForm onSubmit={setData} />
+      { !state ? <ContactForm onSubmit={handleClick} /> : null }
     </Layout>
   )
 }
