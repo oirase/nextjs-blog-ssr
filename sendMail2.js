@@ -1,5 +1,5 @@
-import nodemailer from 'nodemailer'
-//const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer')
+
 const senderEmailAdress = 'japan.prefecture@gmail.com'
 const receiverEmailAddress = 'azukiparfait@protonmail.com'
 
@@ -14,14 +14,11 @@ const smtpConfig = {
   }
 }
 
+const transporter = nodemailer.createTransport(smtpConfig)
+/*
 export default async function getData(req, res) {
   const { name, email, subject, body } = req.body
-  try{
-  const transporter = nodemailer.createTransport(smtpConfig)
-} catch(e) {
-  res.status(200).json({ error: e })
-}
-/*
+
   const mailView =
 `
 お問い合わせ内容
@@ -48,7 +45,9 @@ ${body}
       res.status(200).json(body)
     }
   })
+
+  res.status(200).json(req.body)
+}
 */
 
-  //res.status(200).json(req.body)
-}
+console.log('success')
