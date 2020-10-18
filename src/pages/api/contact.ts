@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer'
+import { createTransport　} from 'nodemailer'
 //const nodemailer = require('nodemailer')
 const senderEmailAdress = 'japan.prefecture@gmail.com'
 const receiverEmailAddress = 'azukiparfait@protonmail.com'
@@ -17,7 +17,7 @@ const smtpConfig = {
 export default async function getData(req, res) {
   const { name, email, subject, body } = req.body
 try{
-  const transporter = nodemailer.createTransport(smtpConfig)
+  const transporter = createTransport(smtpConfig)
 
 /*
   const mailView =
