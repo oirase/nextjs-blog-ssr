@@ -20,7 +20,6 @@ const Contact = () => {
 
   const fetcher =  async (data: contactFormType) => {
     const url = '/api/contact'
-    //const data = { test: "api-test" }
     const res = await fetch(url, {
       method: 'POST',
       headers: {
@@ -60,6 +59,11 @@ const Contact = () => {
         .result-info {
           text-align: center;
           padding: 2rem 0;
+          height: 10rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
           line-height: 2;
         }
       `}</style>

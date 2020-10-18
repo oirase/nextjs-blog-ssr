@@ -38,7 +38,7 @@ const ContactForm = ({ onSubmit }: Props) => (
       >
       <Form  className="form" >
         <label className="form__label" htmlFor="name">お名前</label>
-        <Field className="form__input" name="name" type="text" />
+        <Field className="form__input" name="name" type="text" value="aaa"/>
         <ErrorMessage name="name">
           { msg => <p className="form__error">{msg}</p> }
         </ErrorMessage>
@@ -48,12 +48,12 @@ const ContactForm = ({ onSubmit }: Props) => (
           { msg => <p className="form__error">{msg}</p> }
         </ErrorMessage>
         <label className="form__label" htmlFor="subject">題名</label>
-        <Field className="form__input" name="subject" type="text" />
+        <Field className="form__input" name="subject" type="text" value="サイトの不具合について"　/>
         <ErrorMessage name="subject">
           { msg => <p className="form__error">{msg}</p> }
         </ErrorMessage>
         <label className="form__label" htmlFor="body">お問い合わせ内容</label>
-        <Field className="form__textarea" name="body" type="text" component="textarea" />
+        <Field className="form__textarea" name="body" type="text" component="textarea" value="サイトが正しく表示されません" />
         <ErrorMessage name="body">
           { msg => <p className="form__error">{msg}</p> }
         </ErrorMessage>
