@@ -7,12 +7,20 @@ const senderEmailAdress = 'japan.prefecture@gmail.com'
 const receiverEmailAddress = 'azukiparfait@protonmail.com'
 
 const smtpConfig = {
+  service: 'gmail',
   host: 'smtp.gmail.com',
   port: 587,
-  secure: true
+  secure: true,
+  auth: {
+    user: senderEmailAdress,
+    pass: 'axvdylavjpypqytf'
+  }
 }
-
-  const transporter = createTransport(smtpConfig)
+  try {
+    const transporter = createTransport(smtpConfig)
+  } catch(e) {
+    res.status(200).json({error: 'nodemailer'})
+  }
 /*
 
   const mailView =
