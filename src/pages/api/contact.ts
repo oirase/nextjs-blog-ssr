@@ -1,6 +1,4 @@
-import { sendMail,
-         senderEmailAdress,
-         receiverEmailAddress  } from '~/lib/mailer'
+import { senderEmailAdress } from '~/lib/mailer'
 
 export default function getData(req, res) {
 const { name, email, subject, body } = req.body

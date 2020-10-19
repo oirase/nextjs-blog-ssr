@@ -74,7 +74,7 @@ const Tab: FC<Props> = ({ href, children}) => {
 
             &:hover {
               background: ${white};
-              opcacity: .3
+              opacity: .3;
             }
           }
         }
