@@ -17,15 +17,15 @@ const { name, email, subject, body } = req.body
 本文
 ${body}
 `
-/*
+
   const message = {
     from: senderEmailAdress,
     to: receiverEmailAddress,
     subject: `${name}様からのお問い合わせ`,
     text: mailView
   }
-*/
-/*
+
+
   transporter.sendMail(message, (error, response) => {
     if(error) {
       console.log('error')
@@ -34,7 +34,7 @@ ${body}
      //res.status(200).json({ nodemailer: 'success' })
     }
   })
-*/
-  res.status(200).json(req.body)
+
+  //res.status(200).json(req.body)
 }
 
