@@ -39,6 +39,10 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
             margin-bottom: auto;
           }
 
+          &:hover {
+            opacity: .7;
+          }
+
           %item__list {
             margin-bottom: 1.5rem;
             line-height: 1.9;
