@@ -1,4 +1,6 @@
-import transporter from '~/lib/mailer'
+import transporter,
+      { senderEmailAdress,
+        receiverEmailAddress  } from '~/lib/mailer'
 
 export default async function getData(req, res) {
 const { name, email, subject, body } = req.body
@@ -15,7 +17,7 @@ const { name, email, subject, body } = req.body
 本文
 ${body}
 `
-/*
+
   const message = {
     from: senderEmailAdress,
     to: receiverEmailAddress,
@@ -28,10 +30,10 @@ ${body}
       console.log('error')
     } else {
       console.log('success', res.response)
-      res.status(200).json(body)
+      res.status(200).json({ nodemailer: 'success' })
     }
   })
-*/
+
   res.status(200).json(req.body)
 }
 
