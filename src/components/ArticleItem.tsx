@@ -7,7 +7,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
 
   <div className="item">
     <Link href={`/article/${id}`}>
-    <a>
+    <a className="item__link">
     <div className="item__image-view">
       <img className="item__image" src={`/images/article/${image}`} />
     </div>
@@ -33,15 +33,21 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           border-radius: 18px;
           overflow: hidden;
           position: relative;
-          color: white;
+          color: ${white};
+          background: ${white};
 
           &:last-child {
             margin-bottom: auto;
           }
 
-          &:hover {
-            opacity: .7;
+          &__link {
+
+            &:hover {
+              opacity: .7;
+            }
           }
+
+
 
           %item__list {
             margin-bottom: 1.5rem;
