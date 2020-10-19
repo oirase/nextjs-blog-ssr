@@ -11,7 +11,7 @@ const { name, email, subject, body } = req.body
   const message = {
     from: senderEmailAdress,
     to: receiverEmailAddress,
-    subject: `${name}様からのお問い合わせ`,
+    subject: 'お問い合わせ',
     text: 'nodemailer-test'
   }
 

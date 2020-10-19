@@ -73,6 +73,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
             font-size: 1.4rem;
             text-align: center;
             padding: 2rem 2.5rem 3.5rem 2.5rem;
+            background: ${skyblue};
           }
 
           &__title {
