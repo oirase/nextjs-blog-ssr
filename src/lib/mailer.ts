@@ -13,4 +13,17 @@ const smtpConfig = {
   }
 }
 
-export default createTransport(smtpConfig)
+
+const transporter = createTransport(smtpConfig)
+
+export const sendMail = (message) => {
+
+  transporter.sendMail(message, (error, response) => {
+      if(error) {
+        console.log('error')
+      } else {
+        //console.log('success', res.response)
+       //res.status(200).json({ nodemailer: 'success' })
+      }
+    })
+}

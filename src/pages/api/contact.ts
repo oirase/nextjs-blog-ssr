@@ -1,6 +1,6 @@
-import transporter,
-      { senderEmailAdress,
-        receiverEmailAddress  } from '~/lib/mailer'
+import { sendMail,
+         senderEmailAdress,
+         receiverEmailAddress  } from '~/lib/mailer'
 
 export default async function getData(req, res) {
 const { name, email, subject, body } = req.body
@@ -25,7 +25,8 @@ ${body}
     text: mailView
   }
 
-
+  sendMail(message)
+/*
   transporter.sendMail(message, (error, response) => {
     if(error) {
       console.log('error')
@@ -34,7 +35,7 @@ ${body}
      //res.status(200).json({ nodemailer: 'success' })
     }
   })
-
+*/
   //res.status(200).json(req.body)
 }
 
