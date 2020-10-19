@@ -1,7 +1,7 @@
 import { createTransport　} from 'nodemailer'
 
 export const senderEmailAdress = 'japan.prefecture@gmail.com'
-export const receiverEmailAddress = 'azukiparfait@protonmail.com'
+export const receiverEmailAddress = 'mahoganyshelf@outlook.com'
 
 const smtpConfig = {
   host: 'smtp.gmail.com',
