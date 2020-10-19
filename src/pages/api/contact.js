@@ -1,8 +1,10 @@
 //import dynamic from 'next/dynamic'
-import { senderEmailAdress } from '~/lib/mailer'
+//import { senderEmailAdress } from '~/lib/mailer'
+
+const a = require('../../lib/mailer.js')
 
 try {
-  const a1 = senderEmailAdress
+  const a1 = a.senderEmailAdress
 } catch(e) {
   console.log('error', e)
 }

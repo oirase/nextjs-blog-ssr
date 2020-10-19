@@ -1,8 +1,15 @@
+
+module.exports = {
+  senderEmailAdress: 'japan.prefecture@gmail.com'
+}
+/*
 import { createTransport　} from 'nodemailer'
 
 export const senderEmailAdress = 'japan.prefecture@gmail.com'
 export const receiverEmailAddress = 'mahoganyshelf@outlook.com'
+module.exports = {
 
+}
 const smtpConfig = {
   host: 'smtp.gmail.com',
   port: 587,
@@ -27,3 +34,4 @@ export const sendMail = (message) => {
       }
     })
 }
+*/
