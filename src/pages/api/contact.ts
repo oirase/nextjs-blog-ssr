@@ -2,7 +2,7 @@ import { sendMail,
          senderEmailAdress,
          receiverEmailAddress  } from '~/lib/mailer'
 
-export default async function getData(req, res) {
+export default function getData(req, res) {
 const { name, email, subject, body } = req.body
 
 

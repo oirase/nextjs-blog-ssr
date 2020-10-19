@@ -14,10 +14,10 @@ const Tab: FC<Props> = ({ href, children}) => {
   return (
 
     <Link href={href}>
-      <a className="tab__wrapper">
-         <div className="tab">
+      <a className="tab">
+         <span className="tab--hover">
             {children}
-         </div>
+         </span>
          <style jsx>{`
 
         $green: #33CC99;
@@ -70,12 +70,12 @@ const Tab: FC<Props> = ({ href, children}) => {
             margin-right: 0;
           }
 
-          &:hover {
-            opacity: .7;
-          }
+          &--hover {
 
-          &__wrapper {
-            background: ${white};
+            &:hover {
+              background: ${white};
+              opcacity: .3
+            }
           }
         }
       `}</style>
