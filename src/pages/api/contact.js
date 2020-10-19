@@ -1,5 +1,5 @@
-import { createTransport　} from 'nodemailer'
-//const nodemailer = require('nodemailer')
+//import { createTransport　} from 'nodemailer'
+const nodemailer = require('nodemailer')
 
 export default async function getData(req, res) {
  // const { name, email, subject, body } = req.body
@@ -7,23 +7,16 @@ const senderEmailAdress = 'japan.prefecture@gmail.com'
 const receiverEmailAddress = 'azukiparfait@protonmail.com'
 
 const smtpConfig = {
-  service: 'gmail',
   host: 'smtp.gmail.com',
   port: 587,
-  secure: true,
+  secure: false,
   auth: {
     user: senderEmailAdress,
     pass: 'axvdylavjpypqytf'
   }
 }
   try {
-    const transporter = createTransport({
-    service: "gmail",
-    auth: {
-      user: senderEmailAdress,
-      pass: 'axvdylavjpypqytf'
-    }
-  })
+    const transporter = nodemailer.createTransport(smtpConfig)
   } catch(e) {
     res.status(200).json({error: 'nodemailer'})
   }
