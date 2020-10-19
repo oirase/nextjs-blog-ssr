@@ -1,10 +1,15 @@
+//import dynamic from 'next/dynamic'
 import { senderEmailAdress } from '~/lib/mailer'
 
 export default function getData(req, res) {
 const { name, email, subject, body } = req.body
 
-
-const a1 = senderEmailAdress
+//const senderEmailAdress = dynamic(() => import('~/lib/mailer') as DynamicOptions<string>)
+try {
+  const a1 = senderEmailAdress
+} catch(e) {
+  console.log('error', e)
+}
 /*
   const message = {
     from: senderEmailAdress,
