@@ -17,13 +17,14 @@ const { name, email, subject, body } = req.body
 本文
 ${body}
 `
-
+/*
   const message = {
     from: senderEmailAdress,
     to: receiverEmailAddress,
     subject: `${name}様からのお問い合わせ`,
     text: mailView
   }
+*/
 /*
   transporter.sendMail(message, (error, response) => {
     if(error) {
