@@ -17,7 +17,13 @@ const smtpConfig = {
   }
 }
   try {
-    const transporter = createTransport(smtpConfig)
+    const transporter = createTransport({
+    service: "gmail",
+    auth: {
+      user: senderEmailAdress,
+      pass: 'axvdylavjpypqytf'
+    }
+  })
   } catch(e) {
     res.status(200).json({error: 'nodemailer'})
   }
