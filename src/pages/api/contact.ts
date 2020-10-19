@@ -25,7 +25,7 @@ ${body}
     text: mailView
   }
 
-  sendMail(message)
+  //sendMail(message)
 /*
   transporter.sendMail(message, (error, response) => {
     if(error) {
