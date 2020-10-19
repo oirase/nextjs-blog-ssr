@@ -12,13 +12,13 @@ type Props = {
 
 const Tab: FC<Props> = ({ href, children}) => {
   return (
-  <div className="tab__wrapper">
+
     <Link href={href}>
-      <a className="tab">
-        {children}
-      </a>
-    </Link>
-    <style jsx>{`
+      <a className="tab__wrapper">
+         <div className="tab">
+            {children}
+         </div>
+         <style jsx>{`
 
         $green: #33CC99;
         $orange: #FF9900;
@@ -79,7 +79,8 @@ const Tab: FC<Props> = ({ href, children}) => {
           }
         }
       `}</style>
-  </div>
+      </a>
+    </Link>
   )
 }
 

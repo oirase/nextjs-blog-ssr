@@ -6,15 +6,15 @@ export default async function getData(req, res) {
 const { name, email, subject, body } = req.body
 
 
-
-
+const a1 = senderEmailAdress
+/*
   const message = {
     from: senderEmailAdress,
     to: receiverEmailAddress,
     subject: 'お問い合わせ',
     text: 'nodemailer-test'
   }
-
+*/
   //sendMail(message)
 /*
   transporter.sendMail(message, (error, response) => {
