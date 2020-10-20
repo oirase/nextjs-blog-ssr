@@ -15,9 +15,9 @@ const Tab: FC<Props> = ({ href, children}) => {
 
     <Link href={href}>
       <a className="tab">
-         <span className="tab--hover">
+
             {children}
-         </span>
+
          <style jsx>{`
 
         $green: #33CC99;
@@ -44,6 +44,19 @@ const Tab: FC<Props> = ({ href, children}) => {
 
           @media(${md}) {
             font-size: 2rem;
+          }
+
+          &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: ${white};
+            opacity: 0;
+          }
+
+          &:hover::before {
+            opacity: .5;
           }
 
           &:nth-child(1) {

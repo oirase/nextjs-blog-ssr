@@ -46,15 +46,17 @@ const Contact = () => {
 
   const loading = <p>送信中...</p>
 
+  const errorMessage = <p>お問い合わせの送信に失敗しました。しばらく時間を置いてから再度お試し下さい。</p>
+
   return (
     <Layout>
+      { !data ? <ContactForm onSubmit={handleClick} /> : null }
       <div className="result-info">
-      { error && <p>error</p>}
-      </div>
+      { error && errorMessage　}
       { !state ? null
                : data ? complete
                       : loading }
-      { !data ? <ContactForm onSubmit={handleClick} /> : null }
+      </div>
       <style jsx>{`
         .result-info {
           text-align: center;
