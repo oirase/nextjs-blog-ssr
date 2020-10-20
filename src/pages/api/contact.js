@@ -25,7 +25,7 @@ const receiverEmailAddress = 'mahoganyshelf@outlook.com'
 
   const transporter = createTransport(smtpConfig)
 
-
+/*
   const mailView =
 `
 お問い合わせ内容
@@ -45,7 +45,7 @@ ${body}
   }
 
 
-
+*/
 //const senderEmailAdress = dynamic(() => import('~/lib/mailer') as DynamicOptions<string>)
 
 /*
