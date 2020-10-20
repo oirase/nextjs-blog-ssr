@@ -7,7 +7,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
 
   <div className="item">
     <Link href={`/article/${id}`}>
-    <a className="item__link">
+    <a>
     <div className="item__image-view">
       <img className="item__image" src={`/images/article/${image}`} />
     </div>
@@ -18,7 +18,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
       <li className="item__date">{date}</li>
       <li className="item__category">
         <Link href={`/category/${category}`}>
-          <a>{category}</a>
+          <a className="item__link">{category}</a>
         </Link>
       </li>
       </ul>
@@ -57,8 +57,6 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
             opacity: .3;
           }
 
-
-
           %item__list {
             margin-bottom: 1.5rem;
             line-height: 1.9;
@@ -94,7 +92,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
             @extend %item__list;
           }
 
-          &__category {
+          &__link {
             color: ${linkColor};
 
             &:hover {
