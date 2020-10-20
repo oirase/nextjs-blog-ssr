@@ -12,9 +12,7 @@ const { name, email, subject, body } = req.body
   //const a1 = a.senderEmailAdress
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
+    service: 'gmail',
     auth: {
       user:  'japan.prefecture@gmail.com',
       pass: 'axvdylavjpypqytf'
