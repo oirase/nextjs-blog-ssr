@@ -10,7 +10,7 @@ const { name, email, subject, body } = req.body
 
 
   //const a1 = a.senderEmailAdress
-
+try {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -18,7 +18,9 @@ const { name, email, subject, body } = req.body
       pass: 'axvdylavjpypqytf'
     }
   })
-
+} catch(e) {
+  console.log('error', e)
+}
 
 
 //const senderEmailAdress = dynamic(() => import('~/lib/mailer') as DynamicOptions<string>)
