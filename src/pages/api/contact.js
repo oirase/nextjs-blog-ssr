@@ -17,7 +17,7 @@ const { name, email, subject, body } = req.body
   port: 587,
   secure: true,
   auth: {
-    user: senderEmailAdress,
+    user: 'japan.prefecture@gmail.com',
     pass: 'axvdylavjpypqytf'
   }
 }
