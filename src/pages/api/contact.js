@@ -7,7 +7,8 @@ const nodemailer = require('nodemailer')
 
 export default function getData(req, res) {
 const { name, email, subject, body } = req.body
-
+const senderEmailAdress = 'japan.prefecture@gmail.com'
+const receiverEmailAddress = 'mahoganyshelf@outlook.com'
 
   //const a1 = a.senderEmailAdress
 
@@ -17,7 +18,7 @@ const { name, email, subject, body } = req.body
   port: 587,
   secure: true,
   auth: {
-    user: 'japan.prefecture@gmail.com',
+    user: senderEmailAdress,
     pass: 'axvdylavjpypqytf'
   }
 }
