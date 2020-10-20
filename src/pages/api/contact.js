@@ -14,11 +14,8 @@ const receiverEmailAddress = 'mahoganyshelf@outlook.com'
 
   const smtpConfig = {
   service: 'gmail',
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: true,
   auth: {
-    user: senderEmailAdress,
+    user: 'japan.prefecture@gmail.com',
     pass: 'axvdylavjpypqytf'
   }
 }
