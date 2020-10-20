@@ -18,7 +18,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
       <li className="item__date">{date}</li>
       <li className="item__category">
         <Link href={`/category/${category}`}>
-          {category}
+          <a>{category}</a>
         </Link>
       </li>
       </ul>
@@ -36,6 +36,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           color: ${white};
           background: ${skyblue};
           position: relative;
+          cursor: pointer;
 
           &:last-child {
             margin-bottom: auto;

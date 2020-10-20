@@ -22,7 +22,7 @@ const Footer = ({ url='/contact', text='contact us' }) => (
       height: 8rem;
       border-radius: 0 0 10px 10px;
 
-      &__link {
+      &__link:hover {
         text-decoration: underline;
       }
 
