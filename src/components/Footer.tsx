@@ -9,7 +9,7 @@ type Props = {
 const Footer = ({ url='/contact', text='contact us' }) => (
  <footer className="footer">
   <Link href={url}>
-    <a>{text}</a>
+    <a className="footer__link">{text}</a>
   </Link>
   <style jsx>{`
     .footer {
@@ -21,6 +21,11 @@ const Footer = ({ url='/contact', text='contact us' }) => (
       background: ${purple};
       height: 8rem;
       border-radius: 0 0 10px 10px;
+
+      &__link {
+        text-decoration: underline;
+      }
+
     }
   `}</style>
  </footer>

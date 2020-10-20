@@ -59,7 +59,7 @@ const Tab: FC<Props> = ({ href, children}) => {
           }
 
           &:hover::before {
-            opacity: .5;
+            opacity: .3;
           }
 
           &:nth-child(1) {

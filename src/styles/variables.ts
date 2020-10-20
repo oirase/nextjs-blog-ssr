@@ -12,6 +12,7 @@ export const yellow = '#FFCC00'
 export const purple = '#990066'
 export const brown = '#993333'
 export const darkbrown = '#462024'
+export const linkColor = purple
 
 export const yellowPurple = 'linear-gradient($purple, $yellow)'
 
