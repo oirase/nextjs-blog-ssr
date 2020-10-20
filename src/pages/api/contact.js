@@ -1,30 +1,27 @@
 //import dynamic from 'next/dynamic'
 //import { senderEmailAdress } from '~/lib/mailer'
 const nodemailer = require('nodemailer')
-const a = require('../../lib/mailer.js')
+//const a = require('../../lib/mailer.js')
 
 
 
 export default function getData(req, res) {
 const { name, email, subject, body } = req.body
 
-try {
-  const a1 = a.senderEmailAdress
-  /*
+
+  //const a1 = a.senderEmailAdress
+
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
     secure: false,
     auth: {
-      user: a.senderEmailAdress,
+      user:  'japan.prefecture@gmail.com',
       pass: 'axvdylavjpypqytf'
     }
   })
-*/
 
-} catch(e) {
-  console.log('error', e)
-}
+
 
 //const senderEmailAdress = dynamic(() => import('~/lib/mailer') as DynamicOptions<string>)
 
