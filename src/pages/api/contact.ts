@@ -1,8 +1,8 @@
 //import dynamic from 'next/dynamic'
 //import { senderEmailAdress } from '~/lib/mailer'
-const nodemailer = require('nodemailer')
+//const nodemailer = require('nodemailer')
 //const a = require('../../lib/mailer.js')
-
+import nodemailer from 'nodemailer'
 
 
 export default function getData(req, res) {
@@ -57,7 +57,7 @@ ${body}
   }
 */
   //sendMail(message)
-
+/*
   transporter.sendMail(message, (error, response) => {
     if(error) {
       console.log('error')
@@ -67,7 +67,7 @@ ${body}
      res.status(200).json({ result:'success' })
     }
   })
-
-
+*/
+res.status(200).json({ result:'success' })
 }
 
