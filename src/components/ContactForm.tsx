@@ -64,7 +64,8 @@ const ContactForm = ({ onSubmit }: Props) => (
       .form {
         display: flex;
         margin: 0 auto;
-        width: 34rem;
+        width: 40rem;
+        max-width: 100%;
         padding: 4rem 0;
         background: ${skyblue};
         flex-direction: column;
