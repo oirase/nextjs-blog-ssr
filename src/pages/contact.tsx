@@ -3,6 +3,7 @@ import Link from 'next/link'
 import useSWR from 'swr'
 import ContactForm from '~/components/ContactForm'
 import Layout from '~/components/Layout'
+import Loader from '~/components/Loader'
 
 type contactFormType = {
   name: string
@@ -38,7 +39,7 @@ const Contact = () => {
   }
 
   const complete = <>
-        <p>送信が完了しました</p>
+        <p className="result-info__text">送信が完了しました</p>
         <Link　href="/">
           <a>トップページ</a>
         </Link>
@@ -55,7 +56,7 @@ const Contact = () => {
       { error && errorMessage　}
       { !state ? null
                : data ? complete
-                      : loading }
+                      : <Loader /> }
       </div>
       <style jsx>{`
         .result-info {
@@ -67,6 +68,10 @@ const Contact = () => {
           justify-content: space-between;
           align-items: center;
           line-height: 2;
+
+          &__text {
+            margin-bottom: 1rem;
+          }
         }
       `}</style>
     </Layout>

@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/j7iWBwHScSXws7xbWkNsn/_buildManifest.js",
-    "static/j7iWBwHScSXws7xbWkNsn/_ssgManifest.js"
+    "static/zI9MgpfH08J9NxBxbDpnx/_buildManifest.js",
+    "static/zI9MgpfH08J9NxBxbDpnx/_ssgManifest.js"
   ],
   "pages": {
     "/": [
@@ -15,7 +15,7 @@
       "static/chunks/framework.9ec1f7868b3e9d138cdd.js",
       "static/chunks/commons.c7c6c1030b2707d7d955.js",
       "static/chunks/4ecfece97bb3b857a162a63bb4ac00349e302ff2.b5e46d7d83d3aed968c5.js",
-      "static/chunks/pages/index-c5813a91adcceec4caad.js"
+      "static/chunks/pages/index-6939d82b589e7f63717e.js"
     ],
     "/_app": [
       "static/chunks/main-57af1fc065883119c72c.js",
@@ -54,7 +54,7 @@
       "static/chunks/framework.9ec1f7868b3e9d138cdd.js",
       "static/chunks/commons.c7c6c1030b2707d7d955.js",
       "static/chunks/4ecfece97bb3b857a162a63bb4ac00349e302ff2.b5e46d7d83d3aed968c5.js",
-      "static/chunks/pages/category/[category]-1d7bc77031b20f25a2bf.js"
+      "static/chunks/pages/category/[category]-39f248ebb173a29437f1.js"
     ],
     "/contact": [
       "static/chunks/main-57af1fc065883119c72c.js",
@@ -62,7 +62,7 @@
       "static/chunks/framework.9ec1f7868b3e9d138cdd.js",
       "static/chunks/commons.c7c6c1030b2707d7d955.js",
       "static/chunks/4ecfece97bb3b857a162a63bb4ac00349e302ff2.b5e46d7d83d3aed968c5.js",
-      "static/chunks/pages/contact-c2f1a5e02c32f53d6160.js"
+      "static/chunks/pages/contact-bcb2d2c13a9d8950fae8.js"
     ],
     "/search": [
       "static/chunks/main-57af1fc065883119c72c.js",
@@ -70,7 +70,7 @@
       "static/chunks/framework.9ec1f7868b3e9d138cdd.js",
       "static/chunks/commons.c7c6c1030b2707d7d955.js",
       "static/chunks/4ecfece97bb3b857a162a63bb4ac00349e302ff2.b5e46d7d83d3aed968c5.js",
-      "static/chunks/pages/search-c313b3ad33e3f5db7f44.js"
+      "static/chunks/pages/search-bd5a09cd690e4252f03a.js"
     ]
   },
   "ampFirstPages": []
