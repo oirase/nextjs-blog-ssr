@@ -1,9 +1,15 @@
 import Link from 'next/link'
 import { white, purple } from '~/styles/variables'
-const Footer = () => (
+
+type Props = {
+  url?: string
+  text?: string
+}
+
+const Footer = ({ url='/contact', text='contact us' }) => (
  <footer className="footer">
-  <Link href="/contact">
-    <a>contact us</a>
+  <Link href={url}>
+    <a>{text}</a>
   </Link>
   <style jsx>{`
     .footer {
