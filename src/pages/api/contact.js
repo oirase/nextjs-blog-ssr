@@ -20,7 +20,7 @@ const receiverEmailAddress = 'mahoganyshelf@outlook.com'
   }
 }
 
-  const transporter = createTransport(smtpConfig)
+  const transporter = nodemailer.createTransport(smtpConfig)
 
 /*
   const mailView =
