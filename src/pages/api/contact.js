@@ -12,17 +12,20 @@ const receiverEmailAddress = 'mahoganyshelf@outlook.com'
 
   //const a1 = a.senderEmailAdress
 
-  const smtpConfig = {
+   const smtpConfig = {
   service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: true,
   auth: {
-    user: 'japan.prefecture@gmail.com',
+    user: senderEmailAdress,
     pass: 'axvdylavjpypqytf'
   }
 }
 
   const transporter = nodemailer.createTransport(smtpConfig)
 
-/*
+
   const mailView =
 `
 お問い合わせ内容
@@ -42,7 +45,7 @@ ${body}
   }
 
 
-*/
+
 //const senderEmailAdress = dynamic(() => import('~/lib/mailer') as DynamicOptions<string>)
 
 /*

@@ -43,7 +43,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           &__link {
 
             &:hover {
-              opacity: .7;
+              opacity: .8;
             }
           }
 
