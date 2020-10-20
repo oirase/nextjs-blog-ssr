@@ -10,17 +10,39 @@ const { name, email, subject, body } = req.body
 
 
   //const a1 = a.senderEmailAdress
-try {
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user:  'japan.prefecture@gmail.com',
-      pass: 'axvdylavjpypqytf'
-    }
-  })
-} catch(e) {
-  console.log('error', e)
+
+  const smtpConfig = {
+  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: true,
+  auth: {
+    user: senderEmailAdress,
+    pass: 'axvdylavjpypqytf'
+  }
 }
+
+  const transporter = createTransport(smtpConfig)
+
+
+  const mailView =
+`
+お問い合わせ内容
+
+お名前　${name}
+メールアドレス　${email}
+題名　${subject}
+
+本文
+${body}
+`
+  const message = {
+    from: senderEmailAdress,
+    to: receiverEmailAddress,
+    subject: `${name}様からのお問い合わせ`,
+    text: mailView
+  }
+
 
 
 //const senderEmailAdress = dynamic(() => import('~/lib/mailer') as DynamicOptions<string>)
