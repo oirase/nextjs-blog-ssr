@@ -4,15 +4,15 @@ const Loader = () => (
   <div className="loader">
     <style jsx>{`
       .loader {
-        width: 10rem;
-        height: 10rem;
+        width: 5rem;
+        height: 5rem;
         border-radius: 50%;
         margin: 3rem auto;
       }
 
       .loader {
-        border: 1.1rem solid rgba(255, 255, 255, 0.2);
-        border-left: 1.1rem solid #ffffff;
+        border: 1.1rem solid rgba(51, 51, 51, 0.2);
+        border-left: 1.1rem solid #333;
         animation: load 1.1s infinite linear;
       }
 
