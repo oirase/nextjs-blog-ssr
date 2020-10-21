@@ -42,7 +42,7 @@ const Index = ({ allPostsData }: Props) => {
 
   return (
     <Layout>
-    <p>{process.env.GMAIL_PASS}</p>
+    <p>{process.env.pass}</p>
       <Paginate
         offset={offset}
         length={allPostsData.length}
