@@ -11,6 +11,9 @@ import ArticleItem from '~/components/ArticleItem'
 import PostType from '~/types/post'
 import { useState } from 'react'
 import { yellow, md } from '~/styles/variables'
+//import dotenv from 'dotenv'
+
+//dotenv.config()
 
 export async function getStaticProps () {
   const allPostsData = getPostsData(({ id, title, category, date, image })=>{
@@ -39,6 +42,7 @@ const Index = ({ allPostsData }: Props) => {
 
   return (
     <Layout>
+    <p>{process.env.pass}</p>
       <Paginate
         offset={offset}
         length={allPostsData.length}
