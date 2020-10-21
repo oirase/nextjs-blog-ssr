@@ -11,7 +11,8 @@
     "start": "next start -p $PORT",
     "export": "next export",
     "deploy": "npm run build && npm run export",
-    "lint": "eslint . --ext .ts,.tsx --fix"
+    "lint": "eslint . --ext .ts,.tsx --fix",
+    "heroku_start": "cp .env.heroku .env && npm run start"
   },
   "keywords": [],
   "author": "",
