@@ -23,11 +23,11 @@
     "nodemailer": "^6.4.14",
     "path": "^0.12.7",
     "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1"
   },
   "devDependencies": {
-    "react-dom": "^16.13.1",
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@types/node": "^14.11.5",
