@@ -43,7 +43,9 @@ const Index = ({ allPostsData }: Props) => {
 
   return (
     <Layout>
-    <p>{process.env.KEY_PASS}</p>
+    <p>.env {process.env.KEY_PASS}</p>
+    <p>.env {process.env.DB_PASS}</p>
+    <p>heroku {process.env.GMAIL_PASS}</p>
       <Paginate
         offset={offset}
         length={allPostsData.length}
