@@ -1,16 +1,13 @@
 
 const Loader = () => (
-
-  <div className="loader">
+  <>
+    <div className="loader"></div>
     <style jsx>{`
       .loader {
         width: 5rem;
         height: 5rem;
         border-radius: 50%;
         margin: 3rem auto;
-      }
-
-      .loader {
         border: 1.1rem solid rgba(51, 51, 51, 0.6);
         border-left: 1.1rem solid #333;
         animation: load 1.1s infinite linear;
@@ -25,7 +22,7 @@ const Loader = () => (
         }
       }
     `}</style>
-  </div>
+  </>
 )
 
 export default Loader
