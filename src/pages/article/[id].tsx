@@ -69,6 +69,10 @@ const Article = ({ postData }) => {
             text-align: center;
             color: #666;
           }
+
+          &__tag {
+
+          }
         }
       `}</style>
     </Layout>

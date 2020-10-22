@@ -6,6 +6,7 @@ import { white, skyblue, linkColor } from '~/styles/variables'
 const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
 
   <div className="item">
+  <div className="item__contents">
     <Link href={`/article/${id}`}>
     <a className="item__link">
     <div className="item__image-view">
@@ -24,25 +25,30 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
       </ul>
       </a>
       </Link>
+    </div>
       <style jsx>{`
         .item {
-          width: 27rem;
-          background: ${skyblue};
           margin-bottom: 4rem;
           font-size: 1.8rem;
           border-radius: 18px;
           overflow: hidden;
           position: relative;
           color: ${white};
-          background: ${skyblue};
-
+          background: ${white};
           cursor: pointer;
 
           &:last-child {
             margin-bottom: auto;
           }
 
+          &__contents {
+            width: 27rem;
+            background: ${skyblue};
 
+            &:hover {
+              opacity: .5;
+            }
+          }
 
           %item__list {
             margin-bottom: 1.5rem;
@@ -66,24 +72,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
 
           &__link {
             text-decoration: none;
-            position: relative;
-
-            &:before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            background: ${white};
-            opacity: 0;
-            z-index: 100;
           }
-
-          &:hover::before {
-            opacity: .3;
-          }
-        }
 
           &__info {
             font-size: 1.4rem;
