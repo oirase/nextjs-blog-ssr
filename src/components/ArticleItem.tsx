@@ -31,7 +31,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
       .item {
         margin-bottom: 4rem;
         font-size: 1.8rem;
-        border-radius: 18px;
+        //border-radius: 18px;
         overflow: hidden;
         //position: relative;
         color: ${white};
