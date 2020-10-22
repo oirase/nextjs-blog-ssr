@@ -35,28 +35,14 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           position: relative;
           color: ${white};
           background: ${skyblue};
-          position: relative;
+
           cursor: pointer;
 
           &:last-child {
             margin-bottom: auto;
           }
 
-          &:before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            background: ${white};
-            opacity: 0;
-            z-index: 100;
-          }
 
-          &:hover::before {
-            opacity: .3;
-          }
 
           %item__list {
             margin-bottom: 1.5rem;
@@ -80,7 +66,24 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
 
           &__link {
             text-decoration: none;
+            position: relative;
+
+            &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: ${white};
+            opacity: 0;
+            z-index: 100;
           }
+
+          &:hover::before {
+            opacity: .3;
+          }
+        }
 
           &__info {
             font-size: 1.4rem;
@@ -100,6 +103,8 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           &__category--link {
             color: ${linkColor};
             text-decoration: none;
+            position: relative;
+            z-index: 200;
 
             &:hover {
               text-decoration: underline;
