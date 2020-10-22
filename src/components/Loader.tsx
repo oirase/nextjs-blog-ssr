@@ -11,7 +11,7 @@ const Loader = () => (
       }
 
       .loader {
-        border: 1.1rem solid rgba(51, 51, 51, 0.2);
+        border: 1.1rem solid rgba(51, 51, 51, 0.6);
         border-left: 1.1rem solid #333;
         animation: load 1.1s infinite linear;
       }

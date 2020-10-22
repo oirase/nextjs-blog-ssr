@@ -18,7 +18,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
       <li className="item__date">{date}</li>
       <li className="item__category">
         <Link href={`/category/${category}`}>
-          <a className="item__link">{category}</a>
+          <a className="item__category--link">{category}</a>
         </Link>
       </li>
       </ul>
@@ -51,6 +51,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
             top: 0;
             background: ${white};
             opacity: 0;
+            z-index: 100;
           }
 
           &:hover::before {
@@ -92,7 +93,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
             @extend %item__list;
           }
 
-          &__link {
+          &__category--link {
             color: ${linkColor};
 
             &:hover {
