@@ -1,19 +1,19 @@
 import { createTransport } from 'nodemailer'
 
-const senderEmailAdress = 'japan.prefecture@gmail.com'
-const receiverEmailAddress = 'mahoganyshelf@outlook.com'
+const senderEmailAdress = process.env.MAIL_FROM_ADDRESS
+const receiverEmailAddress = process.env.MAIL_RECEIVER_ADDRESS
 
 export default function getData(req, res) {
 const { name, email, subject, body } = req.body
 
    const smtpConfig = {
-  service: 'gmail',
-  host: 'smtp.gmail.com',
-  port: 587,
+  service: process.env.MAIL_SERVICE,
+  host: process.env.MAIL_FROM_HOST,
+  port: process.env.MAIL_PORT,
   secure: true,
   auth: {
     user: senderEmailAdress,
-    pass: 'axvdylavjpypqytf'
+    pass: process.env.MAIL_PASSWORD
   }
 }
 
