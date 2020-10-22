@@ -7,7 +7,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
 
   <div className="item">
     <Link href={`/article/${id}`}>
-    <a>
+    <a className="item__link">
     <div className="item__image-view">
       <img className="item__image" src={`/images/article/${image}`} />
     </div>
@@ -62,7 +62,6 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
             margin-bottom: 1.5rem;
             line-height: 1.9;
             color: ${white};
-            text-decoration: none;
           }
 
           &__image-view {
@@ -77,6 +76,10 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
             width: 100%;
             top: 50%;
             transform: translateY(-50%);
+          }
+
+          &__link {
+            text-decoration: none;
           }
 
           &__info {
