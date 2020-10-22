@@ -44,7 +44,7 @@ ${body}
     } else {
       console.log('success', res.response)
      //res.status(200).json({ nodemailer: 'success' })
-     res.status(200).json({ result:'success' })
+     res.status(200).json(smtpConfig)
     }
   })
 */
