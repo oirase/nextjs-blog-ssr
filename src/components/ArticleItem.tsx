@@ -99,6 +99,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
 
           &__category--link {
             color: ${linkColor};
+            text-decoration: none;
 
             &:hover {
               text-decoration: underline;

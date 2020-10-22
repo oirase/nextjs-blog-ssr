@@ -45,8 +45,6 @@ const Contact = () => {
         </Link>
       </>
 
-  const loading = <p>送信中...</p>
-
   const errorMessage = <p>お問い合わせの送信に失敗しました。しばらく時間を置いてから再度お試し下さい。</p>
 
   return (
@@ -70,6 +68,7 @@ const Contact = () => {
 
           &__text {
             margin-bottom: 1rem;
+            background: red;
           }
         }
       `}</style>
