@@ -63,7 +63,7 @@ const Contact = () => {
           text-align: center;
           padding: 2rem 0;
           height: 10rem;
-          display: flex;
+          //display: flex;
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
