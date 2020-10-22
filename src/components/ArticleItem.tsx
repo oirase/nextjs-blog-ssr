@@ -61,7 +61,8 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           %item__list {
             margin-bottom: 1.5rem;
             line-height: 1.9;
-
+            color: ${white};
+            text-decoration: none;
           }
 
           &__image-view {

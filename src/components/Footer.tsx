@@ -17,15 +17,18 @@ const Footer = ({ url='/contact', text='contact us' }) => (
       display: flex;
       justify-content: center;
       align-items: center;
-      color: ${white};
       background: ${purple};
       height: 8rem;
       border-radius: 0 0 10px 10px;
 
-      &__link:hover {
-        text-decoration: underline;
-      }
+      &__link{
+        color: ${white};
+        text-decoration: none;
 
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   `}</style>
  </footer>
