@@ -32,7 +32,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           font-size: 1.8rem;
           border-radius: 18px;
           overflow: hidden;
-          position: relative;
+          //position: relative;
           color: ${white};
           background: ${white};
           cursor: pointer;
@@ -46,7 +46,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
             background: ${skyblue};
 
             &:hover {
-              opacity: .5;
+              opacity: .8;
             }
           }
 
@@ -79,6 +79,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
             text-align: center;
             padding: 2rem 2.5rem 3.5rem 2.5rem;
             background: ${skyblue};
+            height: 100%;
           }
 
           &__title {
@@ -92,8 +93,8 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           &__category--link {
             color: ${linkColor};
             text-decoration: none;
-            position: relative;
-            z-index: 200;
+            //position: relative;
+            //z-index: 200;
 
             &:hover {
               text-decoration: underline;
