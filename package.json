@@ -12,7 +12,7 @@
     "export": "next export",
     "deploy": "npm run build && npm run export",
     "lint": "eslint . --ext .ts,.tsx --fix",
-    "heroku_start": "cp .env.heroku .env && npm run start"
+    "heroku_start": "node make_env_heroku && npm run start"
   },
   "keywords": [],
   "author": "",

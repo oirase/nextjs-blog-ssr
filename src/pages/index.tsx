@@ -11,6 +11,7 @@ import ArticleItem from '~/components/ArticleItem'
 import PostType from '~/types/post'
 import { useState } from 'react'
 import { yellow, md } from '~/styles/variables'
+//import * as env from '~/config/env'
 //import dotenv from 'dotenv'
 
 //dotenv.config()
@@ -42,7 +43,7 @@ const Index = ({ allPostsData }: Props) => {
 
   return (
     <Layout>
-    <p>{process.env.pass}</p>
+    <p>{process.env.KEY_PASS}</p>
       <Paginate
         offset={offset}
         length={allPostsData.length}

@@ -1,11 +1,13 @@
 const withTypescript = require('@zeit/next-typescript')
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
+const node_env = process.env.NODE_ENV || 'dev'
 
 module.exports = {
   resolve: {
     alias: {
-      '~': './src'
+      '~': './src',
+      'env': node_env
     }
   },
   webpack: config => {
