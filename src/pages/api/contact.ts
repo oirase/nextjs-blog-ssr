@@ -1,11 +1,16 @@
 import { createTransport } from 'nodemailer'
 import htmlspecialchars from 'htmlspecialchars'
+import contactFormType from '~/types/contactForm'
 
 const senderEmailAdress = process.env.MAIL_FROM_ADDRESS
 const receiverEmailAddress = process.env.MAIL_RECEIVER_ADDRESS
 
 export default function getData(req, res) {
-const data = req.body.map(field=>htmlspecialchars(field))
+//const data = req.body.map(field=>htmlspecialchars(field))
+let data: contactFormType
+for(let value of Object.keys(req.body)) {
+  data[value] = htmlspecialchars(req.body[value])
+}
 const { name, email, subject, body } = data
 
    const smtpConfig = {
