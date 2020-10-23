@@ -11,7 +11,7 @@ let data: contactFormType | {} = {}
 for(let value of Object.keys(req.body)) {
   data[value] = htmlspecialchars(req.body[value])
 }
-const { name, email, subject, body } = data
+const { name, email, subject, body } = data as contactFormType
 /*
    const smtpConfig = {
   service: process.env.MAIL_SERVICE,

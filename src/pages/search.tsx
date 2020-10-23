@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRef, useState, KeyboardEvent } from 'react'
 import Layout from '~/components/Layout'
+import Contents from '~/components/Contents'
 import ItemList from '~/components/ItemList'
 import ArticleItem from '~/components/ArticleItem'
 import Paginate from '~/components/Paginate'
@@ -54,43 +55,45 @@ const Search = ({ allPostsData }) => {
 
   return (
     <Layout>
-      <div className="search">
-        <div className="search__box">
-          <input
-            type="text"
-            className="search__input"
-            ref={inputSearch}
-            onKeyPress={keyPress}
-            autoFocus
-          />
-          <button className="search__button" onClick={handleSearch}>検索</button>
-        </div>
-        <div className="search__result">
-        {searchResult
-          ? <p>{searchResult.length} search results</p>
-          : <p>please enter a search term</p>
-        }
-        </div>
-      </div>
-      {searchResult && searchResult.length &&
-          <>
-            <Paginate
-              offset={offset}
-              length={searchResult.length}
-              setOffset={setOffset}
+      <Contents>
+        <div className="search">
+          <div className="search__box">
+            <input
+              type="text"
+              className="search__input"
+              ref={inputSearch}
+              onKeyPress={keyPress}
+              autoFocus
             />
-            <ItemList>
-              <ListRender
-                data={searchResult}
+            <button className="search__button" onClick={handleSearch}>検索</button>
+          </div>
+          <div className="search__result">
+          {searchResult
+            ? <p>{searchResult.length} search results</p>
+            : <p>please enter a search term</p>
+          }
+          </div>
+        </div>
+        {searchResult && searchResult.length &&
+            <>
+              <Paginate
                 offset={offset}
-                render={
-                  (data)=>
-                    <ArticleItem {...data} />
-                }
+                length={searchResult.length}
+                setOffset={setOffset}
               />
-            </ItemList>
-          </>
-      }
+              <ItemList>
+                <ListRender
+                  data={searchResult}
+                  offset={offset}
+                  render={
+                    (data)=>
+                      <ArticleItem {...data} />
+                  }
+                />
+              </ItemList>
+            </>
+        }
+    </Contents>
     <style jsx>{`
 
       .search {
