@@ -82,6 +82,11 @@ const Article = ({ postData }) => {
             padding: 1rem 2rem;
             border-radius: 5px;
             display: inline-block;
+            text-decoration: none;
+
+            &:hover {
+              opacity: .8;
+            }
 
             &--wrapper {
                text-align: right;

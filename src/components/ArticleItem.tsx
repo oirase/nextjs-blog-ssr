@@ -63,7 +63,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
         }
 
         %item__list {
-          //margin-bottom: 1.5rem;
+          margin-bottom: 1.5rem;
           line-height: 1.9;
           color: white;
         }
@@ -93,7 +93,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           //padding: 2rem 0 3.5rem 0;
           background: ${skyblue};
           position: relative;
-          z-index: 100;
+          z-index: 1;
         }
 
         &__title {

@@ -25,7 +25,7 @@ const Tab: FC<Props> = ({ href, children}) => {
         $blue: #00CCCC;
 
         .tab {
-          padding: 1.8rem 0;
+          padding: 1.2rem 0;
           text-align: center;
           font-size: 1.4rem;
           width: 20rem;
@@ -45,7 +45,7 @@ const Tab: FC<Props> = ({ href, children}) => {
 
           @media(${sm}) {
             font-size: 2rem;
-            padding: 1.2rem 0;
+            padding: 1.8rem 0;
           }
 
           &:before {
