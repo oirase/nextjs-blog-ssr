@@ -7,7 +7,7 @@ const receiverEmailAddress = process.env.MAIL_RECEIVER_ADDRESS
 
 export default function getData(req, res) {
 //const data = req.body.map(field=>htmlspecialchars(field))
-let data: contactFormType | {} = {}
+let data: contactFormType
 for(let value of Object.keys(req.body)) {
   data[value] = htmlspecialchars(req.body[value])
 }
