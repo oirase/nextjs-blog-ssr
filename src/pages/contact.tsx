@@ -8,7 +8,7 @@ import Loader from '~/components/Loader'
 type contactFormType = {
   name: string
   email: string
-  subject: string
+  subject?: string
   body: string
 }
 
