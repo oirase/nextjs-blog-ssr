@@ -51,10 +51,10 @@ const Contact = () => {
     <Layout>
       { !data ? <ContactForm onSubmit={handleClick} /> : null }
       <div className="result-info">
-      { error && errorMessage　}
-      { !state ? null
-               : data ? complete
-                      : <Loader /> }
+      { error ? errorMessage　
+              : !state ? null
+                       : data ? complete
+                              : <Loader /> }
       </div>
       <style jsx>{`
         .result-info {
