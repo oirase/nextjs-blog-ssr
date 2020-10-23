@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
-import { brown,
-         white
-        } from '~/styles/variables'
+import { brown } from '~/styles/variables'
 
 const ScrollButton = () => {
 
@@ -43,7 +41,7 @@ const ScrollButton = () => {
           border-radius: 10px;
           background: ${brown};
           opacity: 0;
-          color: ${white};
+          color: white;
           visibility: hidden;
           position: fixed;
           right: 20px;

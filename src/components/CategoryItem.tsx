@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import CategoryType from '~/types/category'
-import { white, skyblue } from '~/styles/variables'
+import { skyblue } from '~/styles/variables'
 
 const CategoryItem: FC<CategoryType> = ({ name, image }) => (
 

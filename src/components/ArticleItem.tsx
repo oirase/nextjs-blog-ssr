@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import PostsType from '~/types/post'
-import { white, skyblue, linkColor } from '~/styles/variables'
+import { skyblue, linkColor } from '~/styles/variables'
 
 const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
 <>
@@ -34,8 +34,8 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
         border-radius: 18px;
         overflow: hidden;
         position: relative;
-        color: ${white};
-        background: ${white};
+        color: white;
+        background: white;
         cursor: pointer;
 
         &:last-child {
@@ -65,7 +65,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
         %item__list {
           //margin-bottom: 1.5rem;
           line-height: 1.9;
-          color: ${white};
+          color: white;
         }
 
         &__image-view {

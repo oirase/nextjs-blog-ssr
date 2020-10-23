@@ -7,7 +7,7 @@ import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
 import { getPostsData } from '~/lib/posts'
 import PostType from '~/types/post'
-import { white, yellow, darkbrown, fontBase } from '~/styles/variables'
+import { yellow, darkbrown, fontBase } from '~/styles/variables'
 
 export async function getStaticProps () {
   const allPostsData = getPostsData(({ id, title, category, date, image, content })=>{
@@ -110,7 +110,7 @@ const Search = ({ allPostsData }) => {
         }
 
         &__input {
-          background: ${white};
+          background: white;
           display: block;
           width: 17rem;
           padding: 2px 4px;

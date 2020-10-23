@@ -1,8 +1,8 @@
 
 export const headerFont = 'Courier New'
+export const sm = 'min-width: 480px'
 export const md = 'min-width: 768px'
 
-export const white = '#FFF'
 export const green = '#33CC99'
 export const orange = '#FF9900'
 export const red = '#FF3300'

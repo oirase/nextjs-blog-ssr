@@ -1,7 +1,5 @@
 import Link from 'next/link'
-import { fontBase,
-         white
-        } from '~/styles/variables'
+import { fontBase } from '~/styles/variables'
 
 const Header = () => (
  <header className="header">
@@ -14,7 +12,7 @@ const Header = () => (
       display: flex;
       justify-content: center;
       align-items: center;
-      color: ${white};
+      color: white;
 
       &__h1 {
         font-family: 'Abril Fatface', ${fontBase};

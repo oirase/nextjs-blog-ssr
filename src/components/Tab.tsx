@@ -1,9 +1,8 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import { fontBase,
-         white,
          brown,
-         md
+         sm
         } from '~/styles/variables'
 
 type Props = {
@@ -32,7 +31,7 @@ const Tab: FC<Props> = ({ href, children}) => {
           width: 20rem;
           max-width: 24%;
           margin-right: 0.8%;
-          border: 1px solid ${white};
+          border: 1px solid white;
           border-bottom: none;
           background: $blue;
           border-radius: 10px 10px 0 0;
@@ -44,7 +43,7 @@ const Tab: FC<Props> = ({ href, children}) => {
           position: relative;
           text-decoration: none;
 
-          @media(${md}) {
+          @media(${sm}) {
             font-size: 2rem;
           }
 
@@ -55,7 +54,7 @@ const Tab: FC<Props> = ({ href, children}) => {
             height: 100%;
             left: 0;
             top: 0;
-            background: ${white};
+            background: white;
             opacity: 0;
           }
 
@@ -90,7 +89,7 @@ const Tab: FC<Props> = ({ href, children}) => {
           &--hover {
 
             &:hover {
-              background: ${white};
+              background: white;
               opacity: .3;
             }
           }

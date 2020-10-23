@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import Layout from '~/components/Layout'
 import { getAllPostIds, getPostData } from '~/lib/posts'
 import { useActiveArticleDispatch } from '~/components/Context'
-import { white, yellow, md } from '~/styles/variables'
+import { yellow, md } from '~/styles/variables'
 
 export async function getStaticPaths() {
   const paths = getAllPostIds()
@@ -46,7 +46,7 @@ const Article = ({ postData }) => {
       </div>
       <style jsx>{`
         .article {
-          background: ${white};
+          background: white;
           padding: 3rem 3rem 4.5rem 3rem;
           line-height: 2;
           //min-height: 60rem;

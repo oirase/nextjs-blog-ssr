@@ -1,10 +1,12 @@
 import { createTransport } from 'nodemailer'
+import htmlspecialchars from 'htmlspecialchars'
 
 const senderEmailAdress = process.env.MAIL_FROM_ADDRESS
 const receiverEmailAddress = process.env.MAIL_RECEIVER_ADDRESS
 
 export default function getData(req, res) {
-const { name, email, subject, body } = req.body
+const data = req.body.map(field=>htmlspecialchars(field))
+const { name, email, subject, body } = data
 
    const smtpConfig = {
   service: process.env.MAIL_SERVICE,
@@ -49,6 +51,6 @@ ${body}
   })
 */
 //res.status(200).json({ result:'success' })
-res.status(200).json(smtpConfig)
+res.status(200).json(data)
 }
 

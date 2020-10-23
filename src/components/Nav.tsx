@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import Tab from '~/components/Tab'
 import { useActiveArticleState } from '~/components/Context'
 import { fontBase,
-         white,
          brown,
          md
         } from '~/styles/variables'

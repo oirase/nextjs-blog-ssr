@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { white, purple } from '~/styles/variables'
+import { purple } from '~/styles/variables'
 
 type Props = {
   url?: string
@@ -22,7 +22,7 @@ const Footer = ({ url='/contact', text='contact us' }) => (
       border-radius: 0 0 10px 10px;
 
       &__link{
-        color: ${white};
+        color: white;
         text-decoration: none;
 
         &:hover {

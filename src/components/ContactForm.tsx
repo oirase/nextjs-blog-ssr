@@ -1,6 +1,6 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
-import { white, skyblue } from '~/styles/variables'
+import { skyblue } from '~/styles/variables'
 
 type Props = {
   onSubmit: (value: any)=>void
@@ -75,8 +75,8 @@ const ContactForm = ({ onSubmit }: Props) => (
 
         @at-root %form__input-element {
           margin-bottom: 3rem;
-          width: 25rem;
-          background: ${white};
+          width: 26rem;
+          background: white;
         }
 
         &__input {
@@ -88,7 +88,7 @@ const ContactForm = ({ onSubmit }: Props) => (
 
         &__label {
           @extend %form__element;
-          color: ${white};
+          color: white;
         }
 
         &__textarea {
@@ -100,14 +100,14 @@ const ContactForm = ({ onSubmit }: Props) => (
 
         &__button {
           padding: 2rem 4rem;
-          background: ${white};
+          background: white;
           color: ${skyblue};
           border-radius: 7px;
         }
 
         &__error {
           margin-bottom: 3rem;
-          color: ${white};
+          color: white;
           background: red;
           padding: 1.2rem 0;
           width: 100%;
