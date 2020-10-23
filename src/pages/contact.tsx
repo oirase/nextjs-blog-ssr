@@ -4,13 +4,7 @@ import useSWR from 'swr'
 import ContactForm from '~/components/ContactForm'
 import Layout from '~/components/Layout'
 import Loader from '~/components/Loader'
-
-type contactFormType = {
-  name: string
-  email: string
-  subject?: string
-  body: string
-}
+import contactFormType from '~/types/contactForm'
 
 const Contact = () => {
 
