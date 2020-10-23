@@ -31,9 +31,9 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
       .item {
         margin-bottom: 4rem;
         font-size: 1.8rem;
-        //border-radius: 18px;
+        border-radius: 18px;
         overflow: hidden;
-        //position: relative;
+        position: relative;
         color: ${white};
         background: ${white};
         cursor: pointer;
@@ -46,11 +46,22 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           width: 27rem;
           background: ${skyblue};
 
+          &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: ${skyblue};
+          }
+
           &:hover {
             opacity: .8;
           }
         }
-/*
+
         %item__list {
           //margin-bottom: 1.5rem;
           line-height: 1.9;
@@ -78,9 +89,11 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
         &__info {
           font-size: 1.4rem;
           text-align: center;
-          //padding: 2rem 2.5rem 3.5rem 2.5rem;
+          padding: 2rem 2.5rem 3.5rem 2.5rem;
           //padding: 2rem 0 3.5rem 0;
           background: ${skyblue};
+          position: relative;
+          z-index: 100;
         }
 
         &__title {
@@ -102,7 +115,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           }
         }
       }
-*/
+
   `}</style>
 </>
 
