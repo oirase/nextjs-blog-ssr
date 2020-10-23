@@ -45,6 +45,7 @@ const Tab: FC<Props> = ({ href, children}) => {
 
           @media(${sm}) {
             font-size: 2rem;
+            padding: 1.2rem 0;
           }
 
           &:before {

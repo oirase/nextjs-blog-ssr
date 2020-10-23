@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import Layout from '~/components/Layout'
 import { getAllPostIds, getPostData } from '~/lib/posts'
 import { useActiveArticleDispatch } from '~/components/Context'
-import { yellow, md } from '~/styles/variables'
+import { yellow, purple, md } from '~/styles/variables'
 
 export async function getStaticPaths() {
   const paths = getAllPostIds()
@@ -40,9 +40,11 @@ const Article = ({ postData }) => {
           <div className="article__content">
             <p className="article__text" dangerouslySetInnerHTML={{ __html: postData.content }} />
           </div>
-            <Link href={`/category/${postData.category}`}>
-              <a className="article__tag">{postData.category}</a>
-            </Link>
+            <div className="article__tag--wrapper">
+              <Link href={`/category/${postData.category}`}>
+                <a className="article__tag">{postData.category}</a>
+              </Link>
+            </div>
       </div>
       <style jsx>{`
         .article {
@@ -70,8 +72,20 @@ const Article = ({ postData }) => {
             color: #666;
           }
 
-          &__tag {
+          &__text {
+             margin-bottom: 4rem;
+          }
 
+          &__tag {
+            background: ${purple};
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            display: inline-block;
+
+            &--wrapper {
+               text-align: right;
+            }
           }
         }
       `}</style>
