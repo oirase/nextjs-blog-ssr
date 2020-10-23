@@ -36,20 +36,20 @@ const Nav = () => {
         </Tab>
         <Tab
           href='/category'
-          background={red}
+          background={isActive('/category', red)}
         >
           Category
         </Tab>
         <Tab
           href='/search'
-          background={orange}
+          background={isActive('/search', orange)}
         >
           Search
         </Tab>
         { state
         ? <Tab
             href={`/article/${state}`}
-            background={blue}
+            background={isActive(`/article/${state}`, orange)}
           >
             Article
           </Tab>
