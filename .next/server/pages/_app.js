@@ -137,7 +137,7 @@ function App({
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActiveArticleProvider; });
-/* unused harmony export useActiveArticleState */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return useActiveArticleState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return useActiveArticleDispatch; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
