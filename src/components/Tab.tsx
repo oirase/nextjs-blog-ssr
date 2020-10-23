@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import Link from 'next/link'
+import { lighten } from 'polished'
 import { fontBase,
          brown,
          sm
@@ -7,9 +8,10 @@ import { fontBase,
 
 type Props = {
   href: string
+  background: string
 }
 
-const Tab: FC<Props> = ({ href, children}) => {
+const Tab: FC<Props> = ({ href, background, children}) => {
   return (
 
     <Link href={href}>
@@ -33,7 +35,8 @@ const Tab: FC<Props> = ({ href, children}) => {
           margin-right: 0.8%;
           border: 1px solid white;
           border-bottom: none;
-          background: $blue;
+          background: ${background};
+          border-color: ${lighten(0.4, background)};
           border-radius: 10px 10px 0 0;
           font-size: 1.4rem;
           font-family: Georgia, 'Open Sans Condensed', ${fontBase};
@@ -61,26 +64,6 @@ const Tab: FC<Props> = ({ href, children}) => {
 
           &:hover::before {
             opacity: .3;
-          }
-
-          &:nth-child(1) {
-            background: $green;
-            border-color: lighten($green, 40%);
-          }
-
-          &:nth-child(2) {
-            background: $orange;
-            border-color: lighten($orange, 40%);
-          }
-
-          &:nth-child(3) {
-            background: $red;
-            border-color: lighten($red, 40%);
-          }
-
-          &:nth-child(4) {
-            background: $blue;
-            border-color: lighten($blue, 40%);
           }
 
           &:last-child {

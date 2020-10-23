@@ -3,6 +3,10 @@ import { useRouter } from 'next/router'
 import Tab from '~/components/Tab'
 import { useActiveArticleState } from '~/components/Context'
 import { fontBase,
+         green,
+         red,
+         orange,
+         blue,
          brown,
          md
         } from '~/styles/variables'
@@ -14,17 +18,29 @@ const Nav = () => {
   return (
     <nav className="nav">
       <div className="nav__menu">
-        <Tab href='/' >
+        <Tab
+          href='/'
+          background={green}
+        >
           New
         </Tab>
-        <Tab href='/category' >
+        <Tab
+          href='/category'
+          background={red}
+        >
           Category
         </Tab>
-        <Tab href='/search' >
+        <Tab
+          href='/search'
+          background={orange}
+        >
           Search
         </Tab>
         { state
-        ? <Tab href={`/article/${state}`} >
+        ? <Tab
+            href={`/article/${state}`}
+            background={blue}
+          >
             Article
           </Tab>
         : null }
