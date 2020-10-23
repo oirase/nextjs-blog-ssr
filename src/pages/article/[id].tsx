@@ -30,7 +30,7 @@ const Article = ({ postData }) => {
   dispatch(router.query.id)
 
   return (
-    <Layout>
+    <Layout background="white">
       <Head>
         <title>{postData.title}</title>
       </Head>

@@ -48,16 +48,16 @@ const Index = ({ allPostsData }: Props) => {
         length={allPostsData.length}
         setOffset={setOffset}
       />
-      <ItemList>
-        <ListRender
-          data={allPostsData}
-          offset={offset}
-          render={
-            (data)=>
-              <ArticleItem {...data} />
-          }
-        />
-      </ItemList>
+        <ItemList>
+          <ListRender
+            data={allPostsData}
+            offset={offset}
+            render={
+              (data)=>
+                <ArticleItem {...data} />
+            }
+          />
+        </ItemList>
     </Layout>
   )
 }

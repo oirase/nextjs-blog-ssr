@@ -6,9 +6,13 @@ import Header from '~/components/Header'
 import Nav from '~/components/Nav'
 import Footer from '~/components/Footer'
 import styles from '~/components/layout.module.css'
-import { purple } from '~/styles/variables'
+import { purple, yellow } from '~/styles/variables'
 
-const Layout: FC = ({ children }) => (
+type Props = {
+  background?: string
+}
+
+const Layout: FC<Props> = ({ children, background = yellow }) => (
   <>
     <Meta />
     <ScrollButton />
@@ -17,7 +21,7 @@ const Layout: FC = ({ children }) => (
         <Header />
         <Nav />
       </div>
-      <div>
+      <div className="contents">
         {children}
       </div>
       <Footer />
@@ -33,6 +37,12 @@ const Layout: FC = ({ children }) => (
           background-image: url('/images/layout/image03.jpg');
           background-color: purple;
           border-radius: 10px 10px 0 0;
+        }
+
+        .contents {
+          background: ${background};
+          padding: 2rem 0;
+          min-height: 100%;
         }
       `}</style>
     </div>
