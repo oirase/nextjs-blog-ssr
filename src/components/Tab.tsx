@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 //import { lighten } from 'polished'
 import { fontBase,
          brown,
@@ -20,11 +21,6 @@ const Tab: FC<Props> = ({ href, background, children}) => {
             {children}
 
          <style jsx>{`
-
-        $green: #33CC99;
-        $orange: #FF9900;
-        $red: #FF3300;
-        $blue: #00CCCC;
 
         .tab {
           padding: 1.2rem 0;

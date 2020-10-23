@@ -7,6 +7,7 @@ import { fontBase,
          red,
          orange,
          blue,
+         yellow,
          brown,
          md
         } from '~/styles/variables'
@@ -14,13 +15,22 @@ import { fontBase,
 const Nav = () => {
 
   const state = useActiveArticleState()
+  const router = useRouter()
+
+  const isActive = (path, color) => {
+    if (router.pathname === path) {
+      return yellow
+    } else {
+      return color
+    }
+  }
 
   return (
     <nav className="nav">
       <div className="nav__menu">
         <Tab
           href='/'
-          background={green}
+          background={isActive('/', green)}
         >
           New
         </Tab>
