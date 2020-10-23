@@ -7,11 +7,11 @@ const receiverEmailAddress = process.env.MAIL_RECEIVER_ADDRESS
 
 export default function getData(req, res) {
 //const data = req.body.map(field=>htmlspecialchars(field))
-let data: contactFormType | {} = {}
+let data = {} as contactFormType
 for(let value of Object.keys(req.body)) {
   data[value] = htmlspecialchars(req.body[value])
 }
-const { name, email, subject, body } = data as contactFormType
+const { name, email, subject, body } = data
 /*
    const smtpConfig = {
   service: process.env.MAIL_SERVICE,
