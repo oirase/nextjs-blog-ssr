@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import Link from 'next/link'
-import { lighten } from 'polished'
+//import { lighten } from 'polished'
 import { fontBase,
          brown,
          sm
@@ -36,7 +36,7 @@ const Tab: FC<Props> = ({ href, background, children}) => {
           border: 1px solid white;
           border-bottom: none;
           background: ${background};
-          border-color: ${lighten(0.4, background)};
+          //border-color: red;
           border-radius: 10px 10px 0 0;
           font-size: 1.4rem;
           font-family: Georgia, 'Open Sans Condensed', ${fontBase};
