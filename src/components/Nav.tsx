@@ -21,7 +21,7 @@ const Nav = () => {
     if (router.pathname === path) {
       return {
         active: true,
-        actveBackground: yellow
+        activeBackground: yellow
       }
     }
   }
