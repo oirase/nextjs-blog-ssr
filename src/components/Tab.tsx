@@ -77,7 +77,7 @@ const Tab: FC<Props> = ({
         }
 
         .active {
-          background: ${activeBackground}
+          background: ${activeBackground};
 
           &:hover::before {
               opacity: 1;
