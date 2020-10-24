@@ -38,14 +38,14 @@ const Nav = () => {
         </Tab>
         <Tab
           href='/category'
-          background={red}
+          background={orange}
           {...isActive('/category')}
         >
           Category
         </Tab>
         <Tab
           href='/search'
-          background={orange}
+          background={red}
           {...isActive('/search')}
         >
           Search

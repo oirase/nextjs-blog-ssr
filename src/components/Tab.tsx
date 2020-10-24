@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-//import { lighten } from 'polished'
 import { fontBase,
          brown,
          sm
@@ -80,7 +79,7 @@ const Tab: FC<Props> = ({
           background: ${activeBackground};
 
           &:hover::before {
-              opacity: 1;
+              opacity: 0;
           }
         }
       `}</style>

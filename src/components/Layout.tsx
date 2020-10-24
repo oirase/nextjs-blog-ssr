@@ -9,10 +9,15 @@ import styles from '~/components/layout.module.css'
 import { purple, yellow } from '~/styles/variables'
 
 type Props = {
-  background?: string
+  background?: string,
+  padding?: string
 }
 
-const Layout: FC<Props> = ({ children, background = yellow }) => (
+const Layout: FC<Props> = ({
+  background = yellow,
+  padding = '2rem 0',
+  children
+}) => (
   <>
     <Meta />
     <ScrollButton />
@@ -41,7 +46,7 @@ const Layout: FC<Props> = ({ children, background = yellow }) => (
 
         .contents {
           background: ${background};
-          padding: 2rem 0;
+          padding: ${padding};
           min-height: 100%;
         }
       `}</style>
