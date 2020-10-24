@@ -16,6 +16,7 @@ const Nav = () => {
 
   const state = useActiveArticleState()
   const router = useRouter()
+  console.log(router.pathname)
 
   const isActive = (path) => {
     if (router.pathname === path) {
@@ -54,7 +55,7 @@ const Nav = () => {
         ? <Tab
             href={`/article/${state}`}
             background={blue}
-            {...isActive(`/${state}`)}
+            {...isActive(`/article/${state}`)}
           >
             Article
           </Tab>

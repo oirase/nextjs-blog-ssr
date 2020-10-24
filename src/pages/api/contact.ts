@@ -6,13 +6,13 @@ const senderEmailAdress = process.env.MAIL_FROM_ADDRESS
 const receiverEmailAddress = process.env.MAIL_RECEIVER_ADDRESS
 
 export default function getData(req, res) {
-//const data = req.body.map(field=>htmlspecialchars(field))
+
 let data = {} as contactFormType
 for(let value of Object.keys(req.body)) {
   data[value] = htmlspecialchars(req.body[value])
 }
 const { name, email, subject, body } = data
-/*
+
    const smtpConfig = {
   service: process.env.MAIL_SERVICE,
   host: process.env.MAIL_FROM_HOST,
@@ -43,7 +43,7 @@ ${body}
     subject: `${name}様からのお問い合わせ`,
     text: mailView
   }
-*/
+
 /*
   transporter.sendMail(message, (error, response) => {
     if(error) {

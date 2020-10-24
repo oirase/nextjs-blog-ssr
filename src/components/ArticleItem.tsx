@@ -58,7 +58,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           }
 
           &:hover {
-            opacity: .8;
+            opacity: .7;
           }
         }
 
