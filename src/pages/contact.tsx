@@ -47,7 +47,7 @@ const Contact = () => {
   const errorMessage = <p>お問い合わせの送信に失敗しました。しばらく時間を置いてから再度お試し下さい。</p>
 
   return (
-    <Layout padding='4rem 0 2rem 0' >
+    <Layout padding='5rem 0 2rem 0' >
       { !data ? <ContactForm onSubmit={handleClick} /> : null }
       <div className="result-info">
       { error ? errorMessage　
