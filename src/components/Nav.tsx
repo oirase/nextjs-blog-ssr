@@ -17,11 +17,12 @@ const Nav = () => {
   const state = useActiveArticleState()
   const router = useRouter()
 
-  const isActive = (path, color) => {
+  const isActive = (path) => {
     if (router.pathname === path) {
-      return yellow
-    } else {
-      return color
+      return {
+        active: true,
+        actveBackground: yellow
+      }
     }
   }
 
@@ -30,26 +31,30 @@ const Nav = () => {
       <div className="nav__menu">
         <Tab
           href='/'
-          background={isActive('/', green)}
+          background={green}
+          {...isActive('/')}
         >
           New
         </Tab>
         <Tab
           href='/category'
-          background={isActive('/category', red)}
+          background={red}
+          {...isActive('/category')}
         >
           Category
         </Tab>
         <Tab
           href='/search'
-          background={isActive('/search', orange)}
+          background={orange}
+          {...isActive('/search')}
         >
           Search
         </Tab>
         { state
         ? <Tab
             href={`/article/${state}`}
-            background={isActive(`/article/${state}`, orange)}
+            background={blue}
+            {...isActive(`/${state}`)}
           >
             Article
           </Tab>

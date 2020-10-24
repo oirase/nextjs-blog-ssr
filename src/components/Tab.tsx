@@ -10,13 +10,22 @@ import { fontBase,
 type Props = {
   href: string
   background: string
+  active?: boolean
+  activeBackground?: string
 }
 
-const Tab: FC<Props> = ({ href, background, children}) => {
+const Tab: FC<Props> = ({
+  href,
+  background,
+  active=false,
+  activeBackground='white',
+  children
+}) => {
+
   return (
 
     <Link href={href}>
-      <a className="tab">
+      <a className={`tab${active ? ' active' : null}`}>
 
             {children}
 
@@ -65,13 +74,13 @@ const Tab: FC<Props> = ({ href, background, children}) => {
           &:last-child {
             margin-right: 0;
           }
+        }
 
-          &--hover {
+        .active {
+          background: ${activeBackground}
 
-            &:hover {
-              background: white;
-              opacity: .3;
-            }
+          &:hover::before {
+              opacity: 1;
           }
         }
       `}</style>
