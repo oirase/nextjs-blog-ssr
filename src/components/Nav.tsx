@@ -20,16 +20,19 @@ const Nav = () => {
 
   const isActive = (
     path: string,
-    color: string = yellow
+    background: string = yellow,
+    color: string = brown
   ): {
     active: boolean
     activeBackground: string
+    activeColor: string
   } => {
     const regexp = new RegExp(path)
     if (regexp.test(router.pathname)) {
       return {
         active: true,
-        activeBackground: color,
+        activeBackground: background,
+        activeColor: color
       }
     }
   }

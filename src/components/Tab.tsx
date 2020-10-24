@@ -8,6 +8,7 @@ type Props = {
   background: string
   active?: boolean
   activeBackground?: string
+  activeColor?: string
 }
 
 const Tab: FC<Props> = ({
@@ -15,7 +16,8 @@ const Tab: FC<Props> = ({
   background,
   active = false,
   activeBackground = 'white',
-  children,
+  activeColor = 'black',
+  children
 }) => {
   return (
     <Link href={href}>
@@ -61,7 +63,7 @@ const Tab: FC<Props> = ({
             }
 
             &:hover::before {
-              opacity: 0.4;
+              opacity: 0.5;
             }
 
             &:last-child {
@@ -71,6 +73,7 @@ const Tab: FC<Props> = ({
 
           .active {
             background: ${activeBackground};
+            color: ${activeColor};
 
             &:hover::before {
               opacity: 0;
