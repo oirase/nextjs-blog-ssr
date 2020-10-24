@@ -25,7 +25,7 @@ const Tab: FC<Props> = ({
   return (
 
     <Link href={href}>
-      <a className={`tab${active ? ' active' : null}`}>
+      <a className={`tab ${active ? 'active' : null}`}>
 
             {children}
 
