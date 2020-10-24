@@ -9,39 +9,39 @@ import ListRender from '~/components/ListRender'
 import ItemList from '~/components/ItemList'
 
 export async function getStaticPaths() {
-
   let allPostsCategory = getPostsSingleData(({ category }) => category)
   allPostsCategory = Array.from(new Set(allPostsCategory))
-  const paths = allPostsCategory.map(category => {
+  const paths = allPostsCategory.map((category) => {
     return {
       params: {
-        category
-      }
+        category,
+      },
     }
   })
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
 export async function getStaticProps({ params }) {
-  const allPostsData = getPostsData(({ id, title, category, date, image })=>{
+  const allPostsData = getPostsData(({ id, title, category, date, image }) => {
     return {
       id,
       title,
       category,
       date,
-      image
+      image,
     }
   })
 
-  const categoryPostsData = allPostsData.filter(({ category }) =>
-    category === params.category)
+  const categoryPostsData = allPostsData.filter(
+    ({ category }) => category === params.category
+  )
   return {
     props: {
-      categoryPostsData
-    }
+      categoryPostsData,
+    },
   }
 }
 
@@ -50,24 +50,20 @@ type Props = {
 }
 
 const Category = ({ categoryPostsData }: Props) => {
-
   const [offset, setOffset] = useState(1)
 
   return (
     <Layout>
       <Paginate
-              offset={offset}
-              length={categoryPostsData.length}
-              setOffset={setOffset}
-            />
+        offset={offset}
+        length={categoryPostsData.length}
+        setOffset={setOffset}
+      />
       <ItemList>
         <ListRender
           data={categoryPostsData}
           offset={offset}
-          render={
-            (data)=>
-              <ArticleItem {...data} />
-          }
+          render={(data) => <ArticleItem {...data} />}
         />
       </ItemList>
     </Layout>

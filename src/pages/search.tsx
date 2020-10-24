@@ -9,36 +9,38 @@ import { getPostsData } from '~/lib/posts'
 import PostType from '~/types/post'
 import { yellow, darkbrown, fontBase } from '~/styles/variables'
 
-export async function getStaticProps () {
-  const allPostsData = getPostsData(({ id, title, category, date, image, content })=>{
-  return {
-    id,
-    title,
-    category,
-    date,
-    image,
-    content
-  }})
+export async function getStaticProps() {
+  const allPostsData = getPostsData(
+    ({ id, title, category, date, image, content }) => {
+      return {
+        id,
+        title,
+        category,
+        date,
+        image,
+        content,
+      }
+    }
+  )
 
   return {
     props: {
-      allPostsData
-    }
+      allPostsData,
+    },
   }
 }
 
 const Search = ({ allPostsData }) => {
-
   const inputSearch = useRef(null)
   const [searchResult, setSearchResult] = useState<PostType[] | null>(null)
   const [offset, setOffset] = useState(1)
 
   const handleSearch = () => {
     const searchWord = inputSearch.current.value
-    const result = allPostsData.filter(data=>{
-      const {id, ...rest} = data
-      for (let key of Object.keys(rest)) {
-        if(rest[key].includes(searchWord)) {
+    const result = allPostsData.filter((data) => {
+      const { id, ...rest } = data
+      for (const key of Object.keys(rest)) {
+        if (rest[key].includes(searchWord)) {
           return true
         }
       }
@@ -63,71 +65,70 @@ const Search = ({ allPostsData }) => {
             onKeyPress={keyPress}
             autoFocus
           />
-          <button className="search__button" onClick={handleSearch}>検索</button>
+          <button className="search__button" onClick={handleSearch}>
+            検索
+          </button>
         </div>
         <div className="search__result">
-        {searchResult
-          ? <p>{searchResult.length} search results</p>
-          : <p>please enter a search term</p>
-        }
+          {searchResult ? (
+            <p>{searchResult.length} search results</p>
+          ) : (
+            <p>please enter a search term</p>
+          )}
         </div>
       </div>
-      {searchResult && searchResult.length &&
-          <>
-            <Paginate
+      {searchResult && searchResult.length && (
+        <>
+          <Paginate
+            offset={offset}
+            length={searchResult.length}
+            setOffset={setOffset}
+          />
+          <ItemList>
+            <ListRender
+              data={searchResult}
               offset={offset}
-              length={searchResult.length}
-              setOffset={setOffset}
+              render={(data) => <ArticleItem {...data} />}
             />
-            <ItemList>
-              <ListRender
-                data={searchResult}
-                offset={offset}
-                render={
-                  (data)=>
-                    <ArticleItem {...data} />
-                }
-              />
-            </ItemList>
-          </>
-      }
-    <style jsx>{`
-
-      .search {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        height: 14rem;
-        padding: 3rem 0;
-
-        &__box {
-          border: 1px solid ${darkbrown};
-          height: 3.3rem;
+          </ItemList>
+        </>
+      )}
+      <style jsx>{`
+        .search {
           display: flex;
-          border-radius: 4px;
-          over-flow: hidden;
-        }
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          height: 14rem;
+          padding: 3rem 0;
 
-        &__input {
-          background: white;
-          display: block;
-          width: 17rem;
-          padding: 2px 4px;
-          height: 100%;
-        }
+          &__box {
+            border: 1px solid ${darkbrown};
+            height: 3.3rem;
+            display: flex;
+            border-radius: 4px;
+            over-flow: hidden;
+          }
 
-        &__button {
-          background: ${darkbrown};
-          display: block;
-          width: 9rem;
-          color: ${yellow};
-          height: 100%;
-          font-size: 1.8rem;
-          font-family: Georgia, ${fontBase};
+          &__input {
+            background: white;
+            display: block;
+            width: 17rem;
+            padding: 2px 4px;
+            height: 100%;
+          }
+
+          &__button {
+            background: ${darkbrown};
+            display: block;
+            width: 9rem;
+            color: ${yellow};
+            height: 100%;
+            font-size: 1.8rem;
+            font-family: Georgia, ${fontBase};
+          }
         }
-      }
-    `}</style>
+      `}</style>
     </Layout>
   )
 }

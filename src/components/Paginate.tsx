@@ -1,10 +1,6 @@
 import { FC } from 'react'
 import css from 'styled-jsx/css'
-import { fontBase,
-         yellow,
-         darkbrown,
-         md
-      } from '~/styles/variables'
+import { fontBase, yellow, darkbrown, md } from '~/styles/variables'
 
 type Props = {
   offset: number
@@ -13,37 +9,36 @@ type Props = {
 }
 
 const Li: FC<any> = ({ children, active, ...rest }) => (
-  <li  className={`paginate__li${active ? '--active' : ''}`} {...rest}>
+  <li className={`paginate__li${active ? '--active' : ''}`} {...rest}>
     {children}
     <style jsx>{`
       .paginate__li {
-          display: flex;
-          justify-content: center;
-          margin: 0 1.5rem 1.5rem 0;
-          align-items: center;
-          background: ${darkbrown};
-          border-radius: 100%;
-          height: 4rem;
-          width: 4rem;
-          cursor: pointer;
+        display: flex;
+        justify-content: center;
+        margin: 0 1.5rem 1.5rem 0;
+        align-items: center;
+        background: ${darkbrown};
+        border-radius: 100%;
+        height: 4rem;
+        width: 4rem;
+        cursor: pointer;
 
-          &--active {
-            @extend .paginate__li;
-            background: ${yellow};
-            border: 1px solid ${darkbrown};
-            color: ${darkbrown};
-          }
+        &--active {
+          @extend .paginate__li;
+          background: ${yellow};
+          border: 1px solid ${darkbrown};
+          color: ${darkbrown};
+        }
 
-          &:hover {
-            @extend .paginate__li--active;
-          }
+        &:hover {
+          @extend .paginate__li--active;
+        }
       }
     `}</style>
   </li>
 )
 
 const Paginate = ({ offset, length, range, setOffset }) => {
-
   const totalPage = Math.ceil(length / range)
   if (totalPage === 1) return null
   const start = offset < 10 ? 1 : Math.floor(offset / 10) * 10
@@ -51,52 +46,52 @@ const Paginate = ({ offset, length, range, setOffset }) => {
   if (end > totalPage) end = totalPage
   const list = []
 
-  for (let i=start; i<=end; ++i) {
+  for (let i = start; i <= end; ++i) {
     i === offset
       ? list.push(<Li active={true}>{i}</Li>)
-      : list.push(<Li onClick={()=>setOffset(i)}>{i}</Li>)
+      : list.push(<Li onClick={() => setOffset(i)}>{i}</Li>)
   }
 
-  start !== 1 && list.unshift(<Li onClick={()=>setOffset(1)}>1</Li>)
-  end !== totalPage && list.push(<Li onClick={()=>setOffset(totalPage)}>{totalPage}</Li>)
+  start !== 1 && list.unshift(<Li onClick={() => setOffset(1)}>1</Li>)
+  end !== totalPage &&
+    list.push(<Li onClick={() => setOffset(totalPage)}>{totalPage}</Li>)
 
-  offset !== 1 && list.unshift(<Li onClick={()=>setOffset(offset - 1)}>&#9664;</Li>)
-  offset !== end && list.push(<Li onClick={()=>setOffset(offset + 1)}>&#9654;</Li>)
+  offset !== 1 &&
+    list.unshift(<Li onClick={() => setOffset(offset - 1)}>&#9664;</Li>)
+  offset !== end &&
+    list.push(<Li onClick={() => setOffset(offset + 1)}>&#9654;</Li>)
 
   return (
-  <div className="paginate">
-    <ul  className="paginate__ul">
-      {list}
-    </ul>
-    <style jsx>{`
-      .paginate {
-        width: 100%;
-        color: ${yellow};
-        padding: 4rem 3.5rem 0 5rem;
-        //background: ${yellow};
-        font-family: 'Abril Fatface', ${fontBase};
+    <div className="paginate">
+      <ul className="paginate__ul">{list}</ul>
+      <style jsx>{`
+        .paginate {
+          width: 100%;
+          color: ${yellow};
+          padding: 4rem 3.5rem 0 5rem;
+          //background: ${yellow};
+          font-family: 'Abril Fatface', ${fontBase};
 
-        &__ul {
-          display: flex;
-          flex-wrap: wrap;
-          margin: 0 auto;
-          width: 80rem;
-          max-width: 100%;
+          &__ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: 80rem;
+            max-width: 100%;
 
-
-          @media(${md}){
-            justify-content: center;
+            @media (${md}) {
+              justify-content: center;
+            }
           }
         }
-      }
-    `}</style>
-  </div>
+      `}</style>
+    </div>
   )
 }
 
 Paginate.defaultProps = {
   range: 24,
-  offset: 1
+  offset: 1,
 }
 
 export default Paginate

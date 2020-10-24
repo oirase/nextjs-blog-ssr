@@ -4,30 +4,28 @@ import PostsType from '~/types/post'
 import { skyblue, linkColor } from '~/styles/variables'
 
 const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
-<>
-  <div className="item">
-    <div className="item__contents">
-      <Link href={`/article/${id}`}>
-        <a className="item__link">
-          <div className="item__image-view">
-            <img className="item__image" src={`/images/article/${image}`} />
-          </div>
-          <ul className="item__info">
-            <li className="item__title">
-                {title}
-            </li>
-            <li className="item__date">{date}</li>
-            <li className="item__category">
-              <Link href={`/category/${category}`}>
-                <a className="item__category--link">{category}</a>
-              </Link>
-            </li>
-          </ul>
-        </a>
-      </Link>
+  <>
+    <div className="item">
+      <div className="item__contents">
+        <Link href={`/article/${id}`}>
+          <a className="item__link">
+            <div className="item__image-view">
+              <img className="item__image" src={`/images/article/${image}`} />
+            </div>
+            <ul className="item__info">
+              <li className="item__title">{title}</li>
+              <li className="item__date">{date}</li>
+              <li className="item__category">
+                <Link href={`/category/${category}`}>
+                  <a className="item__category--link">{category}</a>
+                </Link>
+              </li>
+            </ul>
+          </a>
+        </Link>
+      </div>
     </div>
-  </div>
-  <style jsx>{`
+    <style jsx>{`
       .item {
         margin-bottom: 4rem;
         font-size: 1.8rem;
@@ -47,7 +45,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           background: ${skyblue};
 
           &::before {
-            content: "";
+            content: '';
             position: absolute;
             display: block;
             top: 0;
@@ -58,7 +56,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
           }
 
           &:hover {
-            opacity: .7;
+            opacity: 0.7;
           }
         }
 
@@ -105,22 +103,17 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
         }
 
         &__category--link {
-          color: ${linkColor};
+          color: ${yellow};
           text-decoration: none;
-          //position: relative;
-          //z-index: 200;
+
 
           &:hover {
             text-decoration: underline;
           }
         }
       }
-
-  `}</style>
-</>
-
+    `}</style>
+  </>
 )
 
 export default ArticleItem
-
-

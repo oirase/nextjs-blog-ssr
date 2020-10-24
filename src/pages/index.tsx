@@ -3,7 +3,8 @@ import Layout from '~/components/Layout'
 import { getPostsData } from '~/lib/posts'
 import {
   useActiveArticleState,
-  useActiveArticleDispatch } from '~/components/Context'
+  useActiveArticleDispatch,
+} from '~/components/Context'
 import ItemList from '~/components/ItemList'
 import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
@@ -16,20 +17,21 @@ import { yellow, md } from '~/styles/variables'
 
 //dotenv.config()
 
-export async function getStaticProps () {
-  const allPostsData = getPostsData(({ id, title, category, date, image })=>{
-  return {
-    id,
-    title,
-    category,
-    date,
-    image
-  }})
+export async function getStaticProps() {
+  const allPostsData = getPostsData(({ id, title, category, date, image }) => {
+    return {
+      id,
+      title,
+      category,
+      date,
+      image,
+    }
+  })
 
   return {
     props: {
-      allPostsData
-    }
+      allPostsData,
+    },
   }
 }
 
@@ -38,7 +40,6 @@ type Props = {
 }
 
 const Index = ({ allPostsData }: Props) => {
-
   const [offset, setOffset] = useState(1)
 
   return (
@@ -48,16 +49,13 @@ const Index = ({ allPostsData }: Props) => {
         length={allPostsData.length}
         setOffset={setOffset}
       />
-        <ItemList>
-          <ListRender
-            data={allPostsData}
-            offset={offset}
-            render={
-              (data)=>
-                <ArticleItem {...data} />
-            }
-          />
-        </ItemList>
+      <ItemList>
+        <ListRender
+          data={allPostsData}
+          offset={offset}
+          render={(data) => <ArticleItem {...data} />}
+        />
+      </ItemList>
     </Layout>
   )
 }

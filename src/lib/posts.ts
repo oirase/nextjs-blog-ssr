@@ -8,29 +8,28 @@ import PostType from '~/types/post'
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
 const getFileData = (fileName) => {
+  const id = fileName.replace(/\.md$/, '')
+  const fullPath = path.join(postsDirectory, fileName)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const matterResult = matter(fileContents)
 
-    const id = fileName.replace(/\.md$/, '')
-    const fullPath = path.join(postsDirectory, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
-    const matterResult = matter(fileContents)
+  const result = {
+    id,
+    ...(matterResult.data as PostType),
+    content: matterResult.content,
+  }
 
-    const result = {
-      id,
-      ...(matterResult.data as PostType),
-      content: matterResult.content
-    }
-
-    return result
+  return result
 }
 
 export const getAllPostIds = () => {
   const fileNames = fs.readdirSync(postsDirectory)
 
-  return fileNames.map(fileName => {
+  return fileNames.map((fileName) => {
     return {
       params: {
-        id: fileName.replace(/\.md$/, '')
-      }
+        id: fileName.replace(/\.md$/, ''),
+      },
     }
   })
 }
@@ -49,21 +48,21 @@ export const getPostData = async (id) => {
   return {
     id,
     content,
-    ...matterResult.data
+    ...matterResult.data,
   }
 }
 
-export const getPostsData = (getProp: (post: PostType)=>PostType): PostType[] => {
-
+export const getPostsData = (
+  getProp: (post: PostType) => PostType
+): PostType[] => {
   const fileNames = fs.readdirSync(postsDirectory)
 
-  const allPostsData = fileNames.map(fileName => {
-
+  const allPostsData = fileNames.map((fileName) => {
     const result = getFileData(fileName)
     return getProp(result)
   })
 
-   return allPostsData.sort((a, b) => {
+  return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
       return 1
     } else {
@@ -72,15 +71,15 @@ export const getPostsData = (getProp: (post: PostType)=>PostType): PostType[] =>
   })
 }
 
-export const getPostsSingleData = (getProp: (post: PostType)=> string): string[] => {
-
+export const getPostsSingleData = (
+  getProp: (post: PostType) => string
+): string[] => {
   const fileNames = fs.readdirSync(postsDirectory)
 
-  const allPostsData = fileNames.map(fileName => {
-
+  const allPostsData = fileNames.map((fileName) => {
     const result = getFileData(fileName)
     return getProp(result)
   })
 
-   return allPostsData
+  return allPostsData
 }

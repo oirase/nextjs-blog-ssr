@@ -1,4 +1,3 @@
-
 export const headerFont = 'Courier New'
 export const sm = 'min-width: 480px'
 export const md = 'min-width: 768px'
@@ -13,8 +12,6 @@ export const purple = '#990066'
 export const brown = '#993333'
 export const darkbrown = '#462024'
 export const linkColor = purple
-
-export const yellowPurple = 'linear-gradient($purple, $yellow)'
 
 export const fontBase = `"Helvetica Neue",
     Arial,

@@ -1,60 +1,82 @@
+import { FC } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { skyblue } from '~/styles/variables'
+import contactFormType from '~/types/contactForm'
 
 type Props = {
-  onSubmit: (value: any)=>void
+  onSubmit: (value: contactFormType) => void
 }
 
-const ContactForm = ({ onSubmit }: Props) => (
-
+const ContactForm: FC<Props> = ({ onSubmit }) => (
   <>
     <Formik
       initialValues={{ name: '', email: '', subject: '', body: '' }}
       validationSchema={Yup.object({
-        name: Yup.string()
-        .max(20, 'お名前は20文字まで使用可能です')
+        name: Yup.string().max(20, 'お名前は20文字まで使用可能です'),
         //.required('お名前は必須項目です')
-        ,
-        email: Yup.string()
-        .email('メールアドレスのみ使用可能です')
+        email: Yup.string().email('メールアドレスのみ使用可能です'),
         //.required('メールアドレスは必須項目です')
-        ,
-        subject: Yup.string()
-        .max(30, '件名は30文字まで使用可能です')
-        ,
-        body: Yup.string()
-        .max(200, 'お問い合わせ本文は200文字まで使用可能です')
+        subject: Yup.string().max(30, '件名は30文字まで使用可能です'),
+        body: Yup.string().max(
+          200,
+          'お問い合わせ本文は200文字まで使用可能です'
+        ),
         //.required('お問い合わせ本文は必須項目です')
       })}
-      onSubmit={(values, {
-      setSubmitting }) => {
-        setSubmitting(false);
+      onSubmit={(values, { setSubmitting }) => {
+        setSubmitting(false)
         onSubmit(values)
       }}
-      >
-      <Form  className="form" >
-        <label className="form__label" htmlFor="name">お名前</label>
-        <Field className="form__input" name="name" type="text" value="aaa"/>
+    >
+      <Form className="form">
+        <label className="form__label" htmlFor="name">
+          お名前
+        </label>
+        <Field className="form__input" name="name" type="text" value="aaa" />
         <ErrorMessage name="name">
-          { msg => <p className="form__error">{msg}</p> }
+          {(msg) => <p className="form__error">{msg}</p>}
         </ErrorMessage>
-        <label className="form__label" htmlFor="email">メールアドレス</label>
-        <Field className="form__input" name="email" type="text" value="aaa@bb.cc" />
+        <label className="form__label" htmlFor="email">
+          メールアドレス
+        </label>
+        <Field
+          className="form__input"
+          name="email"
+          type="text"
+          value="aaa@bb.cc"
+        />
         <ErrorMessage name="email">
-          { msg => <p className="form__error">{msg}</p> }
+          {(msg) => <p className="form__error">{msg}</p>}
         </ErrorMessage>
-        <label className="form__label" htmlFor="subject">題名</label>
-        <Field className="form__input" name="subject" type="text" value="サイトの不具合について"　/>
+        <label className="form__label" htmlFor="subject">
+          題名
+        </label>
+        <Field
+          className="form__input"
+          name="subject"
+          type="text"
+          value="サイトの不具合について"
+        />
         <ErrorMessage name="subject">
-          { msg => <p className="form__error">{msg}</p> }
+          {(msg) => <p className="form__error">{msg}</p>}
         </ErrorMessage>
-        <label className="form__label" htmlFor="body">お問い合わせ内容</label>
-        <Field className="form__textarea" name="body" type="text" component="textarea" value="サイトが正しく表示されません" />
+        <label className="form__label" htmlFor="body">
+          お問い合わせ内容
+        </label>
+        <Field
+          className="form__textarea"
+          name="body"
+          type="text"
+          component="textarea"
+          value="サイトが正しく表示されません"
+        />
         <ErrorMessage name="body">
-          { msg => <p className="form__error">{msg}</p> }
+          {(msg) => <p className="form__error">{msg}</p>}
         </ErrorMessage>
-        <button className="form__button" type="submit">お問い合わせ送信</button>
+        <button className="form__button" type="submit">
+          お問い合わせ送信
+        </button>
       </Form>
     </Formik>
     <style jsx global>{`

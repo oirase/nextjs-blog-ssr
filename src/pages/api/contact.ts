@@ -6,28 +6,26 @@ const senderEmailAdress = process.env.MAIL_FROM_ADDRESS
 const receiverEmailAddress = process.env.MAIL_RECEIVER_ADDRESS
 
 export default function getData(req, res) {
-
-let data = {} as contactFormType
-for(let value of Object.keys(req.body)) {
-  data[value] = htmlspecialchars(req.body[value])
-}
-const { name, email, subject, body } = data
-
-   const smtpConfig = {
-  service: process.env.MAIL_SERVICE,
-  host: process.env.MAIL_FROM_HOST,
-  port: process.env.MAIL_PORT,
-  secure: true,
-  auth: {
-    user: senderEmailAdress,
-    pass: process.env.MAIL_PASSWORD
+  const data = {} as contactFormType
+  for (const value of Object.keys(req.body)) {
+    data[value] = htmlspecialchars(req.body[value])
   }
-}
+  const { name, email, subject, body } = data
+
+  const smtpConfig = {
+    service: process.env.MAIL_SERVICE,
+    host: process.env.MAIL_FROM_HOST,
+    port: process.env.MAIL_PORT,
+    secure: true,
+    auth: {
+      user: senderEmailAdress,
+      pass: process.env.MAIL_PASSWORD,
+    },
+  }
 
   const transporter = createTransport(smtpConfig)
 
-  const mailView =
-`
+  const mailView = `
 お問い合わせ内容
 
 お名前　${name}
@@ -41,10 +39,10 @@ ${body}
     from: senderEmailAdress,
     to: receiverEmailAddress,
     subject: `${name}様からのお問い合わせ`,
-    text: mailView
+    text: mailView,
   }
 
-/*
+  /*
   transporter.sendMail(message, (error, response) => {
     if(error) {
       console.log('error')
@@ -55,7 +53,6 @@ ${body}
     }
   })
 */
-//res.status(200).json({ result:'success' })
-res.status(200).json(data)
+  //res.status(200).json({ result:'success' })
+  res.status(200).json(data)
 }
-

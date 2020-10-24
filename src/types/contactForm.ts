@@ -1,4 +1,3 @@
-
 type contactFormType = {
   name: string
   email: string

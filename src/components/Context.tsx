@@ -1,9 +1,10 @@
+import { FC } from 'react'
 import { useContext, useState, createContext } from 'react'
 
 const ActiveArticleStateContext = createContext('')
 const ActiveArticleDispatchContext = createContext(null)
 
-export const ActiveArticleProvider = ({ children }) => {
+export const ActiveArticleProvider: FC = ({ children }) => {
   const [state, dispatch] = useState('')
   return (
     <ActiveArticleDispatchContext.Provider value={dispatch}>
@@ -14,5 +15,6 @@ export const ActiveArticleProvider = ({ children }) => {
   )
 }
 
-export const useActiveArticleState = () => useContext(ActiveArticleStateContext)
-export const useActiveArticleDispatch = () => useContext(ActiveArticleDispatchContext)
+export const useActiveArticleState = (): string => useContext(ActiveArticleStateContext)
+export const useActiveArticleDispatch = (): (query: string) => void =>
+  useContext(ActiveArticleDispatchContext)

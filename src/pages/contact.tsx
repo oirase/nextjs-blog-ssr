@@ -7,20 +7,23 @@ import Loader from '~/components/Loader'
 import contactFormType from '~/types/contactForm'
 
 const Contact = () => {
-
   const [state, setState] = useState<contactFormType | null>(null)
-  const { data, error } = useSWR(state ? '/api/contact' : null, ()=> fetcher(state), {
-    revalidateOnFocus: false
-  })
+  const { data, error } = useSWR(
+    state ? '/api/contact' : null,
+    () => fetcher(state),
+    {
+      revalidateOnFocus: false,
+    }
+  )
 
-  const fetcher =  async (data: contactFormType) => {
+  const fetcher = async (data: contactFormType) => {
     const url = '/api/contact'
     const res = await fetch(url, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
 
     const json = await res.json()
@@ -32,28 +35,31 @@ const Contact = () => {
     setState(data)
   }
 
-  const complete = <>
-        <p className="result-info__text">送信が完了しました</p>
-        <Link　href="/">
-          <a>トップページ</a>
-        </Link>
-        <style jsx>{`
-          .result-info__text {
-            margin-bottom: 2rem;
-          }
+  const complete = (
+    <>
+      <p className="result-info__text">送信が完了しました</p>
+      <Link href="/">
+        <a>トップページ</a>
+      </Link>
+      <style jsx>{`
+        .result-info__text {
+          margin-bottom: 2rem;
+        }
       `}</style>
-      </>
+    </>
+  )
 
-  const errorMessage = <p>お問い合わせの送信に失敗しました。しばらく時間を置いてから再度お試し下さい。</p>
+  const errorMessage = (
+    <p>
+      お問い合わせの送信に失敗しました。しばらく時間を置いてから再度お試し下さい。
+    </p>
+  )
 
   return (
-    <Layout padding='5rem 0 2rem 0' >
-      { !data ? <ContactForm onSubmit={handleClick} /> : null }
+    <Layout padding="5rem 0 2rem 0">
+      {!data ? <ContactForm onSubmit={handleClick} /> : null}
       <div className="result-info">
-      { error ? errorMessage　
-              : !state ? null
-                       : data ? complete
-                              : <Loader /> }
+        {error ? errorMessage : !state ? null : data ? complete : <Loader />}
       </div>
       <style jsx>{`
         .result-info {
@@ -66,6 +72,4 @@ const Contact = () => {
   )
 }
 
-export default  Contact
-
-
+export default Contact

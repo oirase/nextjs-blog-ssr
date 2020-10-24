@@ -2,31 +2,34 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Tab from '~/components/Tab'
 import { useActiveArticleState } from '~/components/Context'
-import { fontBase,
-         green,
-         red,
-         orange,
-         blue,
-         yellow,
-         brown,
-         md
-        } from '~/styles/variables'
+import {
+  fontBase,
+  green,
+  red,
+  orange,
+  blue,
+  yellow,
+  brown,
+  md,
+} from '~/styles/variables'
 
 const Nav = () => {
-
   const state = useActiveArticleState()
   const router = useRouter()
   console.log(router.pathname)
 
-  const isActive = (path: string, color: string = yellow): {
-    active: boolean,
+  const isActive = (
+    path: string,
+    color: string = yellow
+  ): {
+    active: boolean
     activeBackground: string
   } => {
     const regexp = new RegExp(path)
     if (regexp.test(router.pathname)) {
       return {
         active: true,
-        activeBackground: color
+        activeBackground: color,
       }
     }
   }
@@ -34,36 +37,24 @@ const Nav = () => {
   return (
     <nav className="nav">
       <div className="nav__menu">
-        <Tab
-          href='/'
-          background={green}
-          {...isActive('/$')}
-        >
+        <Tab href="/" background={green} {...isActive('/$')}>
           New
         </Tab>
-        <Tab
-          href='/category'
-          background={orange}
-          {...isActive('/category')}
-        >
+        <Tab href="/category" background={orange} {...isActive('/category')}>
           Category
         </Tab>
-        <Tab
-          href='/search'
-          background={red}
-          {...isActive('/search')}
-        >
+        <Tab href="/search" background={red} {...isActive('/search')}>
           Search
         </Tab>
-        { state
-        ? <Tab
+        {state ? (
+          <Tab
             href={`/article/${state}`}
             background={blue}
             {...isActive(`/article`, 'white')}
           >
             Article
           </Tab>
-        : null }
+        ) : null}
       </div>
       <style jsx>{`
         .nav {

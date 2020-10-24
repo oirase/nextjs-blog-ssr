@@ -10,21 +10,20 @@ export async function getStaticPaths() {
   const paths = getAllPostIds()
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
-export async function getStaticProps ({ params }) {
+export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
   return {
     props: {
-      postData
-    }
+      postData,
+    },
   }
 }
 
 const Article = ({ postData }) => {
-
   const router = useRouter()
   const dispatch = useActiveArticleDispatch()
   dispatch(router.query.id)
@@ -35,16 +34,19 @@ const Article = ({ postData }) => {
         <title>{postData.title}</title>
       </Head>
       <div className="article">
-          <h2 className="article__title">{postData.title}</h2>
-          <p className="article__date">{postData.date}</p>
-          <div className="article__content">
-            <p className="article__text" dangerouslySetInnerHTML={{ __html: postData.content }} />
-          </div>
-            <div className="article__tag--wrapper">
-              <Link href={`/category/${postData.category}`}>
-                <a className="article__tag">{postData.category}</a>
-              </Link>
-            </div>
+        <h2 className="article__title">{postData.title}</h2>
+        <p className="article__date">{postData.date}</p>
+        <div className="article__content">
+          <p
+            className="article__text"
+            dangerouslySetInnerHTML={{ __html: postData.content }}
+          />
+        </div>
+        <div className="article__tag--wrapper">
+          <Link href={`/category/${postData.category}`}>
+            <a className="article__tag">{postData.category}</a>
+          </Link>
+        </div>
       </div>
       <style jsx>{`
         .article {
@@ -54,8 +56,7 @@ const Article = ({ postData }) => {
           //min-height: 60rem;
           min-height: 100%;
 
-
-          @media(${md}){
+          @media (${md}) {
             padding: 3rem 4rem 4.5rem 4rem;
           }
 
@@ -73,7 +74,7 @@ const Article = ({ postData }) => {
           }
 
           &__text {
-             margin-bottom: 4rem;
+            margin-bottom: 4rem;
           }
 
           &__tag {
@@ -85,11 +86,11 @@ const Article = ({ postData }) => {
             text-decoration: none;
 
             &:hover {
-              opacity: .8;
+              opacity: 0.8;
             }
 
             &--wrapper {
-               text-align: right;
+              text-align: right;
             }
           }
         }

@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import { purple } from '~/styles/variables'
 
 const Footer = () => {
-
   const router = useRouter()
   let url, text
   console.log(router.pathname)
@@ -30,7 +29,7 @@ const Footer = () => {
           height: 8rem;
           border-radius: 0 0 10px 10px;
 
-          &__link{
+          &__link {
             color: white;
             text-decoration: none;
 

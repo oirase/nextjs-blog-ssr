@@ -2,35 +2,33 @@ import { useState, useEffect } from 'react'
 import { brown } from '~/styles/variables'
 
 const ScrollButton = () => {
-
   const [state, setState] = useState(false)
 
   const scrollToTop = () => {
     window.scroll({
       top: 0,
       left: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     })
   }
 
   const onScroll = () => {
     window.pageYOffset < 500
-      ? (state && setState(false))
-      : (state || setState(true))
+      ? state && setState(false)
+      : state || setState(true)
   }
 
-
-  useEffect(()=> {
+  useEffect(() => {
     window.addEventListener('scroll', onScroll)
 
     return () => {
       window.removeEventListener('scroll', onScroll)
     }
-
   }, [state])
 
   return (
-    <button onClick={scrollToTop}
+    <button
+      onClick={scrollToTop}
       className={`scroll-button ${state ? 'active' : null}`}
     >
       &#9650;
@@ -52,11 +50,11 @@ const ScrollButton = () => {
         }
 
         .active {
-            opacity: .5;
-            visibility: visible;
+          opacity: 0.5;
+          visibility: visible;
 
           &:hover {
-            opacity: .7;
+            opacity: 0.7;
             transition: opacity 0.1s, visibility 0.1s;
           }
         }

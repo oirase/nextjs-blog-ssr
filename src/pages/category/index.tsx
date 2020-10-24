@@ -13,8 +13,8 @@ export function getStaticProps() {
 
   return {
     props: {
-      category
-    }
+      category,
+    },
   }
 }
 
@@ -23,16 +23,12 @@ type Props = {
 }
 
 const Category = ({ category }: Props) => {
-
   return (
     <Layout>
       <ItemList>
         <ListRender
           data={category}
-          render={
-            (data)=>
-              <CategoryItem {...data} />
-          }
+          render={(data) => <CategoryItem {...data} />}
         />
       </ItemList>
     </Layout>

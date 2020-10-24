@@ -9,14 +9,14 @@ import styles from '~/components/layout.module.css'
 import { purple, yellow } from '~/styles/variables'
 
 type Props = {
-  background?: string,
+  background?: string
   padding?: string
 }
 
 const Layout: FC<Props> = ({
   background = yellow,
   padding = '2rem 0',
-  children
+  children,
 }) => (
   <>
     <Meta />
@@ -26,9 +26,7 @@ const Layout: FC<Props> = ({
         <Header />
         <Nav />
       </div>
-      <div className="contents">
-        {children}
-      </div>
+      <div className="contents">{children}</div>
       <Footer />
       <style jsx>{`
         .outbox {

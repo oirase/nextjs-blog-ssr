@@ -1,4 +1,3 @@
-
 type PostType = {
   id?: string
   title?: string
