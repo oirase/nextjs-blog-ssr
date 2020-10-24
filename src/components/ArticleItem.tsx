@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import PostsType from '~/types/post'
-import { skyblue, linkColor } from '~/styles/variables'
+import { skyblue, yellow, linkColor } from '~/styles/variables'
 
 const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
   <>

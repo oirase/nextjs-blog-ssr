@@ -39,7 +39,8 @@ const Tab: FC<Props> = ({
             font-family: Georgia, 'Open Sans Condensed', ${fontBase};
             //font-weight: bold;
             letter-spacing: 1px;
-            color: ${brown};
+            //color: ${brown};
+            color: white;
             position: relative;
             text-decoration: none;
 
