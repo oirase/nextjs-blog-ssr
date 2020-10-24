@@ -16,5 +16,5 @@ export const ActiveArticleProvider: FC = ({ children }) => {
 }
 
 export const useActiveArticleState = (): string => useContext(ActiveArticleStateContext)
-export const useActiveArticleDispatch = (): (query: string) => void =>
+export const useActiveArticleDispatch = (): (query: string | string[]) => void =>
   useContext(ActiveArticleDispatchContext)
