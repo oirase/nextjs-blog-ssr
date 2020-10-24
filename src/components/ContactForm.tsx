@@ -104,7 +104,7 @@ const ContactForm = ({ onSubmit }: Props) => (
           color: ${skyblue};
           border-radius: 7px;
           margin: 2px 0;
-          box-shadow: 3px 3px 15px #333;
+          box-shadow: 3px 3px 15px #888;
 
           &:hover {
             box-shadow: none;

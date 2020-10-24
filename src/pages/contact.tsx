@@ -37,12 +37,17 @@ const Contact = () => {
         <Link　href="/">
           <a>トップページ</a>
         </Link>
+        <style jsx>{`
+          .result-info__text {
+            margin-bottom: 2rem;
+          }
+      `}</style>
       </>
 
   const errorMessage = <p>お問い合わせの送信に失敗しました。しばらく時間を置いてから再度お試し下さい。</p>
 
   return (
-    <Layout padding='6rem 0 2rem 0' >
+    <Layout padding='4rem 0 2rem 0' >
       { !data ? <ContactForm onSubmit={handleClick} /> : null }
       <div className="result-info">
       { error ? errorMessage　
@@ -54,16 +59,7 @@ const Contact = () => {
         .result-info {
           text-align: center;
           padding: 2rem 0;
-          //display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center;
           line-height: 2;
-
-          &__text {
-            margin-bottom: 1rem;
-            background: red;
-          }
         }
       `}</style>
     </Layout>
