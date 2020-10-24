@@ -19,7 +19,8 @@ const Nav = () => {
   console.log(router.pathname)
 
   const isActive = (path) => {
-    if (router.pathname === path) {
+    const regexp = new RegExp(path)
+    if (regexp.test(router.pathname)) {
       return {
         active: true,
         activeBackground: yellow
@@ -33,7 +34,7 @@ const Nav = () => {
         <Tab
           href='/'
           background={green}
-          {...isActive('/')}
+          {...isActive('/$')}
         >
           New
         </Tab>
@@ -55,7 +56,7 @@ const Nav = () => {
         ? <Tab
             href={`/article/${state}`}
             background={blue}
-            {...isActive(`/article/${state}`)}
+            {...isActive(`/article`)}
           >
             Article
           </Tab>
