@@ -12,7 +12,9 @@ const CategoryItem: FC<CategoryType> = ({ name, image }) => (
           <div className="item__image-view">
             <img className="item__image" src={`/images/category/${image}`} />
           </div>
-          <p className="item__category--link">{name}</p>
+          <div className="item__info">
+            <p className="item__category--link">{name}</p>
+          </div>
         </a>
       </Link>
     </div>
