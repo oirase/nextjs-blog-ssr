@@ -9,7 +9,7 @@ import {
   orange,
   blue,
   yellow,
-  brown,
+  darkbrown,
   md,
 } from '~/styles/variables'
 
@@ -21,7 +21,7 @@ const Nav = () => {
   const isActive = (
     path: string,
     background: string = yellow,
-    color: string = brown
+    color: string = darkbrown
   ): {
     active: boolean
     activeBackground: string
