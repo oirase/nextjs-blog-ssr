@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import Layout from '~/components/Layout'
 import { getAllPostIds, getPostData } from '~/lib/posts'
 import { useActiveArticleDispatch } from '~/components/Context'
-import { yellow, purple, md } from '~/styles/variables'
+import { yellow, darkbrown, purple, md } from '~/styles/variables'
 
 export async function getStaticPaths() {
   const paths = getAllPostIds()
@@ -78,8 +78,8 @@ const Article = ({ postData }) => {
           }
 
           &__tag {
-            background: ${purple};
-            color: white;
+            background: ${yellow};
+            color: ${darkbrown};
             padding: 1rem 2rem;
             border-radius: 5px;
             display: inline-block;

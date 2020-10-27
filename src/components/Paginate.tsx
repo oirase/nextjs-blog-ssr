@@ -22,11 +22,12 @@ const Li: FC<any> = ({ children, active, ...rest }) => (
         height: 4rem;
         width: 4rem;
         cursor: pointer;
+        border: 1px solid ${darkbrown};
 
         &--active {
           @extend .paginate__li;
           background: ${yellow};
-          border: 1px solid ${darkbrown};
+          //border: 1px solid ${darkbrown};
           color: ${darkbrown};
         }
 

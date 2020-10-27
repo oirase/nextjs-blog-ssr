@@ -33,7 +33,8 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
         <label className="form__label" htmlFor="name">
           お名前
         </label>
-        <Field className="form__input" name="name" type="text" value="aaa" />
+        <Field className="form__input" name="name" type="text"
+        />
         <ErrorMessage name="name">
           {(msg) => <p className="form__error">{msg}</p>}
         </ErrorMessage>
@@ -44,7 +45,6 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
           className="form__input"
           name="email"
           type="text"
-          value="aaa@bb.cc"
         />
         <ErrorMessage name="email">
           {(msg) => <p className="form__error">{msg}</p>}
@@ -56,7 +56,6 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
           className="form__input"
           name="subject"
           type="text"
-          value="サイトの不具合について"
         />
         <ErrorMessage name="subject">
           {(msg) => <p className="form__error">{msg}</p>}
@@ -69,7 +68,6 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
           name="body"
           type="text"
           component="textarea"
-          value="サイトが正しく表示されません"
         />
         <ErrorMessage name="body">
           {(msg) => <p className="form__error">{msg}</p>}
