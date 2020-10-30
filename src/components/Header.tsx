@@ -1,7 +1,8 @@
+import { FC } from 'react'
 import Link from 'next/link'
 import { fontBase } from '~/styles/variables'
 
-const Header = () => (
+const Header: FC = () => (
   <header className="header">
     <Link href="/">
       <h1 className="header__h1">

@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import PostsType from '~/types/post'
-import { skyblue, yellow, linkColor } from '~/styles/variables'
 import styles from '~/styles/item'
 
 const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
@@ -26,7 +25,6 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
     </div>
     <style jsx>{styles}</style>
   </div>
-
 )
 
 export default ArticleItem

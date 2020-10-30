@@ -3,11 +3,11 @@ import { ReactNode, FC } from 'react'
 type Props = {
   render: (props: any) => ReactNode
   data: any[]
-  offset: number
-  range: number
+  offset?: number
+  range?: number
 }
 
-const ListRender = ({ render, data, offset, range }: Props) => {
+const ListRender: FC<Props> = ({ render, data, offset, range }) => {
   const start = offset * range - range
   const end = offset * range
 

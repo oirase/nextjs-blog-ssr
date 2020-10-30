@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { fontBase, brown, sm } from '~/styles/variables'
 
 type Props = {
@@ -17,7 +16,7 @@ const Tab: FC<Props> = ({
   active = false,
   activeBackground = 'white',
   activeColor = 'black',
-  children
+  children,
 }) => {
   return (
     <Link href={href}>
@@ -26,7 +25,7 @@ const Tab: FC<Props> = ({
 
         <style jsx>{`
           .tab {
-            padding: 1.2rem 0;
+            padding: 0.5rem 0;
             text-align: center;
             font-size: 1.4rem;
             width: 20rem;

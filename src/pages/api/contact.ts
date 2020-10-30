@@ -12,7 +12,7 @@ export default function getData(req, res) {
   }
   const { name, email, subject, body } = data
 
-  const smtpConfig = {
+  const transporter = createTransport({
     service: process.env.MAIL_SERVICE,
     host: process.env.MAIL_FROM_HOST,
     port: process.env.MAIL_PORT,
@@ -21,9 +21,7 @@ export default function getData(req, res) {
       user: senderEmailAdress,
       pass: process.env.MAIL_PASSWORD,
     },
-  }
-
-  const transporter = createTransport(smtpConfig)
+  })
 
   const mailView = `
 お問い合わせ内容

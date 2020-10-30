@@ -1,17 +1,11 @@
-import Link from 'next/link'
 import Layout from '~/components/Layout'
 import { getPostsData } from '~/lib/posts'
-import {
-  useActiveArticleState,
-  useActiveArticleDispatch,
-} from '~/components/Context'
 import ItemList from '~/components/ItemList'
 import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
 import ArticleItem from '~/components/ArticleItem'
 import PostType from '~/types/post'
 import { useState } from 'react'
-import { yellow, md } from '~/styles/variables'
 //import * as env from '~/config/env'
 //import dotenv from 'dotenv'
 

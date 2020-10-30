@@ -1,4 +1,6 @@
-const Loader = () => (
+import { FC } from 'react'
+
+const Loader: FC = () => (
   <>
     <div className="loader"></div>
     <style jsx>{`

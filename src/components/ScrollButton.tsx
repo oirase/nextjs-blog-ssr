@@ -1,7 +1,8 @@
+import { FC } from 'react'
 import { useState, useEffect } from 'react'
 import { brown } from '~/styles/variables'
 
-const ScrollButton = () => {
+const ScrollButton: FC = () => {
   const [state, setState] = useState(false)
 
   const scrollToTop = () => {

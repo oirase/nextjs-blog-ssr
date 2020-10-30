@@ -1,12 +1,10 @@
 import { FC } from 'react'
-import path from 'path'
 import Meta from '~/components/Meta'
 import ScrollButton from '~/components/ScrollButton'
 import Header from '~/components/Header'
 import Nav from '~/components/Nav'
 import Footer from '~/components/Footer'
-import styles from '~/components/layout.module.css'
-import { purple, yellow } from '~/styles/variables'
+import { yellow } from '~/styles/variables'
 
 type Props = {
   background?: string

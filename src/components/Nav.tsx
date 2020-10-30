@@ -1,19 +1,10 @@
-import Link from 'next/link'
+import { FC } from 'react'
 import { useRouter } from 'next/router'
 import Tab from '~/components/Tab'
 import { useActiveArticleState } from '~/components/Context'
-import {
-  fontBase,
-  green,
-  red,
-  orange,
-  blue,
-  yellow,
-  darkbrown,
-  md,
-} from '~/styles/variables'
+import { green, red, orange, blue, yellow, darkbrown } from '~/styles/variables'
 
-const Nav = () => {
+const Nav: FC = () => {
   const state = useActiveArticleState()
   const router = useRouter()
   console.log(router.pathname)
@@ -32,7 +23,7 @@ const Nav = () => {
       return {
         active: true,
         activeBackground: background,
-        activeColor: color
+        activeColor: color,
       }
     }
   }

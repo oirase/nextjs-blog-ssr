@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import css from 'styled-jsx/css'
 import { fontBase, yellow, darkbrown, md } from '~/styles/variables'
 
 type Props = {

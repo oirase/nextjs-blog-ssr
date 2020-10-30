@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { skyblue, yellow, linkColor } from '~/styles/variables'
+import { skyblue, yellow } from '~/styles/variables'
 
 const itemStyles = css`
   .item {
@@ -81,7 +81,6 @@ const itemStyles = css`
     &__category--link {
       color: ${yellow};
       text-decoration: none;
-
 
       &:hover {
         text-decoration: underline;

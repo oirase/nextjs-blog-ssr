@@ -1,8 +1,9 @@
+import { FC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { purple } from '~/styles/variables'
 
-const Footer = () => {
+const Footer: FC = () => {
   const router = useRouter()
   let url, text
   console.log(router.pathname)

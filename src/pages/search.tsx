@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useRef, useState, KeyboardEvent } from 'react'
 import Layout from '~/components/Layout'
 import ItemList from '~/components/ItemList'
