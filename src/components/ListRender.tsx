@@ -1,8 +1,9 @@
 import { ReactNode, FC } from 'react'
+import ItemType from '~/types/item'
 
 type Props = {
-  render: (props: any) => ReactNode
-  data: any[]
+  render: (props: ItemType) => ReactNode
+  data: ItemType[]
   offset?: number
   range?: number
 }

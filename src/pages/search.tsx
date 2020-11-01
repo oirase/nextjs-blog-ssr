@@ -1,4 +1,5 @@
-import { useRef, useState, KeyboardEvent } from 'react'
+import { useRef, useState, KeyboardEvent, FC } from 'react'
+import { GetStaticProps } from 'next'
 import Layout from '~/components/Layout'
 import ItemList from '~/components/ItemList'
 import ArticleItem from '~/components/ArticleItem'
@@ -8,7 +9,7 @@ import { getPostsData } from '~/lib/posts'
 import PostType from '~/types/post'
 import { yellow, darkbrown, fontBase } from '~/styles/variables'
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getPostsData(
     ({ id, title, category, date, image, content }) => {
       return {
@@ -29,7 +30,11 @@ export async function getStaticProps() {
   }
 }
 
-const Search = ({ allPostsData }) => {
+type Props = {
+  allPostsData: PostType[]
+}
+
+const Search: FC<Props> = ({ allPostsData }) => {
   const inputSearch = useRef(null)
   const [searchResult, setSearchResult] = useState<PostType[] | null>(null)
   const [offset, setOffset] = useState(1)

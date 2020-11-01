@@ -25,6 +25,7 @@ const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
     </div>
     <style jsx>{styles}</style>
   </div>
+
 )
 
 export default ArticleItem

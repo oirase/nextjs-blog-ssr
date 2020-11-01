@@ -2,7 +2,14 @@ import { FC } from 'react'
 import { useRouter } from 'next/router'
 import Tab from '~/components/Tab'
 import { useActiveArticleState } from '~/components/Context'
-import { green, red, orange, blue, yellow, darkbrown } from '~/styles/variables'
+import {
+  green,
+  red,
+  orange,
+  blue,
+  yellow,
+  darkbrown
+} from '~/styles/variables'
 
 const Nav: FC = () => {
   const state = useActiveArticleState()
@@ -23,7 +30,7 @@ const Nav: FC = () => {
       return {
         active: true,
         activeBackground: background,
-        activeColor: color,
+        activeColor: color
       }
     }
   }

@@ -16,7 +16,7 @@ const Tab: FC<Props> = ({
   active = false,
   activeBackground = 'white',
   activeColor = 'black',
-  children,
+  children
 }) => {
   return (
     <Link href={href}>

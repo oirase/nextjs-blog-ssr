@@ -1,3 +1,4 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import { createTransport } from 'nodemailer'
 import htmlspecialchars from 'htmlspecialchars'
 import contactFormType from '~/types/contactForm'
@@ -5,7 +6,7 @@ import contactFormType from '~/types/contactForm'
 const senderEmailAdress = process.env.MAIL_FROM_ADDRESS
 const receiverEmailAddress = process.env.MAIL_RECEIVER_ADDRESS
 
-export default function getData(req, res) {
+export default function getData(req: NextApiRequest, res: NextApiResponse) {
   const data = {} as contactFormType
   for (const value of Object.keys(req.body)) {
     data[value] = htmlspecialchars(req.body[value])
@@ -26,9 +27,9 @@ export default function getData(req, res) {
   const mailView = `
 お問い合わせ内容
 
-お名前　${name}
+お名前 ${name}
 メールアドレス　${email}
-題名　subject}
+題名 ${subject}
 
 本文
 ${body}

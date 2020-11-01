@@ -1,3 +1,5 @@
+import { FC } from 'react'
+import { GetStaticProps, GetStaticPaths } from 'next'
 import { useState } from 'react'
 import Layout from '~/components/Layout'
 import { getPostsData, getPostsSingleData } from '~/lib/posts'
@@ -7,7 +9,7 @@ import Paginate from '~/components/Paginate'
 import ListRender from '~/components/ListRender'
 import ItemList from '~/components/ItemList'
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   let allPostsCategory = getPostsSingleData(({ category }) => category)
   allPostsCategory = Array.from(new Set(allPostsCategory))
   const paths = allPostsCategory.map((category) => {
@@ -23,7 +25,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allPostsData = getPostsData(({ id, title, category, date, image }) => {
     return {
       id,
@@ -48,7 +50,7 @@ type Props = {
   categoryPostsData: PostType[]
 }
 
-const Category = ({ categoryPostsData }: Props) => {
+const Category: FC<Props> = ({ categoryPostsData }) => {
   const [offset, setOffset] = useState(1)
 
   return (

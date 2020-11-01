@@ -1,8 +1,8 @@
-type contactFormType = {
+type ContactFormType = {
   name: string
   email: string
   subject?: string
   body: string
 }
 
-export default contactFormType
+export default ContactFormType

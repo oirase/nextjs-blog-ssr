@@ -1,3 +1,5 @@
+import { FC } from 'react'
+import { GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -5,8 +7,9 @@ import Layout from '~/components/Layout'
 import { getAllPostIds, getPostData } from '~/lib/posts'
 import { useActiveArticleDispatch } from '~/components/Context'
 import { purple, md } from '~/styles/variables'
+import PostType from '~/types/post'
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds()
   return {
     paths,
@@ -14,8 +17,8 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const postData = await getPostData(params.id as string)
   return {
     props: {
       postData,
@@ -23,7 +26,11 @@ export async function getStaticProps({ params }) {
   }
 }
 
-const Article = ({ postData }) => {
+type Props = {
+  postData: PostType
+}
+
+const Article: FC<Props> = ({ postData }) => {
   const router = useRouter()
   const dispatch = useActiveArticleDispatch()
   dispatch(router.query.id)

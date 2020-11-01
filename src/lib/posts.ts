@@ -7,7 +7,7 @@ import PostType from '~/types/post'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
-const getFileData = (fileName) => {
+const getFileData = (fileName: string): PostType => {
   const id = fileName.replace(/\.md$/, '')
   const fullPath = path.join(postsDirectory, fileName)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -22,7 +22,7 @@ const getFileData = (fileName) => {
   return result
 }
 
-export const getAllPostIds = () => {
+export const getAllPostIds = (): { params: { id: string } }[] => {
   const fileNames = fs.readdirSync(postsDirectory)
 
   return fileNames.map((fileName) => {
@@ -34,7 +34,7 @@ export const getAllPostIds = () => {
   })
 }
 
-export const getPostData = async (id) => {
+export const getPostData = async (id: string): Promise<PostType> => {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 

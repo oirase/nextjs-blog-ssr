@@ -1,13 +1,19 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { fontBase, yellow, darkbrown, md } from '~/styles/variables'
 
-type Props = {
-  offset: number
+type PaginateProps = {
+  offset?: number
   length: number
-  range: number
+  range?: number
+  setOffset: React.Dispatch<React.SetStateAction<number>>
 }
 
-const Li: FC<any> = ({ children, active, ...rest }) => (
+type LiProps = {
+  onClick?: ()=>void
+  active?: boolean
+}
+
+const Li: FC<LiProps> = ({ children, active, ...rest }) => (
   <li className={`paginate__li${active ? '--active' : ''}`} {...rest}>
     {children}
     <style jsx>{`
@@ -38,7 +44,7 @@ const Li: FC<any> = ({ children, active, ...rest }) => (
   </li>
 )
 
-const Paginate = ({ offset, length, range, setOffset }) => {
+const Paginate: FC<PaginateProps> = ({ offset, length, range, setOffset }) => {
   const totalPage = Math.ceil(length / range)
   if (totalPage === 1) return null
   const start = offset < 10 ? 1 : Math.floor(offset / 10) * 10

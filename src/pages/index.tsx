@@ -1,3 +1,5 @@
+import { FC } from 'react'
+import { GetStaticProps } from 'next'
 import Layout from '~/components/Layout'
 import { getPostsData } from '~/lib/posts'
 import ItemList from '~/components/ItemList'
@@ -11,7 +13,7 @@ import { useState } from 'react'
 
 //dotenv.config()
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getPostsData(({ id, title, category, date, image }) => {
     return {
       id,
@@ -33,7 +35,7 @@ type Props = {
   allPostsData: PostType[]
 }
 
-const Index = ({ allPostsData }: Props) => {
+const Index: FC<Props> = ({ allPostsData }) => {
   const [offset, setOffset] = useState(1)
 
   return (

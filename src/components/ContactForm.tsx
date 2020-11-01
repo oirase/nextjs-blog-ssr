@@ -33,21 +33,30 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
         <label className="form__label" htmlFor="name">
           お名前
         </label>
-        <Field className="form__input" name="name" type="text" />
+        <Field className="form__input" name="name" type="text"
+        />
         <ErrorMessage name="name">
           {(msg) => <p className="form__error">{msg}</p>}
         </ErrorMessage>
         <label className="form__label" htmlFor="email">
           メールアドレス
         </label>
-        <Field className="form__input" name="email" type="text" />
+        <Field
+          className="form__input"
+          name="email"
+          type="text"
+        />
         <ErrorMessage name="email">
           {(msg) => <p className="form__error">{msg}</p>}
         </ErrorMessage>
         <label className="form__label" htmlFor="subject">
           題名
         </label>
-        <Field className="form__input" name="subject" type="text" />
+        <Field
+          className="form__input"
+          name="subject"
+          type="text"
+        />
         <ErrorMessage name="subject">
           {(msg) => <p className="form__error">{msg}</p>}
         </ErrorMessage>

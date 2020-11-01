@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { useState } from 'react'
 import Link from 'next/link'
 import useSWR from 'swr'
@@ -6,7 +7,7 @@ import Layout from '~/components/Layout'
 import Loader from '~/components/Loader'
 import contactFormType from '~/types/contactForm'
 
-const Contact = () => {
+const Contact: FC = () => {
   const [state, setState] = useState<contactFormType | null>(null)
   const { data, error } = useSWR(
     state ? '/api/contact' : null,
