@@ -6,7 +6,7 @@ import { purple } from '~/styles/variables'
 const Footer: FC = () => {
   const router = useRouter()
   let url, text
-  console.log(router.pathname)
+
   if (router.pathname === '/contact') {
     url = '/'
     text = 'top page'

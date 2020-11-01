@@ -2,16 +2,16 @@ import { FC } from 'react'
 import { useState, useEffect } from 'react'
 import { brown } from '~/styles/variables'
 
+const scrollToTop = () => {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth',
+  })
+}
+
 const ScrollButton: FC = () => {
   const [state, setState] = useState(false)
-
-  const scrollToTop = () => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    })
-  }
 
   const onScroll = () => {
     window.pageYOffset < 500

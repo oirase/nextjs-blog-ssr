@@ -14,7 +14,6 @@ import {
 const Nav: FC = () => {
   const state = useActiveArticleState()
   const router = useRouter()
-  console.log(router.pathname)
 
   const isActive = (
     path: string,
