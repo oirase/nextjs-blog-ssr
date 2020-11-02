@@ -11,7 +11,6 @@ type Props = {
 const ListRender: FC<Props> = ({ render, data, offset, range }) => {
   const start = offset * range - range
   const end = offset * range
-
   console.log('ListRender')
 
   return <>{data.slice(start, end).map((props) => render(props)')}</>
