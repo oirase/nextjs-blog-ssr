@@ -5,6 +5,7 @@ import styles from '~/styles/item'
 
 const CategoryItem: FC<CategoryType> = ({ name, image }) => (
   <div className="item">
+    { console.log('CategoryItem') }
     <div className="item__contents">
       <Link href={`/category/${name}`}>
         <a className="item__link">

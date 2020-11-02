@@ -4,6 +4,7 @@ import { fontBase } from '~/styles/variables'
 
 const Header: FC = () => (
   <header className="header">
+    { console.log('Header') }
     <Link href="/">
       <h1 className="header__h1">
         <a>WebCreateBlog</a>

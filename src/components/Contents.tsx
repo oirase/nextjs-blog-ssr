@@ -3,6 +3,7 @@ import { yellow } from '~/styles/variables'
 
 const Contents: FC = ({ children }) => (
   <div className="contents">
+    { console.log('Contents') }
     {children}
     <style jsx>{`
       .contents {

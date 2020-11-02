@@ -58,6 +58,7 @@ const Contact: FC = () => {
 
   return (
     <Layout padding="5rem 0 2rem 0">
+      { console.log('ContactPage') }
       {!data ? <ContactForm onSubmit={handleClick} /> : null}
       <div className="result-info">
         {error ? errorMessage : !state ? null : data ? complete : <Loader />}

@@ -55,6 +55,7 @@ const Category: FC<Props> = ({ categoryPostsData }) => {
 
   return (
     <Layout>
+      { console.log('CategoryPage') }
       <Paginate
         offset={offset}
         length={categoryPostsData.length}

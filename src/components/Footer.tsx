@@ -17,6 +17,7 @@ const Footer: FC = () => {
 
   return (
     <footer className="footer">
+      { console.log('Footer') }
       <Link href={url}>
         <a className="footer__link">{text}</a>
       </Link>

@@ -26,6 +26,7 @@ type Props = {
 const Category: FC<Props> = ({ category }) => {
   return (
     <Layout>
+      { console.log('CategoryIndexPage') }
       <ItemList>
         <ListRender
           data={category}

@@ -17,6 +17,7 @@ const Layout: FC<Props> = ({
   children,
 }) => (
   <>
+    { console.log('Layout') }
     <Meta />
     <ScrollButton />
     <div className="outbox">

@@ -15,6 +15,7 @@ type LiProps = {
 
 const Li: FC<LiProps> = ({ children, active, ...rest }) => (
   <li className={`paginate__li${active ? '--active' : ''}`} {...rest}>
+    { console.log('PaginateLi') }
     {children}
     <style jsx>{`
       .paginate__li {
@@ -69,6 +70,7 @@ const Paginate: FC<PaginateProps> = ({ offset, length, range, setOffset }) => {
 
   return (
     <div className="paginate">
+      { console.log('Paginate') }
       <ul className="paginate__ul">{list}</ul>
       <style jsx>{`
         .paginate {

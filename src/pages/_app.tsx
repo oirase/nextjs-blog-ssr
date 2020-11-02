@@ -6,6 +6,7 @@ import '../styles/global.scss'
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ActiveArticleProvider>
+      { console.log('App') }
       <Component {...pageProps} />
     </ActiveArticleProvider>
   )

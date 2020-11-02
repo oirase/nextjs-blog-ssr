@@ -1,15 +1,16 @@
 import { FC } from 'react'
 import { yellow, md } from '~/styles/variables'
 
-const Contents: FC = ({ children }) => (
-  <div className="contents">
+const ItemList: FC = ({ children }) => (
+  <div className="item-list">
+    { console.log('ItemList') }
     {children}
     <style jsx>{`
       %item--base {
         width: 27rem;
       }
 
-      .contents {
+      .item-list {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -40,4 +41,4 @@ const Contents: FC = ({ children }) => (
   </div>
 )
 
-export default Contents
+export default ItemList
