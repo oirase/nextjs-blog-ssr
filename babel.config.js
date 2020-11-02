@@ -1,5 +1,6 @@
-{
-  "presets": [
+module.exports = (api) => {
+  api.cache(true)
+  const presets = [
     [
       "next/babel",
       {
@@ -10,8 +11,8 @@
         }
       }
     ]
-  ],
-  "plugins": [
+  ]
+  const plugins = [
     [
       "module-resolver", {
         "alias": {
@@ -19,11 +20,16 @@
         }
       }
     ]
-  ],
-  env: {
+  ]
+  const env = {
       test: {
           presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
-      },
-  },
+      }
+  }
+  return {
+    presets,
+    plugins,
+    env
+  }
 }
 
