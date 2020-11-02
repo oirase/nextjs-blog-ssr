@@ -5,6 +5,7 @@ import styles from '~/styles/item'
 
 const ArticleItem: FC<PostsType> = ({ id, title, date, category, image }) => (
   <div className="item">
+  { console.log('ArticleItem') }
     <div className="item__contents">
       <Link href={`/article/${id}`}>
         <a className="item__link">
