@@ -12,7 +12,9 @@ const ListRender: FC<Props> = ({ render, data, offset, range }) => {
   const start = offset * range - range
   const end = offset * range
 
-  return <>{ console.log('ListRender) }{data.slice(start, end).map((props) => render(props)')}</>
+  console.log('ListRender)
+
+  return <>{data.slice(start, end).map((props) => render(props)')}</>
 }
 
 ListRender.defaultProps = {
