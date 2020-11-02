@@ -3,7 +3,6 @@ import { FC } from 'react'
 const Loader: FC = () => (
   <>
     <div className="loader"></div>
-    { console.log('Loader') }
     <style jsx>{`
       .loader {
         width: 5rem;

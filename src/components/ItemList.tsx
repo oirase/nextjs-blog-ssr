@@ -3,7 +3,6 @@ import { yellow, md } from '~/styles/variables'
 
 const ItemList: FC = ({ children }) => (
   <div className="item-list">
-    { console.log('ItemList') }
     {children}
     <style jsx>{`
       %item--base {

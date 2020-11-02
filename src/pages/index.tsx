@@ -40,7 +40,6 @@ const Index: FC<Props> = ({ allPostsData }) => {
 
   return (
     <Layout>
-      { console.log('IndexPage') }
       <Paginate
         offset={offset}
         length={allPostsData.length}

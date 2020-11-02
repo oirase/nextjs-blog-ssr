@@ -37,7 +37,6 @@ const Article: FC<Props> = ({ postData }) => {
 
   return (
     <Layout background="white">
-      { console.log('ArticlePage') }
       <Head>
         <title>{postData.title}</title>
       </Head>

@@ -36,7 +36,6 @@ const Nav: FC = () => {
 
   return (
     <nav className="nav">
-      { console.log('Nav') }
       <div className="nav__menu">
         <Tab href="/" background={green} {...isActive('/$')}>
           New

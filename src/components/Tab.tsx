@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import Link from 'next/link'
 import { fontBase, brown, sm } from '~/styles/variables'
 
@@ -10,7 +10,7 @@ type Props = {
   activeColor?: string
 }
 
-const Tab: FC<Props> = React.memo(({
+const Tab: FC<Props> = ({
   href,
   background,
   active = false,
@@ -21,7 +21,6 @@ const Tab: FC<Props> = React.memo(({
   return (
     <Link href={href}>
       <a className={`tab ${active ? 'active' : null}`}>
-        { console.log('Tab') }
         {children}
 
         <style jsx>{`
@@ -83,6 +82,6 @@ const Tab: FC<Props> = React.memo(({
       </a>
     </Link>
   )
-})
+}
 
 export default Tab

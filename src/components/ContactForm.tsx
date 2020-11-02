@@ -10,7 +10,6 @@ type Props = {
 
 const ContactForm: FC<Props> = ({ onSubmit }) => (
   <>
-    { console.log('ContactForm') }
     <Formik
       initialValues={{ name: '', email: '', subject: '', body: '' }}
       validationSchema={Yup.object({

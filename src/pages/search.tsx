@@ -60,7 +60,6 @@ const Search: FC<Props> = ({ allPostsData }) => {
 
   return (
     <Layout>
-      { console.log('SearchPage') }
       <div className="search">
         <div className="search__box">
           <input

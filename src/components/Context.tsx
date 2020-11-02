@@ -9,7 +9,6 @@ export const ActiveArticleProvider: FC = ({ children }) => {
   return (
     <ActiveArticleDispatchContext.Provider value={dispatch}>
       <ActiveArticleStateContext.Provider value={state}>
-        { console.log('ActiveArticleProvider') }
         {children}
       </ActiveArticleStateContext.Provider>
     </ActiveArticleDispatchContext.Provider>

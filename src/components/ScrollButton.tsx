@@ -32,7 +32,6 @@ const ScrollButton: FC = () => {
       onClick={scrollToTop}
       className={`scroll-button ${state ? 'active' : null}`}
     >
-      { console.log('ScrollButton') }
       &#9650;
       <style jsx>{`
         .scroll-button {
