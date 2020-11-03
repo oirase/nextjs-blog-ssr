@@ -45,7 +45,7 @@ const Article: FC<Props> = ({ postData }) => {
         <h2 className="article__title">{postData.title}</h2>
         <p className="article__date">{postData.date}</p>
         <div className="article__content">
-          <p
+          <div
             className="article__text"
             dangerouslySetInnerHTML={{ __html: postData.content }}
           />
