@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useRef, useState, KeyboardEvent, FC } from 'react'
 import { GetStaticProps } from 'next'
 import Layout from '~/components/Layout'
@@ -60,6 +61,7 @@ const Search: FC<Props> = ({ allPostsData }) => {
 
   return (
     <Layout>
+      <Head><title>blog top</title></Head>
       <div className="search">
         <div className="search__box">
           <input

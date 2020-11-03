@@ -127,7 +127,7 @@ const App = ({
   Component,
   pageProps
 }) => {
-  return __jsx(_components_Context__WEBPACK_IMPORTED_MODULE_1__[/* ActiveArticleProvider */ "a"], null, console.log('App'), __jsx(Component, pageProps));
+  return __jsx(_components_Context__WEBPACK_IMPORTED_MODULE_1__[/* ActiveArticleProvider */ "a"], null, __jsx(Component, pageProps));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -159,7 +159,7 @@ const ActiveArticleProvider = ({
     value: dispatch
   }, __jsx(ActiveArticleStateContext.Provider, {
     value: state
-  }, console.log('ActiveArticleProvider'), children));
+  }, children));
 };
 const useActiveArticleState = () => Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(ActiveArticleStateContext);
 const useActiveArticleDispatch = () => Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(ActiveArticleDispatchContext);
