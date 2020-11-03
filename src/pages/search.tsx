@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useRef, useState, KeyboardEvent, FC } from 'react'
 import { GetStaticProps } from 'next'
 import Layout from '~/components/Layout'
+import PageTitle from '~/components/PageTitle'
 import ItemList from '~/components/ItemList'
 import ArticleItem from '~/components/ArticleItem'
 import Paginate from '~/components/Paginate'
@@ -61,7 +62,7 @@ const Search: FC<Props> = ({ allPostsData }) => {
 
   return (
     <Layout>
-      <Head><title>blog top</title></Head>
+      <PageTitle>Search</PageTitle>
       <div className="search">
         <div className="search__box">
           <input
