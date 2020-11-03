@@ -9,7 +9,7 @@ const Meta: FC = () => (
       href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans+Condensed&display=optional"
       rel="stylesheet"
     />
-    <title>WebCreateBlog</title>
+    <title>{process.env.APP_NAME}</title>
   </Head>
 )
 

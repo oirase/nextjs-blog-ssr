@@ -4,7 +4,7 @@ import Head from 'next/head'
 const PageTitle: FC = ({ children }) => (
   <Head>
     <title>
-      {children} | WebCreateBlog
+      {children} | {process.env.APP_NAME}
     </title>
   </Head>
 )
