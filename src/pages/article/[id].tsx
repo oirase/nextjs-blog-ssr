@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Layout from '~/components/Layout'
+import PageTitle from '~/components/PageTitle'
 import { getAllPostIds, getPostData } from '~/lib/posts'
 import { useActiveArticleDispatch } from '~/components/Context'
 import { purple, md } from '~/styles/variables'
@@ -37,9 +38,7 @@ const Article: FC<Props> = ({ postData }) => {
 
   return (
     <Layout background="white">
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
+      <PageTitle>{postData.title} | Article</PageTitle>
       <div className="article">
         <h2 className="article__title">{postData.title}</h2>
         <p className="article__date">{postData.date}</p>

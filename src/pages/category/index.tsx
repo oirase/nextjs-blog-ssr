@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { GetStaticProps } from 'next'
 import Layout from '~/components/Layout'
+import PageTitle from '~/components/PageTitle'
 import ItemList from '~/components/ItemList'
 import ListRender from '~/components/ListRender'
 import category from '~/lib/category'
@@ -26,6 +27,7 @@ type Props = {
 const Category: FC<Props> = ({ category }) => {
   return (
     <Layout>
+      <PageTitle>Category</PageTitle>
       <ItemList>
         <ListRender
           data={category}

@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useState } from 'react'
 import Layout from '~/components/Layout'
+import PageTitle from '~/components/PageTitle'
 import { getPostsData, getPostsSingleData } from '~/lib/posts'
 import PostType from '~/types/post'
 import ArticleItem from '~/components/ArticleItem'
@@ -55,6 +56,7 @@ const Category: FC<Props> = ({ categoryPostsData }) => {
 
   return (
     <Layout>
+      <PageTitle>{categoryPostsData[0].category} | Category</PageTitle>
       <Paginate
         offset={offset}
         length={categoryPostsData.length}

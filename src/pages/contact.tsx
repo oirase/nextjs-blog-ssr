@@ -4,6 +4,7 @@ import Link from 'next/link'
 import useSWR from 'swr'
 import ContactForm from '~/components/ContactForm'
 import Layout from '~/components/Layout'
+import PageTitle from '~/components/PageTitle'
 import Loader from '~/components/Loader'
 import contactFormType from '~/types/contactForm'
 
@@ -58,6 +59,7 @@ const Contact: FC = () => {
 
   return (
     <Layout padding="5rem 0 2rem 0">
+      <PageTitle>Contact</PageTitle>
       {!data ? <ContactForm onSubmit={handleClick} /> : null}
       <div className="result-info">
         {error ? errorMessage : !state ? null : data ? complete : <Loader />}
