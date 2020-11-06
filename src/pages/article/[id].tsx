@@ -36,8 +36,6 @@ const Article: FC<Props> = ({ postData }) => {
   const dispatch = useActiveArticleDispatch()
   dispatch(router.query.id)
 
-  console.log(postData.content)
-
   return (
     <Layout background="white">
       <PageTitle>{postData.title} | Article</PageTitle>
