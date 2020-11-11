@@ -6,7 +6,7 @@ const Meta: FC = () => (
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans+Condensed&display=optional"
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans+Condensed"
       rel="stylesheet"
     />
     <title>{process.env.APP_NAME}</title>
