@@ -114,11 +114,11 @@ const Search: FC<Props> = ({ allPostsData }) => {
             height: 3.3rem;
             display: flex;
             border-radius: 4px;
+            background: white;
             over-flow: hidden;
           }
 
           &__input {
-            background: white;
             display: block;
             width: 17rem;
             padding: 2px 4px;
