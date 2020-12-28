@@ -11,7 +11,7 @@ export default function getData(req: NextApiRequest, res: NextApiResponse) {
   for (const value of Object.keys(req.body)) {
     data[value] = htmlspecialchars(req.body[value])
   }
-  const { name, email, subject, body } = data
+  const { name, email, body } = data
 
   const transporter = createTransport({
     service: process.env.MAIL_SERVICE,
@@ -29,7 +29,6 @@ export default function getData(req: NextApiRequest, res: NextApiResponse) {
 
 お名前 ${name}
 メールアドレス　${email}
-題名 ${subject}
 
 本文
 ${body}

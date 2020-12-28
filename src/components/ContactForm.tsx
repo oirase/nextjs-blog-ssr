@@ -17,7 +17,6 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
         //.required('お名前は必須項目です')
         email: Yup.string().email('メールアドレスのみ使用可能です'),
         //.required('メールアドレスは必須項目です')
-        subject: Yup.string().max(30, '件名は30文字まで使用可能です'),
         body: Yup.string().max(
           200,
           'お問い合わせ本文は200文字まで使用可能です'
@@ -47,17 +46,6 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
           type="text"
         />
         <ErrorMessage name="email">
-          {(msg) => <p className="form__error">{msg}</p>}
-        </ErrorMessage>
-        <label className="form__label" htmlFor="subject">
-          題名
-        </label>
-        <Field
-          className="form__input"
-          name="subject"
-          type="text"
-        />
-        <ErrorMessage name="subject">
           {(msg) => <p className="form__error">{msg}</p>}
         </ErrorMessage>
         <label className="form__label" htmlFor="body">
