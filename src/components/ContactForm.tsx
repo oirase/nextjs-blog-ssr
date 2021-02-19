@@ -81,6 +81,7 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
         &:before {
           content: "";
           width: 100%;
+          box-sizing: border-box;
           border-top: 50px solid navy;
           border-left: 40px solid transparent;
           border-right: 40px solid transparent;
