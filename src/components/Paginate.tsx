@@ -71,11 +71,13 @@ const Paginate: FC<PaginateProps> = ({ offset, length, range, setOffset }) => {
     <div className="paginate">
       <ul className="paginate__ul">{list}</ul>
       <style jsx>{`
+
         .paginate {
           width: 100%;
           color: ${yellow};
           //padding: 4rem 3.5rem 0 5rem;
           padding: 4rem 0;
+          margin-left: 1.5rem;
           display: flex;
           justify-content: center;
           align-items: center;
