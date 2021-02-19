@@ -76,6 +76,17 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
         flex-direction: column;
         align-items: center;
         box-shadow: 3px 3px 15px #333;
+        position: relative;
+
+        &:before {
+          content: "";
+          width: 100%;
+          height: 5rem;
+          background: red;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
 
         @at-root %form__element {
           margin-bottom: 1.5rem;
