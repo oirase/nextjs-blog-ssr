@@ -76,7 +76,7 @@ const Paginate: FC<PaginateProps> = ({ offset, length, range, setOffset }) => {
           width: 100%;
           color: ${yellow};
           //padding: 4rem 3.5rem 0 5rem;
-          padding: 4rem 0;
+          padding: 4rem 0 4rem 1.5rem;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -86,10 +86,10 @@ const Paginate: FC<PaginateProps> = ({ offset, length, range, setOffset }) => {
           &__ul {
             display: flex;
             flex-wrap: wrap;
-            margin: 0 auto 0 1.5rem;
+            margin: 0 auto;
             //width: 80rem;
             width: 80%;
-            max-width: 150rem;
+            max-width: 200rem;
 
             @media (${md}) {
               justify-content: center;
