@@ -28,7 +28,6 @@ const Tab: FC<Props> = ({
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.4rem;
             width: 20rem;
             height: 5rem;
             max-width: 24%;
@@ -38,16 +37,17 @@ const Tab: FC<Props> = ({
             background: ${background};
             border-radius: 10px 10px 0 0;
             font-family: Georgia, 'Open Sans Condensed', ${fontBase};
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             color: white;
             position: relative;
             text-decoration: none;
             font-size: 1.6rem;
-            padding: 1.6rem 0;
+            //padding: 1.6rem 0;
 
             @media (${sm}) {
               font-size: 2rem;
               padding: 1.8rem 0;
+              letter-spacing: 1px;
             }
 
             &:before {
