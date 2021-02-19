@@ -60,7 +60,7 @@ const Nav: FC = () => {
         .nav {
           display: flex;
           justify-content: center;
-          height: 6rem;
+          //height: 6rem;
 
           &__menu {
             display: flex;
