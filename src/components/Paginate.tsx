@@ -86,7 +86,8 @@ const Paginate: FC<PaginateProps> = ({ offset, length, range, setOffset }) => {
             display: flex;
             flex-wrap: wrap;
             margin: 0 auto;
-            width: 80rem;
+            //width: 80rem;
+            width: 80%;
             max-width: 100%;
 
             @media (${md}) {
