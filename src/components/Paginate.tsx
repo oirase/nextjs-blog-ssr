@@ -74,7 +74,11 @@ const Paginate: FC<PaginateProps> = ({ offset, length, range, setOffset }) => {
         .paginate {
           width: 100%;
           color: ${yellow};
-          padding: 4rem 3.5rem 0 5rem;
+          //padding: 4rem 3.5rem 0 5rem;
+          padding: 4rem 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           //background: ${yellow};
           font-family: 'Abril Fatface', ${fontBase};
 
