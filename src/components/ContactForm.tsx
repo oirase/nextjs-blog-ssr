@@ -82,8 +82,8 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
           content: "";
           width: 100%;
           border-top: 50px solid navy;
-          border-left: 40px solid transpalent;
-          border-right: 40px solid transpalent;
+          border-left: 40px solid transparent;
+          border-right: 40px solid transparent;
           position: absolute;
           top: 0;
           left: 0;
