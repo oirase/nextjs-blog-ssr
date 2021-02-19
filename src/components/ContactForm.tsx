@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
-import { skyblue } from '~/styles/variables'
+import { skyblue, navy } from '~/styles/variables'
 import contactFormType from '~/types/contactForm'
 
 type Props = {
@@ -81,7 +81,7 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
         &:before {
           content: "";
           width: 100%;
-          border-top: 50px solid red;
+          border-top: 50px solid navy;
           border-left: 40px solid transpalent;
           border-right: 40px solid transpalent;
           position: absolute;
