@@ -46,8 +46,8 @@ const Tab: FC<Props> = ({
             text-decoration: none;
 
             @media (${sm}) {
-              font-size: 2rem;
-              padding: 1.8rem 0;
+              //font-size: 2rem;
+              //padding: 1.8rem 0;
             }
 
             &:before {
