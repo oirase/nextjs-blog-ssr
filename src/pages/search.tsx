@@ -51,6 +51,7 @@ const Search: FC<Props> = ({ allPostsData }) => {
         }
       }
     })
+    setOffset(1)
     result && setSearchResult(result)
   }
 
