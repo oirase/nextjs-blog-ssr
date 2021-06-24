@@ -30,7 +30,7 @@ const Layout: FC<Props> = ({
         .outbox {
           background: #333;
           padding: 0.5rem;
-          max-width: 120rem;
+          max-width: 100%;
           min-height: 100vh;
         }
 
