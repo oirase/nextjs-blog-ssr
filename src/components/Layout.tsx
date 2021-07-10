@@ -36,10 +36,10 @@ const Layout: FC<Props> = ({
 
         .top-view {
           background-image: url('/images/layout/ice-414.jpg');
-          @media(min-width: 767px) {
+          @media(min-width: 810px) {
             background-image: url('/images/layout/ice-810.jpg');
           }
-          @media(min-width: 1280px) {
+          @media(min-width: 1440px) {
             background-image: url('/images/layout/ice-1440.jpg');
           }
           @media(min-width: 1920px) {
