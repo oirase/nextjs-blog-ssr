@@ -47,6 +47,7 @@ const Layout: FC<Props> = ({
           }
           background-color: purple;
           border-radius: 10px 10px 0 0;
+          background-size: cover;
           width: 100%;
         }
 
