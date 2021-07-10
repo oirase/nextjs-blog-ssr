@@ -36,6 +36,9 @@ const Layout: FC<Props> = ({
 
         .top-view {
           background-image: url('/images/layout/image03.jpg');
+          @media(min-width: 500px) {
+            background-image: url('/images/layout/ice-1440.jpg');
+          }
           background-color: purple;
           border-radius: 10px 10px 0 0;
         }
