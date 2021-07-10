@@ -35,12 +35,19 @@ const Layout: FC<Props> = ({
         }
 
         .top-view {
-          background-image: url('/images/layout/image03.jpg');
-          @media(min-width: 500px) {
+          background-image: url('/images/layout/ice-414.jpg');
+          @media(min-width: 767px) {
+            background-image: url('/images/layout/ice-810.jpg');
+          }
+          @media(min-width: 1280px) {
             background-image: url('/images/layout/ice-1440.jpg');
+          }
+          @media(min-width: 1920px) {
+            background-image: url('/images/layout/ice-1920.jpg');
           }
           background-color: purple;
           border-radius: 10px 10px 0 0;
+          width: 100%;
         }
 
         .contents {
