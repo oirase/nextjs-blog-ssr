@@ -45,6 +45,10 @@ const Layout: FC<Props> = ({
           @media(min-width: 1920px) {
             background-image: url('/images/layout/ice-1920.jpg');
           }
+          @media(-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx){
+            background-image: url('/images/layout/image06.jpg');
+          }
+
           background-color: purple;
           border-radius: 10px 10px 0 0;
           background-size: cover;
