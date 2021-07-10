@@ -69,7 +69,7 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
       .form {
         display: flex;
         margin: 0 auto;
-        width: 40rem;
+        width: 50rem;
         max-width: 100%;
         padding: 9rem 0 4rem 0;
         background: ${skyblue};
@@ -82,7 +82,7 @@ const ContactForm: FC<Props> = ({ onSubmit }) => (
           content: "";
           width: 100%;
           box-sizing: border-box;
-          border-top: 50px solid navy;
+          border-top: 50px solid  ${navy};
           border-left: 40px solid transparent;
           border-right: 40px solid transparent;
           position: absolute;
